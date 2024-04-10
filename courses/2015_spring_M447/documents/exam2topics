@@ -1,0 +1,17 @@
+Lectures 24, 25, 32, 33, 35, 38, and 40.
+
+* Basic iterative methods (Jacobi, Gauss-Siedel, SOR, SSOR) (SOR and SSOR were covered in *much* less detail)
+
+* Convergence of some of these algorithms for diagonally dominant matrices
+
+* The Fundamental Theorem of Iterative Methods (and the theorems leading up to it)
+
+* Gershgorin theorems (I will give you the definition of the disks on the exam)
+
+* Arnoldi/Krylov techniques (you should know what a Krylov subspace is and what Arnoldi does, but there is no need to memorize algorithms)
+
+* Variational/minimization methods: Steepest Decent (SD), Conjugate Gradient (CG), and GMRES (Understand the proofs, but don't memorize the algorithms)
+
+* Preconditioning (just the main ideas, we didn't go into much detail here)
+
+* Eigenvalue problems and classical eigenvalue algorithms (we didn't have homework on this, so if it appears on the exam, it will only be over what we discussed in class)

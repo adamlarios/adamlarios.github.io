@@ -1,0 +1,10 @@
+function fac = factorial(N);
+% A function to compute the factorial of N.
+
+if N == 0
+    fac = 1
+else
+    for i = 1:N
+        
+    end
+end

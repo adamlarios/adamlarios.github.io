@@ -1,0 +1,921 @@
+% \RequirePackage[l2tabu, orthodox]{nag}
+%% Checks for obsolete LaTeX packages and outdated commands. 
+%% Does nothing as long as your syntax is right.
+% 
+% Things Ciprian mentioned:
+% ------------------------
+% Take data epsilon above the parabola, and see that it comes down
+% 
+
+\documentclass[10pt,reqno]{amsart}
+% Document class possibilities:
+%   amsart, article, book, beamer, report, letter
+% Options:
+%   letterpaper, a4paper,11pt,oneside, twoside, draft, twocolumn, landscape
+
+%% For beamer class, see my beamer template.
+
+%% ========== Options to Toggle When Compiling ==============
+%\usepackage{syntonly}
+%\syntaxonly
+% \usepackage[notcite]{showkeys} %% Show tags and labels.
+% %\usepackage{layout}            %% Show variable values controlling page layout.
+%\allowdisplaybreaks[1]         %% Allow multiline displays to split.
+%\nobibliography     %% Use proper citations, but do not generate bibliography.
+
+%% ========== Select *.tex file encoding and language ==============
+%\usepackage[language]{babel} %% Takes care of all language requirements.
+
+%\usepackage[latin1]{inputenc}  %% Use with PuTTY or TeXMaker
+\usepackage[utf8]{inputenc}  %% Use on most OS's, such as Ubuntu.
+
+%% ============== Page Styles ==============
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \pagestyle{empty}
+
+%% ============== Page Layout ==============
+%% Allow extra space at the bottom of pages.
+\raggedbottom     
+
+%% Use smaller margins.
+\usepackage{fullpage}
+
+%%Control page number placement.  \thepage is the current page number.
+% \renewcommand{\headrulewidth}{0pt}
+% \lhead{}
+% \chead{}
+% \rhead{}
+% \lfoot{}
+% \cfoot{\thepage}
+% \rfoot{}
+
+%\usepackage{geometry}  %% Can adjust the margins of individual pages
+%% Use it like this:
+%% \newgeometry{left=3cm,bottom=0.1cm}
+%%     ... Lines that require margins adjusted ...
+%% \restoregeometry
+
+%% ============== Math Packages ==============
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools} % An improvement of amsmath
+\usepackage{latexsym}
+
+%% ============ Typesetting add-ons ============
+%\usepackage{siunitx} %Support for SI units, \num, \SI, etc.
+
+%% ============== Single-Use Packages ==============
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{cases}
+\usepackage{empheq}
+\usepackage{multicol}
+
+%% ============== Graphics Packages ==============
+%\usepackage{graphicx} %% Conflicts with pdflatex.
+%\usepackage{graphics} %% Conflicts with eps files.
+%\usepackage{epsfig} Allows eps files (?)
+
+\usepackage{wrapfig}
+
+%% Note: For using .eps graphics, use the graphicx package,
+%% and in the document use, for example:
+%% \begin{figure}
+%%  \includegraphics[scale=0.5]{my_picture.eps}
+%% \end{figure}
+
+%% Prevent figures from appearing on a page by themselves:
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\textfraction}{0.1}
+%\renewcommand{\floatpagefraction}{0.75}
+
+%% Force floats to always appear after their definition: 
+%\usepackage{flafter}
+
+%% ============== tikZ and PGF packages ==============
+%\usepackage{ltxtable,tabularx,tabulary}
+ 
+\usepackage{tikz}
+\usepackage{pgf}
+% \usepackage{pgfplots} %% Requires pgf 2.0 or later.
+% % \usetikzlibrary{arrows, automata, backgrounds, calendar, 
+% % chains,matrix, mindmap, patterns, petri, shadows, 
+% % shapes.geometric,shapes.misc,
+% % spy, trees}
+% \pgfplotsset{compat=1.9} % Fixes some backwards compatibility warnings
+\usetikzlibrary{arrows}
+
+%% ============== Colors ==============
+%% Warning: These are often a source of conflicts during compilation.
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+
+%% ============== Notes ==============
+\usepackage[backgroundcolor=gray!30,linecolor=black]{todonotes}
+% \usepackage[disable]{todonotes}
+%\listoftodos, \todo[noline]{}, \todo[inline]{}, \todo{}, \missingfigure{}
+% \todo[fancyline]{}
+   
+%% ============== Fonts ==============
+%\usepackage{bbm}  %% Non-Vanilla: Not include in many LaTeX distributions.
+\usepackage{mathrsfs}
+\usepackage{fontenc} %T1 font encoding
+\usepackage{inputenc} %UTF-8 support
+%\usepackage{babel} %Language specific commands, shortcuts, hyphenation.
+
+\usepackage{verbatim}
+
+%% Microtype improves spacing.  Load after fonts.
+% \usepackage{microtype}
+
+%% ============== Theorem Styles ==============
+%% Note: newtheorem* prevents numbering.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ============== References ==============
+\setcounter{secnumdepth}{3} %% Used to label subsections
+% \numberwithin{equation}{section} %% Equation numbering control.
+\numberwithin{figure}{section}   %% Figure numbering control.
+
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+\hypersetup{urlcolor=blue, citecolor=red}
+\usepackage{url}
+
+%% Reference things as 'fig. 1', 'Lemma 7', etc.
+% \usepackage{cleveref}
+
+%% Create references like 'on the following page', 'on page 23'
+\usepackage{varioref} 
+
+% usepackage[refpages]{gloss} %% Glossary
+
+%%%%%%%%%%%%%%%%%%%%% MACROS %%%%%%%%%%%%%%%%%%%%%
+
+% ============================== Vectors ==============================
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\bi}{\vect{i}}
+\newcommand{\bj}{\vect{j}}
+\newcommand{\bk}{\vect{k}}
+
+\newcommand{\bn}{\vect{n}}
+
+\newcommand{\bu}{\vect{u}}
+\newcommand{\bv}{\vect{v}}
+\newcommand{\bw}{\vect{w}}
+\newcommand{\boldm}{\vect{m}}
+\newcommand{\bx}{\vect{x}}
+\newcommand{\by}{\vect{y}}
+\newcommand{\bz}{\vect{z}}
+
+\newcommand{\be}{\vect{e}}
+\newcommand{\bg}{\vect{g}}
+
+\newcommand{\bbf}{\vect{f}}
+
+% ==================== Fields ==================
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nN}{\field{N}}
+\newcommand{\nZ}{\field{Z}}
+\newcommand{\nQ}{\field{Q}}
+\newcommand{\nR}{\field{R}}
+\newcommand{\nC}{\field{C}}
+\newcommand{\nF}{\field{F}}
+\newcommand{\nK}{\field{K}}
+
+% ======================== Script Symbols  ========================
+\newcommand{\sL}{\mathscr L}
+\newcommand{\sH}{\mathscr H}
+\newcommand{\sG}{\mathscr G}
+
+% ====================== Caligraphic Symbols ======================
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+
+% ======================== Fraktur Symbols  ========================
+% Note: Use mathrsfs package.
+
+\newcommand{\fm}{\mathfrak m}
+
+% ========================== Bold Symbols ==========================
+\newcommand{\bvphi}{\boldsymbol{\vphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+% ======================== Misc. Symbols ========================
+\newcommand{\nT}{\mathbb T}
+\newcommand{\vphi}{\varphi}
+\newcommand{\maps}{\rightarrow}
+\newcommand{\Maps}{\longrightarrow}
+\newcommand{\sand}{\quad\text{and}\quad}
+\newcommand{\QED}{\hfill$\blacksquare$}
+\newcommand{\tac}{\textasteriskcentered}
+%\newcommand{\dhr}{\m\athrel{\lhook\joinrel\relbar\kern-.8ex\joinrel\lhook\joinrel\rightarrow}}
+
+% ========================== Operations ==========================
+\newcommand{\cnj}[1]{\overline{#1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npd}[3]{\frac{\partial^#3 #1}{\partial #2^#3}} %\npd{f}{x}{2}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+%\newcommand\norm[1]{\left\vert\mkern-1.7mu\left\vert#1\right\vert\mkern-1.7mu\right\vert}
+%\newcommand\bnorm[1]{\bigl\vert\mkern-2mu\bigl\vert#1\bigr\vert\mkern-2mu\bigr\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+\newcommand{\iip}[2]{\left<\left<#1,#2\right>\right>}
+\newcommand{\braket}[1]{\left<#1\right>}
+\newcommand{\pnt}[1]{\left(#1\right)}
+\newcommand{\pair}[2]{\left(#1,#2\right)}
+
+%Advection operators:
+\newcommand{\adv}[2]{(#1 #2)}
+\newcommand{\vectadv}[2]{\;#1 \otimes#2\;}
+
+% ============ Special Macros For This Paper ==================
+\newcommand{\diff}[1]{\widetilde{#1}}
+\newcommand{\bud}{\diff{\bu}}
+\newcommand{\ud}{\diff{u}}
+\newcommand{\xid}{\diff{\xi}}
+\newcommand{\thetad}{\diff{\theta}}
+
+\newcommand{\bue}{\vect{u}^{\epsilon}}
+\newcommand{\pe}{p^{\epsilon}}
+\newcommand{\thetae}{\theta^{\epsilon}}
+
+\newcommand{\bude}{\diff{\bue}}
+\newcommand{\ude}{\diff{ue}}
+\newcommand{\thetade}{\diff{\thetae}}
+
+\newcommand{\bun}{\vect{u}^{(n)}}
+\newcommand{\thetan}{\theta^{(n)}}
+\newcommand{\omegan}{\omega^{(n)}}
+
+% \newcommand{\thetaSt}{\cnj{\theta}} % 'St' for 'Steady.'
+% \newcommand{\uSt}{\cnj{u}}
+% \newcommand{\buSt}{\cnj{\bu}}
+
+\newcommand{\thetaSt}{\theta} % 'St' for 'Steady.'
+\newcommand{\uSt}{u}
+\newcommand{\buSt}{\bu}
+
+\newcommand{\thetaPer}{\widetilde{\theta}} % 'Per' for 'Perturbation.'
+\newcommand{\uPer}{\widetilde{u}}
+\newcommand{\buPer}{\widetilde{\bu}}
+%\renewcommand{\section}[1]{\section{\texorpdfstring{#1}}}
+
+\newcommand{\dist}{\text{dist}}
+
+% Put notation for initial data here, so it can be changed easily.
+\newcommand{\initialData}[1]{#1_0}
+\newcommand{\buInit}{\initialData{\bu}}
+\newcommand{\uInit}{\initialData{u}}
+\newcommand{\uStInit}{\initialData{\uSt}}
+\newcommand{\uStInitOne}{\initialData{\uSt}}
+\newcommand{\uStInitTwo}{\initialData{\uSt}}
+
+\newcommand{\thetaInit}{\initialData{\theta}}
+
+% \newcommand{\weaklim}[1]{\substack{\mathrm{wk\mbox{-}lim}\\[0.1ex]#1}}
+\DeclareMathOperator*{\weaklim}{wk-lim}
+
+% ========================== Norms ==========================
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\snorm}[2]{\left\|#1\right\|_{#2}}
+\newcommand{\normH}[1]{|#1|}
+\newcommand{\normV}[1]{\|#1\|}
+\newcommand{\normLp}[2]{\|#2\|_{L^{#1}}}
+\newcommand{\normHs}[2]{\|#2\|_{H^{#1}}}
+\newcommand{\normLL}[3]{\|#3\|_{L^{#1}([0,T],L^{#2})}}
+\newcommand{\normLH}[3]{\|#3\|_{L^{#1}([0,T],H^{#2})}}
+\newcommand{\normCL}[3]{\|#3\|_{C^{#1}([0,T],L^{#2})}}
+\newcommand{\normCH}[3]{\|#3\|_{C^{#1}([0,T],H^{#2})}}
+% \documentclass[final,11pt]{article}
+% %\usepackage{amstex} 
+% \usepackage{amsmath}
+% \usepackage{epsfig} 
+% \usepackage{latexsym}
+\usepackage{epic}
+\usepackage{eepic}
+% \usepackage{graphicx}
+% \usepackage{amssymb}
+% \usepackage{epstopdf}
+\usepackage{nicefrac}
+\newcommand{\f}{\frac}
+\newcommand{\eps}{\epsilon}
+
+\usepackage{marvosym}
+% ======================= \texttt{MATLAB} =======================
+\usepackage{listings} % Use for code.
+\usepackage{textcomp} % Used for upquote.
+% \usepackage{color} 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\lstset{language=Matlab,
+   keywords={break,case,catch,continue,else,elseif,end,for,function,
+       global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily,
+   upquote=true,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{purple},
+%    numbers=left,%    numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   showstringspaces=false,
+   commentstyle=\color{dkgreen}
+   }
+   
+\usepackage{marvosym}
+   
+   
+\begin{document}
+
+
+\title{Math 934 -- Runge-Kutta Project
+% \\\textbf{Due date: Monday, 2015 November 9, 10:00 pm}
+}
+% \date{Assigned Friday, 16 October 2015}  %Date assigned
+\author{Instructor: Dr. Adam Larios}
+\maketitle
+\thispagestyle{empty}
+\pagestyle{empty}
+
+% \section{Introduction}
+% \noindent
+% In the paper, ``When zombies attack! Mathematical modeling of an outbreak of zombie infection'' 
+% [Munz, Hudea, Imad, and Smith, 2009], the authors analyze an outbreak of zombiism as an infectious disease and discover that, in their models, the only stable
+% equilibrium is one in which all humans are turned into zombies. This is called
+% the Zombie Apocalypse.
+% Your mission is to read their paper and question their assumptions. Can
+% you find an incorrect assumption? How do you change the model for this? Can
+% you find a stable equilibrium?
+% You may also think of other ways that humans might remove dangerous
+% zombies from the population. Does this change the model? In what ways? And
+% does this allow for a stable equilibrium?
+% You may want to do a web search and/or a library search to see if you can find
+% other publications modeling disease outbreaks, and see what conclusions those come to.
+% You should learn some basics about disease modeling, at the very least reading about it on Wikipedia [Wikipedia(2011)].
+% 
+% \underline{Your main goals are:}
+% \begin{itemize}
+% \item Modify your Runge-Kutta-4 code from Project 1 (or modify my example on the webpage) to allow for 2D systems.  Verify that your code is correct by checking that your error is order $\mathcal{O}(h^{-4})$ as you did on Project 1.  Come up with your own, ODE system for validation purposes, for which you know the exact solution (we did something similar in Project 1).
+% \item 
+% Reproduce some of the results from the [Munz, Hudea, Imad, and Smith, 2009] paper. 
+% \item
+% Once you have this working, evaluate and change the modeling assumptions.
+% \item
+% Write equations to reflect your changes, and see how this influences the
+% equilibria.
+% \item
+% See if you can figure out what are the best ways for humans to fight the
+% zombies and prevent the apocalypse.
+% \end{itemize}
+
+% \underline{Your write-up should include:}
+% 
+% \begin{enumerate}
+% \item 
+% An introduction. In the introduction you should:
+% \begin{enumerate}
+% \item  Explain your understanding of zombies and zombiism (with references
+% to your sources, as in the original paper).
+% \item  Discuss the prior paper, and its results.
+% \end{enumerate}
+% \item 
+% A modeling section in which you explain your new modeling assumptions
+% (similar to section 2, 3, 4 of the original paper), and your results.
+% \item 
+% You may have two or three subsections in which you explore alternatives
+% (similar to the original paper). In particular, you should take into account
+% what actions the humans might take.
+% 
+% \item In the modeling section or subsections, you should include graphs to show
+% how the human and zombie populations change over time, a calculation of
+% the equilibria, and an analysis of how the eigenvalues of the linearized system near the equilibria influence the behavior of the system.
+% \end{enumerate}
+
+% A results and conclusion section in which you include
+% \begin{enumerate}
+% \item  An overall summary of your results.
+% \item  An evaluation of which model(s) created the best scenarios for the humans. Are there any ways to avoid the apocalypse?
+% \item Any criticisms of your models that you can see.
+% \item A concluding paragraph that sums up the paper.
+% \end{enumerate}
+
+
+
+ 
+
+%----------------------------------------------------
+
+% \newpage
+
+\bigskip
+
+\noindent\underline{\textbf{Before You Begin}}
+
+Read all of ``Matlab Introduction,'' emailed to the class, working through each part in Matlab as you go.  If you feel the need for some review, it might be good to go through the document again.  
+
+\bigskip
+
+\noindent\underline{\textbf{Part I: Making your own ODE solver}} 
+
+Now that you are getting familiar with the basics of Matlab, let's try something a little more useful.  Let's solve first-order ODE's (Ordinary Differential Equations) with initial values:
+\begin{empheq}[left={\empheqlbrace},right={}]{align*}
+ \frac{d}{dt}y =f(t,y),
+\\
+y(t_0) = y_0.
+\end{empheq}
+In this section, you will program two O.D.E. solvers and test their accuracy. The first one is already done for you below.  \textbf{Type this method out yourself}, and see if you can understand each line.  When you are ready, try to run the code.  Notice that this code is a function, so you can change the inputs and outputs easily. Here, we take a time interval $t_0\leq t \leq T$, where with think of $t_0$ as the initial time, and $T$ as the final time.  Let $N$ be the number of points, and calculate the step size $h$ by $h=(T-t_0)/N$. 
+
+% \pagebreak
+
+FILE: \texttt{forwardEuler.m}
+
+\begin{minipage}[h]{5in}
+\centering
+\begin{lstlisting}[numbers=left]
+function [y,t] = forwardEuler(f,t0,T,y0,N)
+% Solve dy/dt = f(t,y), y(t0)=y0
+% for t0 <= t <= T, with N time steps.
+% Sample run: 
+% [y_approx,t] = euler(@(t,y) sin(t+y), 0, 5, 0.2, 10);
+% close all;
+% plot(t,y,'-o');
+
+h = (T - t0)/(N-1); % Calulate and store the step-size
+y = zeros(1,N); % Initialize the Y vector.
+
+t = linspace(t0,T,N); % A vector to store the time values.
+y(1) = y0; % Start y at the initial value.
+
+for i = 1:(N-1)
+  y(i+1) = y(i) + h*f(t(i),y(i)); % Update approximation y at t+h
+end
+\end{lstlisting}
+\end{minipage}
+
+\noindent
+\fbox{\parbox{\textwidth}{\textbf{CHECK:} Are there any orange or red lines on your scroll bar?  These are warnings and errors.  Hover your mouse over them to see what they are.  Clear them up before running your code.  If you have a green box at the top, Matlab cannot detect any errors or warnings in your code.  This doesn't necessarily mean your code is error-free though!  We will develop a more rigorous test below.}}
+
+Save the above file as ``forwardEuler.m'' (without the quotes).  It must have this exact name, and must be in the your current working directory for Matlab to be able to find it.  (In Matlab, ``folders'' are called ``directories.'')  Use the command \texttt{pwd} (print working directory) to check your current directory, \texttt{ls} (list) to list what's in it, and \texttt{cd <directory name>} to change directory.  You can also navigate directories graphically using the ``Current Folder'' window.
+
+We will now solve the IVP (initial value problem) given by:
+\begin{empheq}[left={\empheqlbrace},right={}]{align*}
+ \frac{dy}{dt} =-ty^2
+\\
+y(0) = 1
+\end{empheq}
+
+\noindent Run the code by entering these commands in the terminal:
+
+\begin{minipage}[h]{5in}
+\centering
+\begin{lstlisting}
+>> [y_approx,t]= forwardEuler(@(t,y) -t*y^2, 0.0, 5.0, 1.0, 100);
+>> plot(t,y_approx,'-o');
+\end{lstlisting}
+\end{minipage}
+
+\noindent
+This will input the function $f(t,y) = -ty^2$, and the values $t_0=0$, $y_0=1.0$, $T=5.0$, and use $N=100$ grid-points.  Then it will plot\footnote{For more plotting options, type  \texttt{help plot}.} the approximate solution, $t$ vs. $y_\text{approx}(t)$.  Try playing with the inputs.  Can you increase the number of points to get a smoother-looking graph?  What happens when you change the initial value, or even the function?
+
+Note that the exact solution is given by $y(t) = 2/(2+t^2)$ (call the solution, say, \texttt{y\_exact}), and plot both \texttt{y\_exact} and \texttt{y\_approx} on the same graph.  Make sure to base these off the same $t$ values! (See the ``Matlab Introduction'' document if you need help.) Remember to use ``\texttt{hold on}'' to make two plots on one window (see the Matlab Intro worksheet for a detailed example).
+
+\bigskip
+
+\noindent\textbf{\underline{Analyzing Error}}
+
+An numerical approximation is not really any good unless we can say something about \textit{how good} the approximation is.  In particular, one feature we want is for our error to decrease as the resolution (i.e., number of grid-points) increases.  There are many way of quantifying error.  Usually, we want a \textbf{global measure of error}, so it is not enough to take, say, the error at the final time; for example, there could have been crazy errors all along the way, and maybe the two solutions just coincidentally line up at the last time.  Also, we usually want our ``error'' to be a single number, since looking at the error at each time can often provide \textit{too much} information, and it is hard to analyze.  Let's choose a simple way to measure the global error.  For a \textbf{fixed resolution} \texttt{N}, we can define the error to be:
+
+\begin{minipage}[h]{5in}
+\centering
+\begin{lstlisting}
+error = max(abs(y_exact - y_approx));
+\end{lstlisting}
+\end{minipage}
+
+\noindent In mathematics, this can be written as
+\begin{align*}
+ \text{error} = \max_{i = 1\ldots N} |y(t_i) - y_i|
+\end{align*}
+\noindent
+where $y_i$ represents the approximate solution at step $i$, and $y(t)$ is the exact solution at time $t$ (so that $y(t_i)$ is the exact solution at time $t_i$).
+
+\bigskip
+
+\noindent\textbf{\underline{Task 1a}:} Write a separate code (call it \texttt{eulerError.m}) that runs through increasing resolutions, say resolutions $N=10,20,30,\ldots,1000$, and calculates the (global) error at each resolution.  Use the exact solution to the IVP you computed by hand above, and \textbf{call the Euler code as a functio}n (which will be in the file \texttt{forwardEuler.m}) to compute the approximate solution.  This means you will have a loop over the resolutions, probably one line each to compute the exact and approximate solutions, and a line to compute the error.  You will have to save the error in a vector for each resolution as you go, so you will need a ``counter'' or ``index'' for your error.   You will also have to save your resolution values in a vector.
+
+Next, plot the resolution (x-axis) vs. error (y-axis).  You should see the error decreasing as the resolution increases.  You can get a better picture still by using a log-log plot.  Let's explore that idea briefly.
+
+\pagebreak
+
+\noindent\textbf{\underline{Log-log plots}}.  Suppose you have some data that seems to approximately fit a $y=cx^{p}$ pattern for some constant $c>0$ and some power $p$.  How can we determine the power from just looking at the data?  Notice that (so long as $x>0$ and $y>0$),
+\begin{align*}
+ &\qquad y=cx^{p}
+ \\\Rightarrow
+ &\log(y)=\log(cx^{p})
+  \\\Rightarrow
+ &\log(y)=\log(c)+p\log(x)
+\end{align*}
+Setting $X = \log(x)$, $Y = \log(y)$, and $C = \log(c)$ we see that 
+\begin{align*}
+ Y=pX + C
+\end{align*}
+
+Thus, the slope between $\log(x)$ and $\log(y)$ is $p$, which is exactly the power.  Working \textit{backwards}, if we ever have some data, and we suspect there is a power-relationship, we can figure out the power by looking at a log-log plot and looking at the slope!
+
+\bigskip
+
+\noindent\textbf{\underline{Task 1b}:}  Look at a log-log plot of your error.  You can do this in Matlab like this:
+
+\begin{minipage}[h]{5in}
+\centering
+\begin{lstlisting}
+>> close all;
+>> plot(log(resolution),log(error));
+\end{lstlisting}
+\end{minipage}
+
+\noindent
+where \texttt{resolution} is a vector holding all your resolution values, and \texttt{error} is a vector holding all the corresponding errors.  Matlab actually has a built-in log-log plotter which makes the axes look better.  It works like this:
+
+\begin{minipage}[h]{5in}
+\centering
+\begin{lstlisting}
+>> close all;
+>> loglog(resolution,error);
+\end{lstlisting}
+\end{minipage}
+
+You should see a slope of $-1$, at least as $N$ gets large.  If you see any other slope, there is an error either in your \texttt{forwardEuler.m} code, or your error checker.  
+% \textbf{E-mail me your code that computes the error and produces the log-log plot as above.}
+This slope means that 
+\begin{align*}
+ \text{global error} \approx CN^{-1} \approx Ch
+\end{align*}
+for some constant $C>0$.  Thus, \textbf{if you \textit{double} your resolution, error should be cut in \textit{half}.}
+
+\bigskip
+
+\noindent\textbf{\underline{Higher-Order Methods}}. Forward Euler is one of the simplest numerical algorithms for solving an IVP, but its solutions can have a lot of error.  Of course, we could decrease the error by using more grid points (or so we hope), but this means we have to do a lot more work (and accumulate more round-off error).  For Forward Euler, if we double the resolution (i.e., the number of grid points), our error is only $1/2$ of what is was.  Is it possible to have a method that when we double the resolution, the error is, say, $1/4$ of what is was?  That is, could we have a method such that
+\begin{align*}
+ \text{global error} \approx CN^{-2} \approx Ch^2
+\end{align*}
+Such a method would be called a \textit{second-order} method.  Improved Euler is a second order method, but we also will study a forth-order method ($\text{error} \approx CN^{-4} \approx Ch^4$).  This means if you double the resolution, the error is $1/16$ of what is was!
+Let us look at a method which turns out to be a second-order method.  It has several names, including ``Improved Euler,'' ``Runge-Kutta-2 (RK-2),'' ``Heun's Method'' and ``Ralston's Method.''  To understand where it comes from, consider the Euler methods:
+\begin{align*}
+  y_{n+1} &= y_n + h\cdot f(t_n,y_n) \qquad&&\text{(Forward Euler)}
+   \\
+   y_{n+1} &= y_n + h\cdot f(t_{n+1},y_{n+1}) \qquad&&\text{(Backward Euler)}
+ \end{align*}
+ Backward Euler has better stability properties (we will discuss this later), but $y_{n+1}$ is only \textit{implicitly} defined, which means we have to solve an algebraic problem every time step to find $y_{n+1}$ (unless $f$ is very nice, e.g., it is linear, so we can solve it by hand).  
+ 
+ \pagebreak
+ 
+ We would like to use Backward Euler, but the $y_{n+1}$ on the right-hand side is not known.  Instead, we can \textit{approximate} it using forward Euler.  We then average the results of the two methods.  It looks something like this (each step is carried out sequentially, starting at the top):
+ \begin{empheq}[left=\empheqlbrace]{align*}
+  y_{n+1}^* &= y_n + h\cdot f(t_n,y_n) \qquad&&\text{(prediction with forward Euler)}
+   \\
+   y_{n+1}^{**} &= y_n + h\cdot f(t_{n+1},y_{n+1}^*) \qquad&&\text{(use prediction in backward Euler)}
+   \\
+   y_{n+1} &= \tfrac{1}{2}(y_{n+1}^* + y_{n+1}^{**})\qquad&&\text{(average the predictions)}
+ \end{empheq}
+The final $y_{n+1}$ is what we use as our approximated value.  Notice that this is a fully explicit method!  It looks a little messy with all the \textasteriskcentered's, so let's make it a little cleaner by first noting that
+\begin{align}
+\notag
+ \tfrac{1}{2}(y_{n+1}^* + y_{n+1}^{**}) 
+ &= 
+ \tfrac{1}{2}[(y_n + h\cdot f(t_n,y_n)) + (y_n + h\cdot f(t_{n+1},y_{n+1}^*))]
+ \\\label{rk2}
+ \Rightarrow \qquad \qquad \qquad y_{n+1} &= 
+ y_n + \tfrac{h}{2}( f(t_n,y_n) +  f(t_n+h,y_n + h\cdot f(t_n,y_n))).
+\end{align}
+since $t_{n+1} = t_n+h$.  
+Next, note that we are being inefficient, since we compute $f(t_n,y_n)$ multiple times.  Therefore, we can just save it as a value, say, $k_1$, and use it when we need it.  We can now write the method like this:
+ \begin{empheq}[left=\text{(RK-2)\quad}\empheqlbrace]{align*}
+  k_1 &=  f(t_n,y_n)
+   \\
+   k_2 &=  f(t_n + h,y_n + h\cdot k_1)
+   \\
+   y_{n+1} &= y_n + \tfrac{h}{2}\cdot(k_1 + k_2)
+ \end{empheq}
+This is the Improved Euler Method (or Heun, or RK-2, or Ralphson, etc.).  It is an \textbf{explicit} method of \textbf{order 2}, meaning its error behaves like $C\cdot h^2$ when $h$ is small, where $C$ is some fixed number depending on the ODE problem, but not depending on $h$.  For short-hand, we say it is an $\mathcal{O}(h^2)$ method, using the ``Big-O'' notation.
+
+\bigskip
+
+\noindent\textbf{\underline{Task 2}:} Prove mathematically that Runge-Kutta-2 (RK-2) is an $\mathcal{O}(h^2)$ method.  \\\textit{Hint: This is easiest to do from equation \eqref{rk2}.  Follow the steps we did in class, for showing the \underline{local} truncation error for Forward Euler is bounded by $Ch^2$, to show that the \underline{local} truncation for RK-2 is $Ch^3$.  This involves taking derivatives of the equation several times, using the chain rule, using the third-order Taylor Remainder Theorem, and using the equation to replace values as you go. Use this to show the \underline{global} error is bounded by $Ch^2$.}
+
+% \pagebreak
+
+\bigskip
+
+\noindent\textbf{\underline{Runge-Kutta-4}}. One of the most widely-used numerical algorithms is the Runge-Kutta-4 (RK-4) method.  It is a fourth-order explicit method, given by one of the following equivalent forms.
+
+\begin{minipage}{0.45\textwidth}
+\begin{empheq}[left=\text{(RK-4)\quad}\empheqlbrace]{align*}
+   k_1 &=  f(t_n,y_n)
+   \\
+   k_2 &=  f(t_n+\tfrac{h}{2},y_n + \tfrac{h}{2}\cdot k_1)
+   \\
+   k_3 &=  f(t_n+\tfrac{h}{2},y_n + \tfrac{h}{2}\cdot k_2)
+   \\
+   k_4 &=  f(t_n + h,y_n + h\cdot k_3)
+   \\
+   y_{n+1} &= y_n + \tfrac{h}{6}\cdot(k_1 + 2\cdot k_2 + 2\cdot k_3 + k_4)
+\end{empheq}
+\end{minipage}
+\qquad or\qquad
+\begin{minipage}{0.45\textwidth}
+\begin{empheq}[left=\empheqlbrace]{align*}
+   k_1 &=  h\cdot f(t_n,y_n)
+   \\
+   k_2 &=  h\cdot f(t_n+\tfrac{h}{2},y_n + \tfrac{1}{2}\cdot  k_1)
+   \\
+   k_3 &=  h\cdot f(t_n+\tfrac{h}{2},y_n + \tfrac{1}{2}\cdot  k_2)
+   \\
+   k_4 &=  h\cdot f(t_n + h,y_n +  k_3)
+   \\
+   y_{n+1} &= y_n + \tfrac{1}{6}\cdot(k_1 + 2\cdot k_2 + 2\cdot k_3 + k_4)
+\end{empheq}
+\end{minipage}
+
+\bigskip
+
+\noindent\textbf{\underline{Task 3a}:} Adapt your \texttt{forwardEuler.m} code to a new code called \texttt{rk4.m}, which solves the IVP using Runge-Kutta-4.  It will be essentially the same, but add a few more lines.%  You can find the Runge-Kutta-4 algorithm in your book on page 135.
+
+\bigskip
+
+\noindent\textbf{\underline{Task 3b}:} Test your implementation by computing the resolution vs. error as in Task 1b.  The slope in the log-log plot should now be $-4$ instead of $-1$.  When you see that slope, you will know that your code is working, and you will have a fourth-order IVP solver!
+
+\bigskip
+
+When you have finished tasks 1-3, show them to me, and I will check them off.  If you get stuck, come by, and we can work though it together!  =)
+
+\bigskip
+
+\begin{center}
+ Have fun, and happy coding!
+\end{center}
+
+\pagebreak
+
+\begin{center}
+\underline{\textbf{More Information on Runge-Kutta Methods}}
+\end{center}
+
+In general, one can have Runge-Kutta methods of any order.  
+An $p$-stage method can be give by
+ \begin{empheq}[left=\text{(RK-p)\quad}\empheqlbrace]{align*}
+   k_1 &=  f(t_n,y_n)
+   \\
+   k_2 &=  f(t_n+\alpha_2 h,y_n + \beta_{21}h\cdot k_1)
+   \\
+   k_3 &=  f(t_n+\alpha_3 h,y_n + \beta_{31}h\cdot k_1+ \beta_{32}h\cdot k_2)
+   \\
+   \vdots&\qquad  \vdots
+   \\
+   k_p &=  f(t_n+\alpha_p h,y_n + \beta_{p1}h\cdot k_1+ \beta_{p2}h\cdot k_2
+   +\cdots+\beta_{p,p-1}h\cdot k_{p-1})
+   \\
+   y_{n+1} &= y_n + h(c_1k_1 + c_2k_2 +\cdots+c_pk_p)
+\end{empheq}
+For any given method the constants $\alpha_i$, $\beta_i$, and $c_i$ are usually looked up in a table (they are determined by working out the local truncation error with Taylor series, and choosing the constants to make all the terms cancel up to a desired order).  They are typically given in the form of a ``\textbf{Butcher-tableau}'', named after the New Zealand mathematician John Butcher, who works at the University of Auckland.  For the method to be \textit{consistent} (i.e., for the local truncation error $\tau\maps 0$ as $h\maps0$), it is sufficient for $\sum_{j=1}^p\beta_{i,j}=\alpha_i$ for each $i= 2,3,\ldots,p$.  
+For example, (RK-p) is given by the Butcher tableau:
+\begin{center}
+\begin{tabular}{l|lllll}
+0          & \\
+$\alpha_2$ & $\beta_{21}$ & \\
+$\alpha_3$ & $\beta_{31}$ & $\beta_{32}$ & \\
+$\vdots$   & $\vdots$     &              & $\ddots$ & \\
+$\alpha_p$ & $\beta_{p1}$ & $\beta_{p2}$ & $\cdots$ & $\beta_{p,p-1}$\\
+\hline
+           & $c_1$        & $c_2$        & $\cdots$ & $c_{p-1}$        & $c_p$ 
+\end{tabular}
+\end{center}
+Forward Euler (RK-1) is given by the Butcher tableau:
+\begin{center}
+\begin{tabular}{l|l}
+0 &  \\
+\hline
+  & 1
+\end{tabular}
+\end{center}
+Improved Euler (RK-2) is given by the Butcher tableau:
+\begin{center}
+\begin{tabular}{l|ll}
+0 &  \\
+$\tfrac{1}{2}$ & $\tfrac{1}{2}$ \\
+\hline
+  & 0 & 1
+\end{tabular}
+\end{center}
+And RK-4 is given by the Butcher tableau:
+\begin{center}
+\begin{tabular}{l|llll}
+0 & & & & \\
+$\tfrac{1}{2}$ & $\tfrac{1}{2}$  &\\
+$\tfrac{1}{2}$ & 0 & $\tfrac{1}{2}$ \\
+1 & 0 & 0 & 1 \\
+\hline
+  & $\tfrac{1}{6}$ & $\tfrac{1}{3}$  & $\tfrac{1}{3}$  & $\tfrac{1}{6}$
+\end{tabular}
+\end{center}
+
+\noindent
+\textbf{Caution!} A $p$-stage might not be an order-$p$ method!  For example, a $5^{\text{th}}$-order method requires \textit{6 stages}.
+
+Matlab's ODE solver \texttt{ode45.m} is based on Erwin Fehlberg's method, which is two methods combined into one, allowing for an adaptive step-size.  They have the same coefficients $\alpha_i$, $\beta_i$, and only differ in the $c_i$ coefficients, so we can write them in the same table as:
+ 
+ \begin{center}
+\begin{tabular}{r|rrrrrr}
+0&\\
+ 1/4 & 1/4\\
+3/8 & 3/32 & 9/32\\
+12/13  & 1932/2197 & -7200/2197 & 7296/2197\\
+1  & 439/216 & -8 & 3680/513 & -845/4104\\
+1/2 &-8/27 &2 &-3544/2565 &1859/4104 &-11/40 &\\
+\hline
+& 16/135 & 0 & 6656/12825 & 28561/56430 & -9/50 & 2/55 \\
+& 25/216 & 0 & 1408/2565 & 2197/4104 & -1/5 & 0
+\end{tabular}
+\end{center}
+The first bottom row is used to compute a 4th-order accurate solution.  The second bottom  row is used to compute a 5th-order accurate solution.  If the two results are significantly different, the step size $h$ is decreased (often in some optimal way), and the calculation is repeated for that step.
+
+
+% \bigskip
+% 
+% \bigskip
+% 
+% \noindent\textbf{\underline{Final Submission}}
+% 
+% \noindent
+% \textbf{**Please follow these instructions carefully, or my face might melt off, which I would like to prevent.***}
+% 
+% Put all four codes, \texttt{forwardEuler.m}, \texttt{forwardEulerError.m}, \texttt{rk4.m},and \texttt{rk4Error.m}, in a directory titled by your last name \textbf{with no other files}, and zip the directory using ``zip'' (please not anything else).  For example, I would put
+% 
+% 
+% \texttt{forwardEuler.m}
+% 
+% \texttt{forwardEulerError.m}
+% 
+% \texttt{rk4.m}
+% 
+% \texttt{rk4Error.m}
+% 
+% \noindent
+% into a folder named \texttt{Larios} (not \texttt{AdamLarios}, not \texttt{Adam}, not anything else), and use a the zip program (not rar, not tar, not 7-zip) on this folder to create a file called:
+% 
+% \texttt{Larios.zip}
+% 
+% \noindent
+% Then, email me this file with \textbf{no text in the email body}.  Title the email simply  \texttt{RKproject}.  Done!  =)
+% 
+% \textbf{Revisions:} Hopefully you only email me your project once it is finished, but \textit{in case} you need to send me a revision, please just resend everything in one zip file, so I don't have to piece your project together from various emails.
+
+
+
+% \textbf{\underline{Failure of numerical methods}}
+% 
+% Consider the initial-value problem
+% \begin{empheq}[left={\empheqlbrace},right={}]{align*}
+%  y' = y- \frac{1}{(1+t)^2}-\frac{1}{1+t},
+% \\
+% y(0) = 1.
+% \end{empheq}
+% 
+% \begin{itemize}
+% \item[(a)] Verify that $y(t) =\frac{1}{1+t}$ is a solution to the initial value problem.
+% 
+% \item[(b)] Graph the slope field for this ODE using dfield8.m, and the
+% solution curve starting at $(t_0, y_0) = (0, 1)$ for $0 \leq t \leq 20$. Set the scale of the plot so that you can make a visual comparison of the solution curve with the exact solution $y(t) =\frac{1}{1+t}$.
+% 
+% \item[(c)] How does your graph in part (b) compare to the exact solution
+% from part (a)? Based on the slope field, explain why the 
+% numerical solution fails.
+% \end{itemize}
+
+
+
+% \bigskip
+% 
+% \noindent\underline{\textbf{Bonus}}
+% 
+% \bigskip
+% 
+% This bonus is worth an extra 10\% of your project grade, and should be fairly straight-forward.  Let's code Runge-Kutta-4 for a $2\times2$ system.
+% 
+% \bigskip
+% 
+% \noindent\textbf{Runge-Kutta Algorithm for a $2\times2$ System}
+% Consider the initial-value problem,
+% \begin{empheq}[left={\empheqlbrace},right={}]{align*}
+%  \frac{dx}{dt} &=f_1(t,x,y),\\
+%   \frac{dy}{dt} &=f_2(t,x,y),\\
+% x(t_0) &= x_{0},\\
+% y(t_0) &= y_{0}.
+% \end{empheq}
+% The solution for this $2\times2$ system will of course be two functions, $x(t)$ and $y(t)$.  
+% To solve it with Runge-Kutta-4 with time-step $h$, start with inputs:
+% \begin{align*}
+%  x(1)=x_{0}, \qquad y(1)=y_{0}, \qquad t(1) = t_0.
+% \end{align*}
+% Then, update each time-step using
+% \begin{align*}
+%  k_{1,1} &= h\cdot f_1(t_{n},x_n,y_n);\\
+%  k_{1,2} &= h\cdot f_2(t_{n},x_n,y_n);\\
+%  k_{2,1} &= h\cdot f_1(t_{n}+\tfrac{h}{2},x_n+\tfrac{1}{2}k_{1,1},y_n+\tfrac{1}{2}k_{1,2});\\
+%  k_{2,2} &= h\cdot f_2(t_{n}+\tfrac{h}{2},x_n+\tfrac{1}{2}k_{1,1},y_n+\tfrac{1}{2}k_{1,2}));\\
+%  k_{3,1} &= h\cdot f_1(t_{n}+\tfrac{h}{2},x_n+\tfrac{1}{2}k_{2,1},y_n+\tfrac{1}{2}k_{2,2}));\\
+%  k_{3,2} &= h\cdot f_2(t_{n}+\tfrac{h}{2},x_n+\tfrac{1}{2}k_{2,1},y_n+\tfrac{1}{2}k_{2,2}));\\
+%  k_{4,1} &= h\cdot f_1(t_{n}+h,x_n+k_{3,1},y_n+k_{3,2});\\
+%  k_{4,2} &= h\cdot f_2(t_{n}+h,x_n+k_{3,1},y_n+k_{3,2});\\
+%   t_{n+1} &= t_n+h;\\
+% x_{n+1} &= x_{n}+ (k_{1,1}+2k_{2,1}+2k_{3,1}+k_{4,1})/6;\\
+% y_{n+1} &= y_{n}+ (k_{1,2}+2k_{2,2}+2k_{3,2}+k_{4,2})/6;\\
+% \end{align*}
+% 
+% Note that changing an existing 1D RK4 code into a 2D RK4 code only requires a slight modification, and should only take you a few minutes to reprogram.   In fact, an arbitrary dimensional RK4 solver can be coded in as little as 12 lines total by using Matlab's vector functionality.
+% 
+% To test the global error, you want to test both $x$ and $y$ values together.  In mathematics, the global error can be written as
+% \begin{align*}
+%  \text{error} = \max_{i = 1\ldots N} (|x_i - x(t_i)|^2 + |y_i - y(t_i)|^2)^{1/2}
+% \end{align*}
+% Of course, in Matlab, you will have to use the \texttt{.}$\wedge$
+% notation to square the vectors component-wise.
+% 
+% How do you get an exact solution to test though?  You can solve one out of the book, or you can build one!  Just make up any system of differential equation, such as
+% \begin{empheq}[left={\empheqlbrace},right={}]{align*}
+%  \frac{dx}{dt} &=-y + x^3y + g_1(t),\\
+%   \frac{dy}{dt} &=-x + xy^2 + g_2(t).
+% \end{empheq}
+% where $g_1$ and $g_2$ are to be determined.  
+% Make up some functions $x(t)$ and $y(t)$, e.g., some sines and cosines, or polynomials or something.  Then plug them into the system to find out what $g_1$ and $g_2$ are.  Also, determine the initial data by plugging $t=0$ into your $x(t)$ and $y(t)$.  The $x(t)$ and $y(t)$ that you made up are now exact solutions to this system!  You can now test your code on this system to see how well you recover $x(t)$ and $y(t)$ (i.e. by looking at the error on a log-log plot as the resolution increases).
+% 
+% \bigskip
+% 
+% \noindent\underline{\textbf{Bonus Task}:} Code a $2\times2$ Runge-Kutta-4 solver, and check that the order of the error is -4.
+
+
+
+
+
+
+
+
+
+% In this part, we consider logistic models of population growth that have been modified to include terms that account for ``harvesting.'' 
+% In particular, you should imagine a fish population subject to seasonal variations in fishing. The differential equation models are given below.
+% In your report, you should include a discussion of the meaning of each variable and parameter and an explanation of why the equation is written the way it is.
+% We have discussed three general approaches that can be employed to study a differential equation: Numerical techniques yield graphs of approximate solutions, geometric/qualitative techniques provide predictions of the long-term behavior of the solution and in special cases analytic techniques provide explicit formulas for the solution.
+% In your report, you should employ as many of these techniques as is appropriate to help understand the models, and you should consider the following equations:
+% 
+% \begin{enumerate}
+% \item (Logistic growth with constant harvesting) Let $P(t)$ be a fish population measured in millions of fish.  The equation
+% \begin{align*}
+% \frac{dP}{dt}= rP\pnt{1-\frac{P}{N}} - a
+% \end{align*}
+% represents a logistic model of population growth with constant harvesting at a rate $a$. Choose parameters somewhere within the following ranges: $0.20\leq r\leq0.25$, $0.09\leq a\leq0.21$, $2\leq N\leq 5$.  What will happen to the fish population for various initial conditions? (Note: This equation is autonomous, so you can take advantage of the special techniques that are available for autonomous equations.)
+% 
+% \item (Logistic growth with periodic harvesting)   The equation
+% \begin{align*}
+% \frac{dP}{dt}= rP\pnt{1-\frac{P}{N}} - a(1+\sin bt)
+% \end{align*}
+% is a non-autonomous equation that considers periodic harvesting. What do the parameters $a$ and $b$ represent? Let $b = 1$. For various values of  $a$ given in the range above, what will happen to the fish
+% population for various initial conditions?
+% 
+% \item Consider the same equation as in Part 2 above, but let $r=0.25$, $N = 4$, and $a = 0.25$. What will happen to the fish population for various initial conditions with this value of $a$?                                                                       \end{enumerate}
+% 
+% 
+% \textbf{Your report:} In your report you should address these three questions, one at a time, in the form of a \textbf{short, to the point} essay. Begin Questions 1 and 2 with a description of the meaning of each of the variables and parameters and an explanation of why the differential equation is the way it is. You should include pictures and graphs of data and of solutions of your models as appropriate. Use the ODE solver you wrote in part 1 to solve these equations.  
+
+%----------------------------------------------------
+\end{document}

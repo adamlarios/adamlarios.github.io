@@ -1,0 +1,64 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+<body>
+
+		<div id="splash"><img src="/~alarios2/images/larios_turbulence2.jpg"
+            style="padding: 12px; float: left;" width="330" />
+           <!-- <div width="340">A recent simulation of turbulent flow run with collabortors at
+               Texas A\&M.</div>
+           -->
+        </div>
+
+		<!-- end #menu -->
+		<div class="post">
+			<h2 class="title"><a >Research Overview</a></h2>
+			<p class="meta">Basic information about my research. </p>
+			<div class="entry">
+                <p>
+              My research in mathematics is focused on mathematical and computational analysis of
+              partial differential equations, with a special emphasis on fluid
+              dynamics and turbulence.  In addition to participating in
+              workshops and conferences with world-renowned scientists and
+              mathematicians, I have also benefited immensely from a unique
+              opportunity to work at the Los Alamos National Lab with several
+              leading researchers there.  Thanks
+              to the special scientific environment and computational
+              infrastructure at Los Alamos, I have been able to complement my rigorous
+              mathematical results with large-scale numerical simulations and
+              receive valuable feedback and insight from some of the foremost
+              researchers in geophysics.  This is in addition to the scientific
+              exchange I had with researchers from around the world with a
+              broad range of scientific interests and backgrounds.  These
+              experiences have prepared me to work on a wide variety of
+              mathematical, numerical, and scientific problems.   
+                </p>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+		<div class="post">
+			<h2 class="title"><a >Gallery</a></h2>
+        <p class="meta">"The purpose of computing is insight, not numbers." -Richard W. Hamming</p>
+			<div class="entry">
+                <p>
+Turbulence research tends to produce many nice pictures.  Please look at my <a href="gallery.shtml">gallery</a> of outputs from my simulations.
+                </p>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+		<div class="post">
+			<h2 class="title"><a >Research with Students</a></h2>
+			<p class="meta">Information about my research. </p>
+			<div class="entry">
+                <p>
+I love doing research with graduate and undergraduate students.  
+
+As a postdoc, I mentored undergraduates for two summers in the MCTP (Mentoring Through Critical Transition Points) ``Pre-REU'' program, which introduced mathematics students who just finished their first year to topics such as Fourier series and wavelets.  The students were also mentored in Matlab-based projects where they used the mathematical tools they had learned to write programs that could do voice recognition and handwriting recognition.  One student, Ashley Orr, extended her project and won a Pi Mu Epsilon prize for her talk, ``Fourier and Wavelet Analysis: Extracting the Business Cycle.''  Congratualtions to Ashley!
+                </p>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+
+
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->

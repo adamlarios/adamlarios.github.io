@@ -1,0 +1,585 @@
+\documentclass[margin]{res}
+\setlength{\textheight}{9.5in}
+
+% --------------------- Compiling Options -----------------------
+%\usepackage[notcite]{showkeys} %Show tags and labels.
+%\numberwithin{equation}{section} % Equation numbering control.
+%\nobibliography %Use proper citations, but do not generate bibliography.
+%\allowdisplaybreaks[1] %Allow multiline displays to split.
+%\raggedbottom
+
+% ------------------------ Basic Packages ------------------------
+\usepackage{amsmath,amsfonts,amssymb,amsthm,latexsym}
+\usepackage{enumerate}
+\usepackage{cancel}
+%\usepackage{ulem}
+\usepackage{empheq}
+\usepackage{verbatim}
+\usepackage{datetime}
+\shortdate
+%\longdate,\shortdate,\usdate,\ddmmyyyydate,\dmyyyydate,\ddmmyydate,\dmyydate,
+%\textdate,\mmddyyyydate,\mdyyyydate,\mmddyydate,\mdyydate,\yyyymmdddate
+
+% --------------------- Advanced Packages ----------------------
+\usepackage{cases}
+%\usepackage[square,comma,numbers,sort&compress]{natbib}
+%\usepackage{empheq}
+
+% \usepackage[colorlinks=true]{hyperref}
+% \hypersetup{urlcolor=blue, citecolor=red}
+
+\usepackage{textcomp}
+\usepackage{url}
+
+% ---------------------- Graphics Packages -----------------------
+%\usepackage{graphicx}
+%\usepackage{graphics}
+%\usepackage{fancyhdr}
+\usepackage{wrapfig}
+
+%Note: For using .eps graphics, use the graphicx package above,
+% and in the document use, for example:
+% \begin{figure}
+%  \includegaphics[scale=0.5]{my_picture.eps}
+% \end{figure}
+
+% -------------------------------- Notes ------------------------------
+ % Use in document as \mnote{My note here.}
+% \newcounter{mnote}
+%  \setcounter{mnote}{0}
+%  \newcommand{\mnote}[1]{\addtocounter{mnote}{1}
+%    \ensuremath{{}^{\bullet\arabic{mnote}}}
+%    \marginpar{\footnotesize\em\color{red}\ensuremath{\bullet\arabic{mnote}}#1}}
+
+
+% -------------------------------- Fonts ------------------------------
+%\usepackage{bbm}
+%\usepackage{mathrsfs}
+
+% ------------------------  Theorem Styles ------------------------
+% Note: newtheorem* prevents numbering.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+% ------------------------------ Vectors ------------------------------
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\vi}{\vect{i}}
+\newcommand{\vj}{\vect{j}}
+\newcommand{\vk}{\vect{k}}
+
+\newcommand{\bu}{\vect{u}}
+\newcommand{\bv}{\vect{v}}
+\newcommand{\bw}{\vect{w}}
+
+\newcommand{\bx}{\vect{x}}
+\newcommand{\by}{\vect{y}}
+\newcommand{\bz}{\vect{z}}
+
+% -------------------- Fields -------------------
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nN}{\field{N}}
+\newcommand{\nZ}{\field{Z}}
+\newcommand{\nQ}{\field{Q}}
+\newcommand{\nR}{\field{R}}
+\newcommand{\nC}{\field{C}}
+\newcommand{\nF}{\field{F}}
+\newcommand{\nK}{\field{K}}
+\newcommand{\nT}{\field{T}}
+
+% ------------------------- Script Symbols  -------------------------
+\newcommand{\sL}{\mathscr L}
+\newcommand{\sH}{\mathscr H}
+
+% ---------------------- Caligraphic Symbols ----------------------
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+
+\newcommand{\cN}{\mathcal N}
+
+% ------------------------- Fraktur Symbols  -------------------------
+% Note: Use mathrsfs package in Fonts section above.
+
+%\newcommand{\fM}{\mathfrak M}
+
+% -------------------------- Bold Symbols --------------------------
+\newcommand{\bvphi}{\boldsymbol{\vphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+% ------------------------ Misc. Symbols ------------------------
+\newcommand{\vphi}{\varphi}
+\newcommand{\maps}{\rightarrow}
+\newcommand{\Maps}{\longrightarrow}
+\newcommand{\sand}{\quad\text{and}\quad}
+\newcommand{\QED}{\hfill$\blacksquare$}
+%\newcommand{\dhr}{\mathrel{\lhook\joinrel\relbar\kern-.8ex\joinrel\lhook\joinrel\rightarrow}}
+
+% -------------------------- Operations --------------------------
+\newcommand{\cnj}[1]{\overline{#1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\fd}[2]{\frac{d #1}{d #2}}
+\newcommand{\npd}[3]{\frac{\partial^#3 #1}{\partial #2^#3}}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\newcommand{\LiL2}[1]{\norm{#1}_{L^\infty((0,T);L^2(\Omega))}}
+%\newcommand{\norm}[2]{\left\lVert#1\right\rVert_{#2}}
+%\newcommand{\L2}[1]{\norm{#1}{L^2(\Omega)}}
+%\newcommand\norm[1]{\left\vert\mkern-1.7mu\left\vert#1\right\vert\mkern-1.7mu\right\vert}
+%\newcommand\bnorm[1]{\bigl\vert\mkern-2mu\bigl\vert#1\bigr\vert\mkern-2mu\bigr\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+\newcommand{\pnt}[1]{\left(#1\right)}
+\newcommand{\pair}[2]{\left(#1,#2\right)}
+%----------------------------------------------------
+
+ \newcounter{week}
+ \setcounter{week}{1}
+ \newcommand{\week}{
+ \arabic{week}\addtocounter{week}{1}}
+
+ 
+\begin{document}
+\begin{center}
+   \textbf{MATH 928:} 
+   \textbf{Functional Analysis I}\\
+   \textbf{UNL, Spring 2017}, Section: 001, CRN: 29317
+   %-----------------
+    \\
+   Lecture: \textbf{M, W, F, 10:30-11:20, Burnett Hall 232}\\
+   % 08/25-12/15
+   % Credits: 3 units
+   % Student Capacity: 30
+   % Class email: 
+   % Course ID: 042718
+   %-----------------
+\end{center}
+%
+\vspace{-0.2in}
+%
+\begin{resume}
+\section{Instructor:} Dr. Adam Larios 
+\hfill \textbf{Email:} 
+\url{alarios@unl.edu}
+\\
+%\begin{tabular}{l c l}
+\textbf{Office:} Avery Hall 305
+\hfill
+%&& 
+\textbf{Math Dept. Phone:} (402) 472-7250
+\\
+\textbf{Office Hours:} M,W,F, 9:30 am -- 10:20 am, or by appointment
+\hfill
+\\
+\textbf{Web:} \url{www.math.unl.edu/~alarios2/courses/2017_fall_M928/content.shtml}
+%&&
+
+%\end{tabular} 
+
+% \section{Teaching Assistant:} 
+% \hfill \textbf{Email:} 
+% \url{}
+% \\
+% %\begin{tabular}{l c l}
+% \textbf{Office:} 
+% \hfill
+%&& 
+
+ \section{Prerequisites:} MATH 818 (Modern Algebra II) and 921 (Real Analysis), or permission.    You are also expected to be able to write mathematical proofs. 
+ %This course will require basic computer skills.  We will learn programming, but prior knowledge of programming is \textit{not} a prerequisite.
+ 
+ 
+%  A grade of P or C or better in MATH 208/208H (Calc III), or approved equivalent. You are expected to know differentiation and integration techniques and to be familiar with vector fields and parameterized curves.
+ 
+%  MATH 251 or equivalent with a grade of C or better, basic knowledge of computers and the ability to handle programming or computer algebra systems (e.g.,  Sage, Mathematica, Maple, or something similar; or Matlab, C/C++, Python, Java, Fortran, etc.)  We will be using Matlab in this course.
+
+% ==================================================
+\section{Textbook:} John B. Conway. \textit{A Course in Functional Analysis (Graduate Texts in Mathematics) 2nd Edition}. Springer, 1994. 
+ISBN: 978-3540960423.
+
+%Igor Griva, Stephen G. Nash, and Ariela Sofer.  \textit{Linear and Nonlinear Optimization}, $2^{\text{nd}}$ Edition. Society for Industrial Mathematics (SIAM). ISBN-13: 978-0898716610.
+
+% Optional:
+% Numerical Optimization (Springer Series in Operations Research and Financial Engineering) 2nd Edition
+% by Jorge Nocedal (Author), Stephen Wright (Author)
+%  Springer Series in Operations Research and Financial Engineering
+
+% \textit{Elementary Differential Equations: Custom TAMU Edition}. W. Boyce, R. DiPrima.   John Wiley and Sons, Inc, 2011. ISBN: 9781118133712.  \textbf{Note: this is a special edition made for Texas A\&M. It is a shortened version of the $9^{\text{th}}$ edition.}
+% 
+% \textit{Differential Equations with Matlab, 2nd Edition}. Wiley, B. Hunt, R. Lipsman, J. Osborn, J. Rosenberg.  John Wiley and Sons, Inc, 2005. ISBN:  9780471718123.  \\\textbf{(Optional)}
+% ==================================================
+
+% % ==================================================
+% \section{ACE Outcome 3:}``Use mathematical, computational, statistical, or formal reasoning (including reasoning based on principles of logic) to solve problems, draw inferences, and determine reasonableness.'' Your instructor will provide examples, you will discuss them in class, and you will practice with numerous homework problems. The exams will test how well you've mastered the material.  The final exam will be the primary means of assessing your achievement of ACE Outcome 3.
+% % ==================================================
+
+% ==================================================
+\section{Contacting me:}
+The best way to contact with me is by email, \url{alarios@unl.edu}.  Please put [MATH 928] somewhere in the title and make sure to include your whole name in your email. Polite, courteous emails are appreciated; see my website for tips on email etiquette.  My office is in Avery Hall, room 305. Drop-ins are welcome during office hours.  If you want to meet me at a different time, please email me in advance, and we will try to schedule a time to meet.
+
+% \textbf{NOTE:} Because of privacy rights, \textbf{I cannot discuss grades over email or telephone. Please do not email me asking about your grade.  I will not be able to give you any information.}  Of course, I am happy to discuss grades in my office.
+% ==================================================
+
+% ==================================================
+\section{Description:} Mathematical theory of unconstrained and constrained optimization for nonlinear multivariate functions, particularly iterative methods, such as quasi-Newton methods, least squares optimization, and convex programming.  Computer implementation of these methods.
+
+% ==================================================
+
+% ==================================================
+ \section{Motivation:} Functional analysis is a deep root that nourishes major branches of mathematics.  It is at once simple and intricate, obvious and profound, delicate and unyielding.    It has distinction as a subject in its own right, but it is also vital to the study of partial differential equations, quantum mechanics, $C^*$ algebras, numerical analysis, optimization, probability, topology.  It also makes strong appearances in algebraic geometry, number theory, coding theory, and many other areas.  Learning to weld the power of functional analysis and to understand its subtitles is essential to the full development of a mathematician.
+
+% ==================================================
+
+% ==================================================
+\section{Homework:}
+Homework is designed to help students understand the material, to prepare them for exams, and to give them experience writing programs based on the material.   The given exercises represent a minimal assignment. Some students may have to work additional exercises or do additional reading to attain sufficient mastery of the material. 
+
+I may also assign practice exercises that will not be collected. Homework                                                                                                                                                                                                        problems must be written neatly in narrative English with mathematics embedded.  \LaTeX is strongly encouraged, but not required. % Raw calculations                                                                                                                                                                                                                                                                                                                                               with no explanation will not be accepted. Work that is not sufficient to earn 3/4 of the points on any given problem will be returned with no score. You may resubmit such work, but resubmissions will not be awarded more than 3/4 of the points for the assignment.
+
+% ==================================================
+\section{Reading \& Exercises:} You are expected to read the appropriate sections of the text \textbf{before} coming to the class meeting in which the topic is scheduled. You are also expected to work through the indicated exercises after the corresponding  material is presented in class, and \textbf{before} the next class meeting.
+% ==================================================
+
+% ==================================================
+\section{Attendance \& Preparation:} 
+There is no textbook that exactly fits the course goals; hence, the lecture notes are the primary record of the course. Regular attendance and attention is therefore critical. It will be helpful for you to browse through the material before it is presented in class.
+
+Daily attendance for class lectures is expected and is extremely important. 
+While attendance is not recorded, \underline{missing even \textbf{one} class will put you behind}. Note that there is a strong correlation between class absences and poor grades.   You are responsible for all material and announcements in class regardless of whether or not you attended.  \textbf{You are also responsible for making arrangements with another classmate to find out what you missed.  You should not ask me to go over material you missed (due to tardiness or absences) during office hours or over email.} 
+
+If you know ahead of time that you will miss a deadline, exam date, etc. Please let me know as soon as possible in advance. Reasonable accommodations will be made for university-excused absences.
+% ==================================================
+
+% % ==================================================
+% \section{Scheduling:} A tentative schedule of assignments and exams is included in this syllabus. These details are presented as a guide. Your instructor may change the dates for each assignment and/or exam, modify the exercise list, and/or add assignments. It is your responsibility to keep track of the course details and schedule for your section.
+% % ==================================================
+
+% % ==================================================
+% \section{Computing:}
+% We will be writing programs to implement numerical methods. I will prepare directions for writing in
+% Matlab; however, you are welcome to use a different language, such as python or C++ (although I request that you do not use Java). You may use your own computing equipment, and you may also use the computers in the Math Department computer lab in Avery 9, or in labs around campus.  Matlab is free to download for UNL students, and can be accessed here:
+% 
+% \texttt{\textbf{http://procurement.unl.edu/matlab-licenses}}
+% % ==================================================
+
+% ==================================================
+\section{Collaboration:} Collaboration is encouraged in this course. However, copying someone else's work and submitting it as your own is unacceptable.  This act of academic dishonesty will be prosecuted in accordance with university policy.
+% ==================================================
+
+% % ==================================================
+% \section{Projects:}
+% Projects will be assigned as announced in class. For some projects, you may be put into groups.  In these cases, you will be asked to collaborate on and turn in a single assignment, which will receive a single grade.  Each member of the group is responsible for 100\% of each assignment, so if one or more  group members do not fully contribute for any reason, it is still the responsibility of the other group members to turn in a completed assignment by the due date.  It is your responsibility to contact your group members, and to contact me well in advance if problems arise.  
+% % ==================================================
+
+% % ==================================================
+% \section{Quizzes:}
+% There will be weekly (or almost weekly) quizzes administered in class.  \textbf{No make-up quizzes will be given; however, the lowest two quiz scores will be dropped.} You are required to bring and possibly present your N-Card or a government issued ID card when taking exams.
+% % ==================================================
+
+% ==================================================
+\section{Electronics: } You are not allowed to have on your person during exams or quizzes any device that can access the internet or communicate in any way.  Cell phones, Apple watches, etc. should be put away in backpacks/purses.  Calculators, laptops, tablets, cell phones, and other non-medical electronic devices are not permitted during exams unless otherwise stated.  During class, cell phones should be set on vibrate or off.  If you need to take a call, send a text message, etc., please quietly leave the classroom to do so, so that you do not distract other students.  You are welcome to return to class quietly when you are finished.  If you wish to take notes using an electronic device, you must first demonstrate to me that you can type or write fast enough to do so properly, and that you can do it without distracting others, before the privilege to use such devices may be granted.  If you are found to be abusing this privilege, you risk forfeiting it.
+% ==================================================
+
+% \pagebreak
+
+% % ==================================================
+% \section{Grading:}
+% Your course grade will be based on a weighted average computed as follows.
+% \begin{center}
+% \begin{tabular}{| l  r  |}\hline
+% Homework:   & 30\%                 \\
+% Midterms:   & $2\times20\% = 40\%$ \\
+% Final Exam: & 30\%                 \\
+% Total:      & 100\%                \\ \hline
+% \end{tabular}
+% \end{center}
+% % ==================================================
+
+% % ==================================================
+% \section{Grading:}
+% Your minimal course grade will be computed as follows. All work in the course will be graded according to the following scale:
+% 
+% A: 90,
+% A-: 87,
+% B+: 84,
+% B: 80,
+% B-: 77,
+% C+: 74,
+% C: 70,
+% C-: 67,
+% D+: 64,
+% D: 60,
+% D-: 57
+% 
+% 
+% If deemed necessary, minor adjustments to this scale will be made in favor of the students (commonly known as ``applying a curve'').  A grade of ``A+'' may be assigned in the case truly exceptional work.
+% % ==================================================
+
+% % ==================================================
+% \section{Project:} There will be a Matlab project.  
+% Details about the specifics of the project will be provided
+% when the project is assigned.  The project is optional, 
+% but highly recommended.  The grade of your project can
+% be used to replace the lowest 15\% of one of your homework, 
+% quiz, or mid-term exam grade categories, with each exam counted separately.
+% This will be done automatically (there is no need to request it), 
+% and it will only be done if it benefits your grade.  
+% % ==================================================
+
+
+
+% ==================================================
+\section{Make-up exams:}
+Make-up exams will only be given with written evidence of an official university
+excused absence. 
+% Section 7.3 of the University Student Rules states that for an absence: 
+% ``to be excused the student must notify his or her instructor in writing (acknowledged email message is acceptable) prior to the date of absence if such notification is feasible. In cases where advance notification is not feasible (e.g., accident or emergency) the student must provide notification by the end of the second working day after the absence. This notification should include an explanation of why notice could not be sent prior to the class.'' 
+% ==================================================
+
+% ==================================================
+\section{Incompletes:}
+A grade of ``incomplete'' may be considered if all but a small portion of the class has been successfully completed , but the student in question is prevented from completing the course by a severe, unexpected, and documented event. Students who are simply behind in their work should consider dropping the course.
+% ==================================================
+
+% % ==================================================
+% \section{Programming:}   This course contains a gentle introduction to scientific computing with Matlab.  Matlab is one of the most widely-used programming languages in science, mathematics, and engineering, and can be a very strong asset to future scientific work.  \textbf{No previous programming experience is assumed.}  Student are assumed to be able to have basic computer skills, such as using a mouse, keyboard, etc., and be able to download and install programs and navigate websites.  Basic programming in Matlab will be taught in class on designated days.  Programming assignments and/or projects will be announced in class.
+% % ==================================================
+
+
+% \pagebreak
+
+% ==================================================
+\section{ADA  Statement:} Students with disabilities are encouraged to contact the instructor for a confidential discussion of their individual needs for academic accommodation. It is the policy of the University of Nebraska-Lincoln to provide flexible and individualized accommodation to students with documented disabilities that may affect their ability to fully participate in course activities or to meet course requirements. To receive accommodation services, students must be registered with the  {\bf Services for Students with Disabilities (SSD) office}, 132 Canfield Administration, 472-3787 voice or TTY. 
+% ==================================================
+
+% % ==================================================
+% \section{Copyright policy:} Printed materials disseminated in class or on the web are protected by copyright laws. One Xerox copy (or download from the web) is allowed for personal use. Multiple copies or sale of any of these materials is strictly prohibited.
+% % ==================================================
+
+% ==================================================
+\section{Grade Questions:} 
+Any questions regarding grading/scoring of homework, exams, or projects must be made within two class days from when they were handed back, or no change in grade will be made.  
+% Any questions regarding grading/scoring of quizzes or exams must be made before the test leaves the room, or no change in grade will be made. If you need more time to look at a quiz or exam and do not want to lose your right of protest, hand it back to me at the end of class, and arrange to come to office hours.
+\\\textbf{NOTE:} Because of privacy rights, I cannot discuss grades over email or telephone. Please do not email me asking about your grade.  I will not be able to give you any information.  Of course, I am happy to discuss grades in my office.
+% ==================================================
+
+% ==================================================
+\section{Important Dates:}
+\begin{tabular}{ll}
+Oct. 15-16: & Semester Break\\
+Nov. 21-25: & Thanksgiving Break\\
+% Sept. 4, 2015 (Friday): & Last day to withdraw from this course and not have\\& it appear on your transcript.\\
+% Oct. 16, 2015 (Friday): & Last day to change your grade option to or from \\&Pass/No
+%     Pass.\\
+% Nov. 13, 2015 (Friday): &  Last day to drop this course and receive a grade of \\&W.
+%      (No permission required.) After this date, \\& you cannot drop.
+  \end{tabular}
+% ==================================================  
+
+% ==================================================
+\section{Departmental Grading Appeals Policy:} Students who believe their academic evaluation has been prejudiced or capricious have recourse for appeals to (in order) the instructor, the departmental chair, the departmental appeals committee, and the college appeals committee.  
+% ==================================================
+
+% ==================================================
+\section{Final Exam Policy:} Students are expected to arrange their personal and
+work schedules to allow them to take the final exam at the scheduled time.  The
+final exam for this course is:\\ 
+\textbf{Monday, Dec. 11, 2017,  3:30 pm-5:30 pm (same classroom).}   
+
+% ==================================================
+
+% ==================================================
+\section{Disclaimer:} 
+While this syllabus was prepared carefully and according to information
+available at the beginning of the semester, changes may be necessary in the
+interest of good teaching. Changes to any of the information above will
+be announced in class and posted on the class web site. This includes in
+particular possible updates or corrections to the syllabus, and changes of
+exam dates. Care has been taken to avoid any conflict between this syllabus and official university policy. Any such conflict, if it exists, is purely accidental, and appropriate measures will be taken to rectify any such mistake. 
+% ==================================================
+
+% % ==================================================
+% \section{Exams:}
+% You are required to bring and possibly present your Aggie Card or a government issued ID card when taking exams, as well as standard writing materials.  
+% \begin{itemize}
+% \item \textbf{Midterm Exam 1:} Tuesday June 17, Bessey Hall 108.
+% \\ \underline{Material}: Chapters 1,2,8, and Sections 7.2, 7.3
+% \item \textbf{Midterm Exam 2:} Tuesday July 1, Bessey Hall 108
+% \\ \underline{Material}: Chapters 3, 6, and 7
+% \item \textbf{Final Exam:} Monday July 7, 10:30-12:30 p.m., Bessey Hall 108
+% \\ \underline{Material}: Comprehensive--all material from the course.
+% \end{itemize}
+% % ==================================================
+
+% ==================================================
+\section{Tentative List Of Topics:} The following tentative list of topics is a rough guide to the material covered in the course, but is subject to change. Updates and changes to the content will be announced in class, over email, on blackboard, or on the course website.
+
+\begin{itemize}
+ \item Hilbert spaces
+ \item Banach spaces
+ \item Classical spaces: $C([0,1])$, $C^k$, $\ell^p$, $L^p$, $C(K)$
+ \item Orthonormal bases
+ \item Fourier series
+ \item Riesz Representation Theorem
+ \item Adjoints
+ \item Dual spaces
+ \item distributions
+ \item 
+ \item Parseval
+ \item Linear functionals
+ \item $C([0,1])$
+ \item spaces of sequences
+ \item Hardy Spaces $H^p$
+ \item $C^*$-algebras
+ \item compact operators
+ \item locally convex spaces
+\end{itemize}
+The big four:
+\begin{itemize}
+ \item Hahn-Banach
+ \item Uniform boundedness
+ \item Open mapping theorem
+ \item Banach-Steinhaus
+\end{itemize}
+
+% Baire, open mapping, closed graph, Hahn–Banach, Alaoglu, Krein–Milman, Stone–Weierstrass theorem
+
+
+
+% \textit{(TBA)}
+
+% \begin{itemize}
+% \item 
+% Introductory Material: \textbf{Sections 1.5-7, 2.2-7}. \\(approximately 5 classes)
+% \item 
+% Theory of Unconstrained Optimization: \textbf{Sections 11.2-5}. \\(approximately 6 classes)
+% \item 
+% Methods for Unconstrained Optimization: \textbf{Sections 12.2-3}. \\(approximately 4 classes)
+% \item 
+% Theory of Constrained Optimization: \textbf{Sections 3.1-3, 14.2-5}. \\(approximately 7 classes)
+% \item 
+% Methods for Constrained Optimization: Selected topics from \textbf{Chapters 15-16}. \\(approximately 4 classes)
+% \end{itemize}
+
+% Most likely, Exam 1 will be on Chapters 1, 2, and 11 and Exam 2 will be on Chapters 12, 3, and 14, but again, this is subject to change.
+
+% Total lecture days: 32
+
+% 
+% 
+% % \begin{wraptable}[17]{r}{-0.35\textwidth}
+% \hspace*{-4.5cm}
+% \begin{tabular}{|r|c|l|l|l|l|}
+% \hline
+% \# &Day& Date &Material & Homework & Notes\\
+% \hline\hline
+% 1 &M& 8/25& 1.1&p.8: 1, 2, 5, 7, 15, 16, 20, 32&\\\hline
+% 2 &W& 8/27& 1.2&p.17: 1, 4, 7, 15, 19, 24&\\\hline
+% 3 &F& 8/29& 1.3&p.27: 1, 2, 5, 11, 12, 14, 15, 19&\\\hline\hline
+% % ============================
+% - &M& 9/1& --- &&Labor Day - NO CLASS\\\hline
+% 4 &W& 9/3& 1.4&p.43: 1, 3, 7, 10, 12, 16, 19, 21, 26, 40, 49&\\\hline
+% 5 &F& 9/5& 1.5&p.56: 3, 6, 16, 17, 19, 20&\\\hline\hline
+% % ============================
+% 6 &M& 9/8& 1.5, 1.6&p.56: 22, 27, 29, 33, 35; p.74: 1, 3, 6, 9, 13&\\\hline
+% 7 &W& 9/10& 1.6&p.74:  31-37, 43, 44&\\\hline
+% 8 &F& 9/12& 2.1&p.87: 1, 3, 9, 11, 15&\\\hline\hline
+% % ============================
+% 9 &M& 9/15& 2.2&p.98: 1, 3, 6, 7, 9, 19, 23&\\\hline
+% 10 &W& 9/17& 2.3&p.108: 1, 2, 10, 21&\\\hline
+% 11 &F& 9/19& 2.4&p.121: 1, 3, 5, 6, 17, 22&\\\hline\hline
+% % ============================
+% 12 &M& 9/22& Review &Catch up on material&\\\hline
+% 13 &W& 9/24& \textbf{Exam 1}&&Chapters 1 and 2\\\hline
+% 14 &F& 9/26& 3.1&p.158: 1, 5, 10, 11, 13, 17, 19-26, 29, 30, 33-41, 43-45&\\\hline\hline
+% % ============================
+% 15 &M& 9/29& 3.2&p.170: 1-5, 7, 9, 10, 12, 15, 17, 21, 23&\\\hline         %%%%%%%%%%% IPAM - UCLA
+% 16 &W& 10/1& 3.2&p. 170: 38-41, 44&\\\hline         %%%%%%%%%%% IPAM - UCLA
+% 17 &F& 10/3& 3.3&p.183: 1, 2, 7, 10, 13,17, 21, 25&\\\hline\hline   %%%%%%%%%%% IPAM - UCLA
+% % ============================
+% 18 &M& 10/6& 3.2, 3.3&p.183: 27, 29,  35, 52, 53&\\\hline
+% 19 &W& 10/8& 3.3&p.183: 39, 40, 41&\\\hline
+% 20 &F& 10/10& 3.5&p.210: 1, 5, 7, 9, 12, 20, 22, 23, 29 [Via Annihilators]&\\\hline\hline
+% % ============================
+% 21 &M& 10/13& 3.5&p.210: 31, 34, 39, 44, 53, 54, 57, 58, 59, 61, 62&\\\hline
+% 22 &W& 10/15& 3.6&&\\\hline
+% 23 &F& 10/17& Review &Catch up on material&Pass/No Pass Deadline\\\hline\hline
+% % ============================
+% - &M& 10/20& --- &&Break - NO CLASS\\\hline
+% 24 &W& 10/22& \textbf{Exam 2}&&Chapter 3\\\hline
+% 25 &F& 10/24& 4.1&p.255: 1, 3, 4, 11, 12, 13&\\\hline\hline
+% % ============================
+% 26 &M& 10/27& 5.1&p.301: 1, 11, 12, 13, 21, 23, 25, 31, 33&($2 \times 2$ systems only)\\\hline
+% 27 &W& 10/29& 5.2&p.316: 1, 3, 5, 8, 11&($2 \times 2$ systems only)\\\hline
+% 28 &F& 10/31& 5.4&p.345: 1-6&($2 \times 2$ systems only)\\\hline\hline
+% % ============================
+% 29 &M& 11/3& 6.1&p.381: 23-26&\\\hline
+% 30 &W& 11/5& 7.1&p.450: 3, 5, 6, 11, 13, 16&\\\hline
+% 31 &F& 11/7& 7.1&p.450:  23, 26, 29, 30&\\\hline\hline
+% % ============================
+% 32 &M& 11/10& 7.2&p.462: 1, 4, 5, 9, 12, 17, 20, 23&\\\hline
+% 33 &W& 11/12& 7.3&p.472:  1, 3, 4, 6, 7, 8, 11, 15, 19, 29, 30, 31, 36&\\\hline
+% 34 &F& 11/14& 7.4&p.481: 1, 3, 5, 7, 9, 15, 17, 19, 22, 23, 26&W-drop deadline\\\hline\hline
+% % ============================
+% 35 &M& 11/17& 7.4&p.481: 29, 32, 33, 36, 37&\\\hline
+% 36 &W& 11/19& 7.5&p.491: 1, 2, 3, 5, 6, 9, 10, 11, 13, 16, 19&\\\hline
+% 37 &F& 11/21& Review&&\\\hline\hline
+% % ============================
+% 38 &M& 11/24& 7.5, 7.6&p.502: 1, 2, 6, 9, 11, 15 &\\\hline
+% -  &W& 11/26& --- &&Thanksgiving - NO CLASS\\\hline
+% -  &F& 11/28& --- &&Thanksgiving - NO CLASS\\\hline\hline
+% % ============================
+% 39 &M& 12/1& 7.6&&\\\hline
+% 40 &W& 12/3& Review&Catch up on material&\\\hline
+% 41 &F& 12/5& \textbf{Exam 3}&&Chapters 4,5,6, and 7\\\hline\hline
+% % ============================
+% 42 &M& 12/8& Review&&\\\hline
+% 43 &W& 12/10& Review&&\\\hline
+% 44 &F& 12/12& Review&&\\\hline\hline
+% % ============================
+% -- &M& 12/15& \textbf{Final} & 7:30 am - 9:30 am&Comprehensive\\\hline\hline
+% \end{tabular}
+% % \end{wraptable}
+% % ==================================================
+% %
+% 
+% \newpage
+
+% To generate the above table:
+% for i in {8..12}; do cal $i 2015 | grep -e Tu -e Th | awk '{print $2,$3,$4,$5,$6,$7}' | tr '[ ]' '[\n]' | sort -n | sed '/^$/d' | sed "s#\(.*\)#$i\/\1\& \\\\\\\\\\\\hline#";done | tail -n 56 | awk '{count +=1}{if (count%2==0) print count,"&T&",$1,$2}{if (count%2==1) print count,"&R&",$1,$2}'
+
+
+
+% for i in {8..12}; do ncal -m $i | grep -e Mo -e We -e Fr | awk '{print $2,$3,$4,$5,$6,$7}' | tr '[ ]' '[\n]' | sort -n | sed '/^$/d' | sed "s#\(.*\)#$i\/\1\& \\\\\\\\\\\\hline#";done | tail -n 56 | awk '{count +=1}{if (count%3==0) print count,"&F&",$1,$2}{if (count%3==1) print count,"&M&",$1,$2}{if (count%3==2) print count,"&W&",$1,$2}'
+
+
+% To the table from summer 2014:
+%for i in {6,7}; do ncal -m $i | grep -e Mo -e Tu -e We -e Th -e Fr | awk '{print $2,$3,$4,$5,$6,$7}' | tr '[ ]' '[\n]' | sort -n | sed '/^$/d' |sed "s#\(.*\)#$i\/\1\& \\\\\\\\\\\\hline#";done | awk '{count +=1}{if (count%5==0) print count,"&F&",$1,$2}{if (count%5==1) print count,"&M&",$1,$2}{if (count%5==2) print count,"&T&",$1,$2}{if (count%5==3) print count,"&W&",$1,$2}{if (count%5==4) print count,"&R&",$1,$2}'
+
+
+% Generate a list of dates from months 8-12 (Aug-Dec), days M,W,F, using bash:
+% for i in {8..12}; do ncal -m $i | grep -e Mo -e We -e Fr | awk '{print $2,$3,$4,$5,$6}' | tr '[ ]' '[\n]' | sort -n | sed '/^$/d' |sed "s#\(.*\)#$i\/\1\& \\\\\\\\\\\\hline#";done | awk '{count +=1}{if (count%3==0) print "M&",$1,$2}{if (count%3==1) print "W&",$1,$2}{if (count%3==2) print "F&",$1,$2}' 
+
+% Generate a list of dates from months 1-5 (Jan-May), days T,R, using bash
+% for i in {1..5}; do ncal -m $i | grep -e Th -e Tu | awk '{print $2,$3,$4,$5,$6}' | tr '[ ]' '[\n]' | sort -n | sed '/^$/d' |sed "s#\(.*\)#$i\/\1\& \\\\\\\\\\\\hline#";done | awk '{count +=1}{if (count%2==0) print "T&",$1,$2}{if (count%2==1) print "R&",$1,$2}' 
+
+
+
+\end{resume}
+\end{document} 
+
+
+

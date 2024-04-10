@@ -1,0 +1,20 @@
+\providecommand{\bysame}{\leavevmode\hbox to3em{\hrulefill}\thinspace}
+\providecommand{\MR}{\relax\ifhmode\unskip\space\fi MR }
+% \MRhref is called by the amsart/book/proc definition of \MR.
+\providecommand{\MRhref}[2]{%
+  \href{http://www.ams.org/mathscinet-getitem?mr=#1}{#2}
+}
+\providecommand{\href}[2]{#2}
+\begin{thebibliography}{1}
+
+\bibitem{Beale_Kato_Majda_1984}
+J.~T. Beale, T.~Kato, and A.~J. Majda, \emph{Remarks on the breakdown of smooth
+  solutions for the {$3$}-{D} {E}uler equations}, Comm. Math. Phys. \textbf{94}
+  (1984), no.~1, 61--66. \MR{763762 (85j:35154)}
+
+\bibitem{Chandrasekhar_1961}
+S.~Chandrasekhar, \emph{Hydrodynamic and {H}ydromagnetic {S}tability}, The
+  International Series of Monographs on Physics, Clarendon Press, Oxford, 1961.
+  \MR{0128226 (23 \#B1270)}
+
+\end{thebibliography}

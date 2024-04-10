@@ -1,0 +1,436 @@
+% \RequirePackage[l2tabu, orthodox]{nag}
+%% Checks for obsolete LaTeX packages and outdated commands. 
+%% Does nothing as long as your syntax is right.
+% 
+
+\documentclass[12pt]{article}
+% Document class possibilities:
+%   amsart, article, book, beamer, report, letter
+% Options:
+%   letterpaper, a4paper,11pt,oneside, twoside, draft, twocolumn, landscape
+
+%% For beamer class, see my beamer template.
+
+%% ========== Options to Toggle When Compiling ==============
+%\usepackage{syntonly}
+%\syntaxonly
+% \usepackage[notcite]{showkeys} %% Show tags and labels.
+% %\usepackage{layout}            %% Show variable values controlling page layout.
+%\allowdisplaybreaks[1]         %% Allow multiline displays to split.
+%\nobibliography     %% Use proper citations, but do not generate bibliography.
+
+%% ========== Select *.tex file encoding and language ==============
+%\usepackage[language]{babel} %% Takes care of all language requirements.
+
+%\usepackage[latin1]{inputenc}  %% Use with PuTTY or TeXMaker
+\usepackage[utf8]{inputenc}  %% Use on most OS's, such as Ubuntu.
+
+
+
+%% ============== Page Layout ==============
+%% Allow extra space at the bottom of pages.
+\raggedbottom     
+
+%% Use smaller margins.
+% \usepackage{fullpage}
+
+\usepackage[
+% margin=1.5cm,
+% includefoot,
+% footskip=30pt,
+% showframe,
+headheight=110pt
+]{geometry}
+\usepackage{layout}
+
+
+%%Control page number placement.  \thepage is the current page number.
+% \renewcommand{\headrulewidth}{0pt}
+% \lhead{}
+% \chead{}
+% \rhead{}
+% \lfoot{}
+% \cfoot{\thepage}
+% \rfoot{}
+
+%\usepackage{geometry}  %% Can adjust the margins of individual pages
+%% Use it like this:
+%% \newgeometry{left=3cm,bottom=0.1cm}
+%%     ... Lines that require margins adjusted ...
+%% \restoregeometry
+
+%% ============== Page Styles ==============
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{\textbf{Math 433/833}\\{}}
+\chead{\textbf{Assignment \# 1}\\{}}
+\rhead{\textbf{Assigned: 2016.01.19}\\\textbf{Due: 2016.01.26}}
+% \rfoot{Page \thepage}
+   
+
+% \pagestyle{empty}
+
+%% ============== Math Packages ==============
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools} % An improvement of amsmath
+\usepackage{latexsym}
+
+%% ============ Typesetting add-ons ============
+%\usepackage{siunitx} %Support for SI units, \num, \SI, etc.
+
+%% ============== Single-Use Packages ==============
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{cases}
+\usepackage{empheq}
+\usepackage{multicol}
+
+%% ============== Graphics Packages ==============
+%\usepackage{graphicx} %% Conflicts with pdflatex.
+%\usepackage{graphics} %% Conflicts with eps files.
+%\usepackage{epsfig} Allows eps files (?)
+
+\usepackage{wrapfig}
+
+%% Note: For using .eps graphics, use the graphicx package,
+%% and in the document use, for example:
+%% \begin{figure}
+%%  \includegraphics[scale=0.5]{my_picture.eps}
+%% \end{figure}
+
+%% Prevent figures from appearing on a page by themselves:
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\textfraction}{0.1}
+%\renewcommand{\floatpagefraction}{0.75}
+
+%% Force floats to always appear after their definition: 
+%\usepackage{flafter}
+
+%% ============== tikZ and PGF packages ==============
+%\usepackage{ltxtable,tabularx,tabulary}
+ 
+\usepackage{tikz}
+\usepackage{pgf}
+% \usepackage{pgfplots} %% Requires pgf 2.0 or later.
+% % \usetikzlibrary{arrows, automata, backgrounds, calendar, 
+% % chains,matrix, mindmap, patterns, petri, shadows, 
+% % shapes.geometric,shapes.misc,
+% % spy, trees}
+% \pgfplotsset{compat=1.9} % Fixes some backwards compatibility warnings
+\usetikzlibrary{arrows}
+
+%% ============== Colors ==============
+%% Warning: These are often a source of conflicts during compilation.
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+
+%% ============== Notes ==============
+\usepackage[backgroundcolor=gray!30,linecolor=black]{todonotes}
+% \usepackage[disable]{todonotes}
+%\listoftodos, \todo[noline]{}, \todo[inline]{}, \todo{}, \missingfigure{}
+% \todo[fancyline]{}
+   
+%% ============== Fonts ==============
+%\usepackage{bbm}  %% Non-Vanilla: Not include in many LaTeX distributions.
+\usepackage{mathrsfs}
+\usepackage{fontenc} %T1 font encoding
+\usepackage{inputenc} %UTF-8 support
+%\usepackage{babel} %Language specific commands, shortcuts, hyphenation.
+
+\usepackage{verbatim}
+
+%% Microtype improves spacing.  Load after fonts.
+% \usepackage{microtype}
+
+%% ============== Theorem Styles ==============
+%% Note: newtheorem* prevents numbering.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ============== References ==============
+\setcounter{secnumdepth}{3} %% Used to label subsections
+\numberwithin{equation}{section} %% Equation numbering control.
+\numberwithin{figure}{section}   %% Figure numbering control.
+
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+\hypersetup{urlcolor=blue, citecolor=red}
+\usepackage{url}
+
+%% Reference things as 'fig. 1', 'Lemma 7', etc.
+% \usepackage{cleveref}
+
+%% Create references like 'on the following page', 'on page 23'
+\usepackage{varioref} 
+
+% usepackage[refpages]{gloss} %% Glossary
+
+%%%%%%%%%%%%%%%%%%%%% MACROS %%%%%%%%%%%%%%%%%%%%%
+
+% ============================== Vectors ==============================
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\bi}{\vect{i}}
+\newcommand{\bj}{\vect{j}}
+\newcommand{\bk}{\vect{k}}
+
+\newcommand{\bn}{\vect{n}}
+
+\newcommand{\bu}{\vect{u}}
+\newcommand{\bv}{\vect{v}}
+\newcommand{\bw}{\vect{w}}
+\newcommand{\boldm}{\vect{m}}
+\newcommand{\bx}{\vect{x}}
+\newcommand{\by}{\vect{y}}
+\newcommand{\bz}{\vect{z}}
+
+\newcommand{\be}{\vect{e}}
+\newcommand{\bg}{\vect{g}}
+
+\newcommand{\bbf}{\vect{f}}
+
+% ==================== Fields ==================
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nN}{\field{N}}
+\newcommand{\nZ}{\field{Z}}
+\newcommand{\nQ}{\field{Q}}
+\newcommand{\nR}{\field{R}}
+\newcommand{\nC}{\field{C}}
+\newcommand{\nF}{\field{F}}
+\newcommand{\nK}{\field{K}}
+
+% ======================== Script Symbols  ========================
+\newcommand{\sL}{\mathscr L}
+\newcommand{\sH}{\mathscr H}
+\newcommand{\sG}{\mathscr G}
+
+% ====================== Caligraphic Symbols ======================
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+\newcommand{\cF}{\mathcal F}
+\newcommand{\cH}{\mathcal H}
+
+\newcommand{\cK}{\mathcal K}
+\newcommand{\cL}{\mathcal L}
+
+% ======================== Fraktur Symbols  ========================
+% Note: Use mathrsfs package.
+
+\newcommand{\fm}{\mathfrak m}
+
+% ========================== Bold Symbols ==========================
+\newcommand{\bvphi}{\boldsymbol{\vphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+% ======================== Misc. Symbols ========================
+\newcommand{\nT}{\mathbb T}
+\newcommand{\vphi}{\varphi}
+\newcommand{\maps}{\rightarrow}
+\newcommand{\Maps}{\longrightarrow}
+\newcommand{\sand}{\quad\text{and}\quad}
+\newcommand{\QED}{\hfill$\blacksquare$}
+\newcommand{\tac}{\textasteriskcentered}
+%\newcommand{\dhr}{\m\athrel{\lhook\joinrel\relbar\kern-.8ex\joinrel\lhook\joinrel\rightarrow}}
+
+% ========================== Operations ==========================
+\newcommand{\cnj}[1]{\overline{#1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npd}[3]{\frac{\partial^#3 #1}{\partial #2^#3}} %\npd{f}{x}{2}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+%\newcommand\norm[1]{\left\vert\mkern-1.7mu\left\vert#1\right\vert\mkern-1.7mu\right\vert}
+%\newcommand\bnorm[1]{\bigl\vert\mkern-2mu\bigl\vert#1\bigr\vert\mkern-2mu\bigr\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+\newcommand{\iip}[2]{\left<\left<#1,#2\right>\right>}
+\newcommand{\braket}[1]{\left<#1\right>}
+\newcommand{\pnt}[1]{\left(#1\right)}
+\newcommand{\pair}[2]{\left(#1,#2\right)}
+
+%Advection operators:
+\newcommand{\adv}[2]{(#1 #2)}
+\newcommand{\vectadv}[2]{\;#1 \otimes#2\;}
+
+% ============ Special Macros For This Paper ==================
+\newcommand{\diff}[1]{\widetilde{#1}}
+\newcommand{\bud}{\diff{\bu}}
+\newcommand{\ud}{\diff{u}}
+\newcommand{\xid}{\diff{\xi}}
+\newcommand{\thetad}{\diff{\theta}}
+
+\newcommand{\bue}{\vect{u}^{\epsilon}}
+\newcommand{\pe}{p^{\epsilon}}
+\newcommand{\thetae}{\theta^{\epsilon}}
+
+\newcommand{\bude}{\diff{\bue}}
+\newcommand{\ude}{\diff{ue}}
+\newcommand{\thetade}{\diff{\thetae}}
+
+\newcommand{\bun}{\vect{u}^{(n)}}
+\newcommand{\thetan}{\theta^{(n)}}
+\newcommand{\omegan}{\omega^{(n)}}
+
+% \newcommand{\thetaSt}{\cnj{\theta}} % 'St' for 'Steady.'
+% \newcommand{\uSt}{\cnj{u}}
+% \newcommand{\buSt}{\cnj{\bu}}
+
+\newcommand{\thetaSt}{\theta} % 'St' for 'Steady.'
+\newcommand{\uSt}{u}
+\newcommand{\buSt}{\bu}
+
+\newcommand{\thetaPer}{\widetilde{\theta}} % 'Per' for 'Perturbation.'
+\newcommand{\uPer}{\widetilde{u}}
+\newcommand{\buPer}{\widetilde{\bu}}
+%\renewcommand{\section}[1]{\section{\texorpdfstring{#1}}}
+
+\newcommand{\dist}{\text{dist}}
+
+% Put notation for initial data here, so it can be changed easily.
+\newcommand{\initialData}[1]{#1_0}
+\newcommand{\buInit}{\initialData{\bu}}
+\newcommand{\uInit}{\initialData{u}}
+\newcommand{\uStInit}{\initialData{\uSt}}
+\newcommand{\uStInitOne}{\initialData{\uSt}}
+\newcommand{\uStInitTwo}{\initialData{\uSt}}
+
+\newcommand{\thetaInit}{\initialData{\theta}}
+
+% \newcommand{\weaklim}[1]{\substack{\mathrm{wk\mbox{-}lim}\\[0.1ex]#1}}
+\DeclareMathOperator*{\weaklim}{wk-lim}
+
+% ========================== Norms ==========================
+\newcommand{\norm}[1]{\left\|#1\right\|}
+\newcommand{\snorm}[2]{\left\|#1\right\|_{#2}}
+\newcommand{\normH}[1]{|#1|}
+\newcommand{\normV}[1]{\|#1\|}
+\newcommand{\normLp}[2]{\|#2\|_{L^{#1}}}
+\newcommand{\normHs}[2]{\|#2\|_{H^{#1}}}
+\newcommand{\normLL}[3]{\|#3\|_{L^{#1}([0,T],L^{#2})}}
+\newcommand{\normLH}[3]{\|#3\|_{L^{#1}([0,T],H^{#2})}}
+\newcommand{\normCL}[3]{\|#3\|_{C^{#1}([0,T],L^{#2})}}
+\newcommand{\normCH}[3]{\|#3\|_{C^{#1}([0,T],H^{#2})}}
+% \documentclass[final,11pt]{article}
+% %\usepackage{amstex} 
+% \usepackage{amsmath}
+% \usepackage{epsfig} 
+% % \usepackage{latexsym}
+\usepackage{epic}
+\usepackage{eepic}
+% \usepackage{graphicx}
+% \usepackage{amssymb}
+% \usepackage{epstopdf}
+\usepackage{nicefrac}
+\newcommand{\f}{\frac}
+\newcommand{\eps}{\epsilon}
+
+\usepackage{marvosym}
+% ======================= \texttt{MATLAB} =======================
+\usepackage{listings} % Use for code.
+\usepackage{textcomp} % Used for upquote.
+% \usepackage{color} 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+
+\lstset{language=Matlab,
+   keywords={break,case,catch,continue,else,elseif,end,for,function,
+       global,if,otherwise,persistent,return,switch,try,while},
+   basicstyle=\ttfamily,
+   upquote=true,
+   keywordstyle=\color{blue},
+   commentstyle=\color{red},
+   stringstyle=\color{purple},
+%    numbers=left,%    numberstyle=\tiny\color{gray},
+   stepnumber=1,
+   numbersep=10pt,
+   backgroundcolor=\color{white},
+   tabsize=4,
+   showspaces=false,
+   showstringspaces=false,
+   commentstyle=\color{dkgreen}
+   }
+   
+% \usepackage{marvosym} % European currency, engineering symbols, etc.
+
+% \pagestyle{fancy}
+
+   
+\begin{document}
+
+% \begin{minipage}[h]{5in}
+% \centering
+% \begin{lstlisting}
+% >> 3 == 3 % Is 3 equal to 3?
+% >> 3 == 5 % Is 3 equal to 5?
+% >> 'This is a string'
+% \end{lstlisting}
+% \end{minipage}
+% 
+% \begin{minipage}[h]{5in}
+% \centering
+% \begin{lstlisting}[numbers=left,firstnumber=1]
+% for i = 1:3
+%     for j = 1:3
+%         A(i,j) = i + j;
+%     end
+% end
+% display(A);
+% \end{lstlisting}
+% \end{minipage}
+% 
+% \begin{subequations}\label{eq}
+% \begin{empheq}[left=\empheqlbrace]{align*}
+% \label{eq1}
+%  x &= y \\
+%  y &= z
+% \end{empheq}
+% \end{subequations}
+
+\begin{enumerate}
+ \item Finish typing the following Matlab programs from the Matlab Intro on Blackboard: \texttt{factorial.m}, \texttt{fibonacci.m}, \texttt{choose.m}.  Print out your three \texttt{*.m} files and attach them to this homework.  (Don't copy/paste into Word or anything, just print from Matlab.)
+ 
+ \item Read sections 1,1, 1.5, 1.6, and 1.7 in the book.
+ 
+ \item Do problem 7.1 (page 22) and problem 7.1 (page 27).  (Short answers please.)
+
+\item
+A factory has 9 lathes and 4 grinders.  Each machine runs for 40 hours per week.  The machines are used to make three different products.  Each unit of product 1 requires 2 hours of time on a grinder machine, each unit of product 2 requires 4 hours on a lathe, and each unit of product 3 requires 5 hours on a lathe and 3 hours on a grinder.  The products also have monetary costs of 25, 10, and 15, respectively.  The sale price per unit depends on the supply, and is given by $p_1(x_1)=20+50 x_1^{-1/2}$, $p_2(x_2)=15+40 x_2^{-1/4}$, and $p_3(x_3)=35+100 x_3^{-1/3}$, where $x_j$ is the number of units of product $j$ per week.
+
+\begin{enumerate}
+\item
+What key properties do the functions $p_j$ have?  How realistic are these?
+\item
+The company wants to maximize its weekly profit.  Construct the appropriate objective function.
+\item
+Construct appropriate constraints for the amounts of products made.  One constraint is non-negativity; namely, $x_1$, $x_2$, $x_3\geq0$.  Find at least two more constraints.
+\end{enumerate}
+
+
+\item
+Suppose we have a collection of $n>3$ data points $(x_j,y_j)$, and we wish to find the quadratic polynomial function $f(x)=a+bx+cx^2$ that minimizes the residual sum of squares $R(a,b,c)=\sum_{j=1}^n (y_j-f(x_j))^2$.  Let $\mathbf{u}$ be the column vector with components $a$, $b$, and $c$.  Use the fact that the minimizer must occur at a point where the first partial derivatives of $R$ are all 0 to construct a matrix $\mathbf{M}$ and a vector $\mathbf{v}$ such that $\mathbf{v}$ is determined by the equation $\mathbf{Mu}=\mathbf{v}$.\footnote{In general, the first partial derivatives all 0 is a necessary condition for a minimizer but not a sufficient condition.  We will eventually learn a theorem that gives additional restrictions needed for the condition to be sufficient as well as necessary.}
+
+\end{enumerate}
+
+
+
+
+\end{document}
+

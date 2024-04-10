@@ -1,0 +1,66 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+
+<div id="splash"></div>
+		<div class="post">
+			<h2 class="title"><a>Fractal Links </a></h2>
+			<p class="meta">Links to some nice fractal pictures online for a
+            followup 
+            to Project 2.  </p>
+			<div class="entry">
+
+<h2>Fractal Videos</h2>
+<dl>
+    <dd>
+    A zoom into the mandelbrot set. (Warning: Music autoplay.)
+    </dd>
+    <dt>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/G_GBwuYuOOs?rel=0" frameborder="0" allowfullscreen></iframe>
+    </dt>
+</dl>
+
+<br>
+
+<dl>
+    <dd>
+    A zoom into a 3d version of the Mandelbrot set, sometimes called the
+    Mandelbulb.
+    </dd>
+    <dt>
+    <iframe width="420" height="315"
+        src="http://www.youtube.com/embed/cDd8R0xlkNA?rel=0" frameborder="0"
+        allowfullscreen></iframe>
+    </dt>
+</dl>
+
+<br>
+
+<dl>
+    <dd>
+    A one-hour Nova documentary of fractals.  This is the movie that got me
+    into math!
+    </dd>
+    <dt>
+        <iframe width="560" height="315" src="http://www.youtube.com/embed/Lk6QU94xAb8?rel=0" frameborder="0" allowfullscreen></iframe>
+    </dt>
+</dl>
+
+<!--
+<dl>
+    <dd>
+    Somewhat less related, but here is a picture of the Hubble Deep Field.
+    This is the darkest part of our sky, yet
+    every point of light you see is about 200 billion stars.
+    </dd>
+    <dt>
+    <img width="420" height="315" src=images/hubble.jpg></img>
+    </dt>
+</dl>
+-->
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->
+
+
+

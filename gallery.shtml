@@ -1,0 +1,98 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+<body>
+
+
+<table width="500" border="0" cellpadding="5">
+
+<tr>
+
+<img src="/~alarios2/images/turb_pics/KSE_scal_256_lam32p1_KKP_phi.jpg"
+        style="padding: 12px; float: left;" width="330" />
+Snapshot of a 2D Kuramoto-Sivashinsky solution
+</tr>
+
+
+<tr>
+<img src="/~alarios2/images/turb_pics/Vorticity2D.png"
+        style="padding: 12px; float: left;" width="330" />
+Vorticty in a 2D flow
+</tr>
+
+
+<tr>
+Vortex tubes and stream lines.
+
+<img src="/~alarios2/images/turb_pics/red_yellow_turb.png"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+<tr>
+1D Kuramoto Sivashinsky spectral simulation, time on y-axis.
+<img src="/~alarios2/images/turb_pics/KSE.png"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+<tr>
+
+3D Euler-Voigt simulation with vortex tubes and streamlines.
+<img src="/~alarios2/images/turb_pics/Voigt_Streams.jpg"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+<tr>
+
+Simulations of turbulent flow run with collabortors at Texas A&M.
+<img src="/~alarios2/images/turb_pics/swirl.jpg"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+<tr>
+
+<img src="/~alarios2/images/larios_turbulence2.jpg"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+<tr>
+
+Isosurfaces and velocity
+<img src="/~alarios2/images/turb_pics/composite_01.jpg"
+        style="padding: 12px; float: left;" width="330" />
+</tr>
+
+ Laminar flow
+<img src="/~alarios2/images/turb_pics/laminar01.jpg"
+        style="padding: 12px; float: left;" width="330" />
+<br>
+</tr>
+<tr>
+
+Taylor-Green flow
+<img src="/~alarios2/images/turb_pics/TaylorGreen01.jpg"
+        style="padding: 12px; float: left;" width="330" />
+<br>
+</tr>
+<tr>
+
+Some vortex tubes
+<img src="/~alarios2/images/turb_pics/vortex_tubes.jpg"
+        style="padding: 12px; float: left;" width="330" />
+<br>
+</tr>
+<tr>
+
+Vortex Cloud
+<img src="/~alarios2/images/turb_pics/Vortex_Cloud.jpg"
+        style="padding: 12px; float: left;" width="330" />
+<br>
+</tr>
+<tr>
+
+Vortex vectors and isosurfaces.
+<img src="/~alarios2/images/turb_pics/Vortex_tube_clouds"
+        style="padding: 12px; float: left;" width="330" />
+<br>
+</tr>
+
+
+</table>
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->

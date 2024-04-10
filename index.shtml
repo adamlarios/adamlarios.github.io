@@ -1,0 +1,104 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+
+<div id="splash"><img src="/~alarios2/images/Adam%20Larios.jpg" style="padding: 12px; float: left;" height="243" width="154" /></div>
+
+<div class="post">
+			<h2 class="title"><a>Welcome to my website </a></h2>
+			<p class="meta">Last updated: Jan 2020</p>
+    <div class="entry">
+      <p>Hello.  My name is Adam Larios.  I am an Associate Professor in the <a href="http://www.math.unl.edu">math department</a> at the <a href ="www.unl.edu">University of Nebraska--Lincoln</a>.  I was previously a Visiting Assistant Professor (postdoc) in the <a href="http://www.math.tamu.edu/">math department</a> at <a href="http://www.tamu.edu/">Texas A&amp;M University</a>.&nbsp; I completed my Ph.D. in Mathematics at the <a href="http://www.uci.edu" class="ExternalLink">University of California-Irvine</a>.&nbsp;
+I am interested in partial differential equations, mathematical
+analysis, and numerical analysis. My work focuses on mathematical fluid
+dynamics.&nbsp; At Texas A&amp;M, I worked with <a href="http://www.math.tamu.edu/directory/formalpg.php?user=foias">Professor Ciprian Foias</a>, <a href="http://www.math.tamu.edu/%7Eguermond/">Professor Jean-Luc Guermond</a> and the other members of the <a href="http://www.math.tamu.edu/research/numerical_analysis/">numerical analysis group</a>.&nbsp; My advisor at UC Irvine was <a href="http://math.uci.edu/%7Eetiti" class="ExternalLink">Professor Edriss S. Titi</a>, and I also work with several excellent collaborators at the Los Alamos National Lab, including <a href="http://public.lanl.gov/wingate/" class="ExternalLink">Dr. Beth Wingate</a> and <a href="http://cnls.lanl.gov/%7Epetersen/" class="ExternalLink">Dr. Mark Petersen</a>.&nbsp; I collaboratored with the <a href="http://cnls.lanl.gov/External/">CNLS</a>, <a href="http://climate.lanl.gov/">COSIM</a>, and <a href="http://www.lanl.gov/ccs2/news.html">CCS-2</a> groups there.</p>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<div class="post">
+	<h2 class="title"><a >Links</a></h2>
+		<p class="meta">Here are some links that are fun, or useful, or both.</p>
+			<div class="entry">
+<dl>
+<li><a href="https://www.youtube.com/watch?v=Ya2IFgRDbo4">N Is A Number</a> A documentary about Mathematician Paul Erdos.
+<li><a href="https://www.youtube.com/watch?v=XTeJ64KD5cg">Graham's Number</a> A Numberphile video about an amazingly large number.
+<li><a href="http://topdocumentaryfilms.com/fermats-last-theorem/">The Proof</a> A NOVA documentary about Andrew Wiles and Fermat's Last Theorem.
+<li><a href="https://www.youtube.com/watch?v=2mTLO2F_ERY">Mr. W</a> A wonderful video on topology by the talented and creative Vi Hart.
+<li>Vi Hart on <a href="https://www.youtube.com/watch?v=ahXIMUkSXX0">Spirals, Fibonacci, and Being a Plant.</a>
+Part <a href="https://www.youtube.com/watch?v=lOIP_Z_-0Hs">2</a>. 
+Part <a href="https://www.youtube.com/watch?v=14-NdQwKz9w">3</a>.
+<li><a href="https://www.youtube.com/watch?v=Cj4y0EUlU-Y">Feynman - Fun to Imagine</a> Classic Feynman.
+<li><a href="https://www.youtube.com/watch?v=EKWGGDXe5MA">Feynman - Computer Heuristics Lecture</a> Feynman explains computers intuitively.
+<li><a href="https://www.youtube.com/watch?v=vMG-LWyNcAs">Parasitic Wasps</a> (Fascinating, but not for the faint of heart.)
+<li><a href="https://www.youtube.com/watch?v=fAbycqD2UmQ">Ferrofluid</a> Beautiful Magnetic fluids.
+<li><a href="https://www.youtube.com/watch?v=wupToqz1e2g">Carl Sagan's Pale Blue Dot</a> Every human should watch this video.
+<li><a href="https://www.youtube.com/watch?v=r18Gi8lSkfM">A visual introduction to Fourier Series.</a>
+<li><a href="https://www.youtube.com/watch?v=ds0cmAV-Yek">An intuitive discussion of Fourier Series by SmarterEveryDay.</a>
+<li><a href="https://www.youtube.com/watch?v=ukBFPrXiKWA">A visual introduction to electral inductors.</a>
+<li><a href="https://www.youtube.com/watch?v=R_w4HYXuo9M">How to turn a sphere inside out.</a> For more detail, see the <a href="https://www.youtube.com/watch?v=-6g3ZcmjJ7k">Longer version</a>
+<li><a href="https://www.youtube.com/watch?v=5sTt0wRNHkM">Taylor Green Vortex decay.</a>
+<li><a href="https://www.youtube.com/watch?v=pnbJEg9r1o8">Pool Vortex</a> An interesting demonstration of vortex stability.
+<li><a href="https://www.youtube.com/watch?v=1_oyqLOqwnI">Turbulence</a> by the National Committee for Fluid Mechanics Films.
+<li><a href="https://www.youtube.com/watch?v=xusdWPuWAoU">Perpetual Ocean</a>
+<li><a href="https://www.youtube.com/watch?v=cDd8R0xlkNA">3D Mandelbulb</a>
+<li><a href="https://www.youtube.com/channel/UC5N5pRddyicAX1QJyJjIIdg/videos">Calculus Blue</a> A calculus lecture series with great visuals.
+<li><a href="https://www.youtube.com/user/numberphile">Numberphile</a> A YouTube channel of great videos on mathematical topics.
+<li><a href="https://www.youtube.com/channel/UCYO_jab_esuFRV4b17AJtAw">3Blue1Brown</a> A YouTube channel about beautiful ideas in mathematics.
+<li><a href="https://www.youtube.com/channel/UCs4aHmggTfFrpkPcWSaBN9g/videos">PBS Infinite Series</a> In-depth explanations of higher-level mathematics.
+<li><a href="https://acko.net/blog/how-to-fold-a-julia-fractal/">How to Fold a Julia Fractal</a> Excellent visuals of complex numbers and fractals.
+<!-- 
+<li><a href=""></a>
+-->
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!--
+		<div class="post">
+			<h2 class="title"><a >Fractal Videos</a></h2>
+			<div class="entry">
+<dl>
+    <dd>
+    A zoom into the mandelbrot set. (Warning: Music autoplay.)
+    </dd>
+    <dt>
+<iframe width="420" height="315" src="http://www.youtube.com/embed/G_GBwuYuOOs?rel=0" frameborder="0" allowfullscreen></iframe>
+    </dt>
+</dl>
+
+<br>
+
+<dl>
+    <dd>
+    A zoom into a 3d version of the Mandelbrot set, sometimes called the
+    Mandelbulb.
+    </dd>
+    <dt>
+    <iframe width="420" height="315"
+        src="http://www.youtube.com/embed/cDd8R0xlkNA?rel=0" frameborder="0"
+        allowfullscreen></iframe>
+    </dt>
+</dl>
+
+<br>
+
+<dl>
+    <dd>
+    A one-hour Nova documentary of fractals.  This is the movie that got me
+    into math!
+    </dd>
+    <dt>
+        <iframe width="420" height="315" src="http://www.youtube.com/embed/Lk6QU94xAb8?rel=0" frameborder="0" allowfullscreen></iframe>
+    </dt>
+</dl>
+
+
+
+</dl>
+                </p>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+-->
+
+
+
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->

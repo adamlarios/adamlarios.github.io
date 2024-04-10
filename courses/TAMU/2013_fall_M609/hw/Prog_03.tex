@@ -1,0 +1,392 @@
+%scp *pdf alarios2@fourier.math.tamu.edu:./public_html/courses/TAMU/2013_fall_M609/hw/
+
+
+%\RequirePackage[l2tabu, orthodox]{nag}
+%% Checks for obsolete LaTeX packages and outdated commands. 
+%% Does nothing as long as your syntax is right.
+
+\documentclass[11pt]{amsart}
+% Document class possibilities:
+%   amsart, article, book, beamer, report, letter
+% Options:
+%   letterpaper, a4paper,11pt,oneside, twoside, draft, twocolumn, landscape
+
+%% For beamer class, see my beamer template.
+
+%% ========== Options to Toggle When Compiling ==============
+%\usepackage[notcite]{showkeys} %% Show tags and labels.
+%\usepackage{layout}            %% Show variable values controlling page layout.
+%\allowdisplaybreaks[1]         %% Allow multiline displays to split.
+%\nobibliography     %% Use proper citations, but do not generate bibliography.
+
+%% ========== Select *.tex file encoding and language ==============
+%\usepackage[language]{babel} %% Takes care of all language requirements.
+
+%\usepackage[latin1]{inputenc}  %% Use with PuTTY or TeXMaker
+\usepackage[utf8]{inputenc}  %% Use on most OS's, such as Ubuntu.
+  \usepackage[T1]{fontenc}
+%   \usepackage{libertine} % or any other font package (or none)
+  % ============== Quote Code =================
+\usepackage{ifxetex}
+\usepackage[svgnames]{xcolor}
+\ifxetex{%
+  \usepackage{fontspec}
+  \setmainfont{Linux Libertine O} % or any font on your system
+  \newfontfamily\quotefont[Ligatures=TeX]{Linux Libertine O} % or any font on your system
+\else
+  \newcommand*\quotefont{\fontfamily{fxl}} % selects Libertine for quote font
+\fi
+ \usepackage{tikz}
+\usepackage{framed}
+% Make commands for the quotes
+\newcommand*{\openquote}{\tikz[remember picture,overlay,xshift=-15pt,yshift=-10pt]
+     \node (OQ) {\quotefont\fontsize{60}{60}\selectfont``};\kern0pt}
+\newcommand*{\closequote}{\tikz[remember picture,overlay,xshift=15pt,yshift=10pt]
+     \node (CQ) {\quotefont\fontsize{60}{60}\selectfont''};}
+% select a colour for the shading
+\definecolor{shadecolor}{named}{Azure}
+% wrap everything in its own environment
+\newenvironment{shadequote}%
+{\begin{snugshade}\begin{quote}\openquote}
+{\hfill\closequote\end{quote}\end{snugshade}}
+% ============== End Quote Code =================
+  
+%% ============== Page Layout ==============
+%% Allow extra space at the bottom of pages.
+\raggedbottom     
+
+%% Use smaller margins.
+\usepackage{fullpage}
+
+%%Control page number placement.  \thepage is the current page number.
+% \renewcommand{\headrulewidth}{0pt}
+% \lhead{}
+% \chead{}
+% \rhead{}
+% \lfoot{}
+% \cfoot{\thepage}
+% \rfoot{}
+
+%\usepackage{geometry}  %% Can adjust the margins of individual pages
+%% Use it like this:
+%% \newgeometry{left=3cm,bottom=0.1cm}
+%%     ... Lines that require margins adjusted ...
+%% \restoregeometry
+
+%% ============== Page Styles ==============
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \pagestyle{empty}
+
+%% ============== Math Packages ==============
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools} % An improvement of amsmath
+\usepackage{latexsym}
+
+%% ============ Typesetting add-ons ============
+\usepackage{siunitx} %Support for SI units, \num, \SI, etc.
+
+%% ============== Single-Use Packages ==============
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{cases}
+\usepackage{empheq}
+\usepackage{multicol}
+\usepackage{wrapfig}
+\usepackage{verbatim}
+
+%% ============== Graphics Packages ==============
+%\usepackage{graphicx} %% Conflicts with pdflatex.
+%\usepackage{graphics} %% Conflicts with eps files.
+%\usepackage{epsfig} Allows eps files (?)
+
+%% Note: For using .eps graphics, use the graphicx package,
+%% and in the document use, for example:
+%% \begin{figure}
+%%  \includegraphics[scale=0.5]{my_picture.eps}
+%% \end{figure}
+
+%% Prevent figures from appearing on a page by themselves:
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\textfraction}{0.1}
+%\renewcommand{\floatpagefraction}{0.75}
+
+%% Force floats to always appear after their definition: 
+%\usepackage{flafter}
+
+%% ============== tikZ and PGF packages ==============
+\usepackage{ltxtable,tabularx,tabulary}
+
+% \usepackage{tikz} % Already in the Quotes section
+\usepackage{pgf}
+\usepackage{pgfplots} %% Requires pgf 2.0 or later.
+% \usetikzlibrary{arrows, automata, backgrounds, calendar, chains,
+% matrix, mindmap, patterns, petri, shadows, shapes.geometric,
+% shapes.misc, spy, trees}
+
+
+%% ============== Colors ==============
+%% Warning: These are often a source of conflicts during compilation.
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+
+%% ============== Notes ==============
+%% Use in document as \mnote{My note here.}
+\newcounter{mnote}
+ \setcounter{mnote}{0}
+ \newcommand{\mnote}[1]{\addtocounter{mnote}{1}
+   \ensuremath{{}^{\bullet\arabic{mnote}}}
+   \marginpar{\footnotesize\em\color{red}\ensuremath{\bullet\arabic{mnote}}#1}}
+
+\usepackage{todonotes}
+% \listoftodos, \todo[noline]{}, \todo[inline]{}, 
+% \todo{}, \missingfigure{}
+   
+%% ============== Fonts ==============
+% \usepackage{bbm}  %% Non-Vanilla: Not include in many LaTeX distros.
+\usepackage{mathrsfs}
+\usepackage{fontenc} %T1 font encoding
+\usepackage{inputenc} %UTF-8 support
+%\usepackage{babel} %Language specific commands, shortcuts, hyphenation.
+
+\usepackage{verbatim}
+
+%% Microtype improves spacing.  Load after fonts.
+\usepackage{microtype}
+
+%% ============== Theorem Styles ==============
+%% Note: newtheorem* prevents numbering.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ============== References ==============
+\numberwithin{equation}{section} %% Equation numbering control.
+\numberwithin{figure}{section}   %% Figure numbering control.
+
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+\hypersetup{urlcolor=blue, citecolor=red}
+\usepackage{url}
+
+%% Reference things as 'fig. 1', 'Lemma 7', etc.
+%% Note: some conflict with section labeling
+% \usepackage{cleveref}
+
+%% Create references like 'on the following page', 'on page 23'
+\usepackage{varioref} 
+
+% usepackage[refpages]{gloss} %% Glossary
+
+%%%%%%%%%%%%%%%%%%%%% MACROS %%%%%%%%%%%%%%%%%%%%%
+
+% ============================== Vectors ==============================
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\bi}{\vect{i}}
+\newcommand{\bj}{\vect{j}}
+\newcommand{\bk}{\vect{k}}
+
+\newcommand{\bu}{\vect{u}}
+\newcommand{\bv}{\vect{v}}
+\newcommand{\bw}{\vect{w}}
+\newcommand{\boldm}{\vect{m}}
+\newcommand{\bx}{\vect{x}}
+\newcommand{\by}{\vect{y}}
+\newcommand{\bz}{\vect{z}}
+
+\newcommand{\be}{\vect{e}}
+
+% ==================== Fields ==================
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nC}{\field{C}}
+\newcommand{\nF}{\field{F}}
+\newcommand{\nK}{\field{K}}
+\newcommand{\nN}{\field{N}}
+\newcommand{\nQ}{\field{Q}}
+\newcommand{\nR}{\field{R}}
+\newcommand{\nT}{\field{T}}
+\newcommand{\nZ}{\field{Z}}
+
+% ======================== Script Symbols  ========================
+\newcommand{\sH}{\mathscr H}
+\newcommand{\sL}{\mathscr L}
+
+% ====================== Caligraphic Symbols ======================
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+
+\newcommand{\cL}{\mathcal L}
+
+% ======================== Fraktur Symbols  ========================
+% Note: Use mathrsfs package.
+
+%\newcommand{\fM}{\mathfrak M}
+
+% ========================== Bold Symbols ==========================
+\newcommand{\bvphi}{\boldsymbol{\vphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+% ======================== Misc. Symbols ========================
+
+\newcommand{\vphi}{\varphi}
+\newcommand{\maps}{\rightarrow}
+\newcommand{\Maps}{\longrightarrow}
+\newcommand{\sand}{\quad\text{and}\quad}
+\newcommand{\QED}{\hfill$\blacksquare$}
+\newcommand{\tac}{\textasteriskcentered}
+%\newcommand{\dhr}{\m\athrel{\lhook\joinrel\relbar\kern-.8ex\joinrel\lhook\joinrel\rightarrow}}
+
+% ========================== Operations ==========================
+\newcommand{\cnj}[1]{\overline{#1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npd}[3]{\frac{\partial^#3 #1}{\partial #2^#3}} %\npd{f}{x}{2}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+%\newcommand\norm[1]{\left\vert\mkern-1.7mu\left\vert#1\right\vert\mkern-1.7mu\right\vert}
+%\newcommand\bnorm[1]{\bigl\vert\mkern-2mu\bigl\vert#1\bigr\vert\mkern-2mu\bigr\vert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+\newcommand{\pnt}[1]{\left(#1\right)}
+\newcommand{\pair}[2]{\left(#1,#2\right)}
+
+%Advection operators:
+\newcommand{\adv}[2]{(#1 #2)}
+\newcommand{\vectadv}[2]{\;#1 \otimes#2\;}
+
+% ============ Special Macros For This Paper ==================
+% \newcommand{}[]{}
+
+% % ========================== Norms ==========================
+% \newcommand{\norm}[1]{\|#1\|}
+% \newcommand{\snorm}[1]{|#1|}
+% \newcommand{\normLp}[2]{\|#2\|_{L^{#1}}}
+% \newcommand{\normHs}[2]{\|#2\|_{H^{#1}}}
+% \newcommand{\normLL}[3]{\|#3\|_{L^{#1}([0,T],L^{#2})}}
+% \newcommand{\normLH}[3]{\|#3\|_{L^{#1}([0,T],H^{#2})}}
+% \newcommand{\normCL}[3]{\|#3\|_{C^{#1}([0,T],L^{#2})}}
+% \newcommand{\normCH}[3]{\|#3\|_{C^{#1}([0,T],H^{#2})}}
+
+
+%% ============== Counters ==============
+\newcounter{my_counter}
+\setcounter{my_counter}{1} 
+
+%
+
+
+% \usepackage{fullpage}
+% \textheight 9.5in
+
+
+
+% ============== Matlab =================
+\usepackage{listings} % Use for code.
+\usepackage{textcomp} % Used for upquote.
+\usepackage{color} 
+\definecolor{dkgreen}{rgb}{0,0.6,0}
+\definecolor{gray}{rgb}{0.5,0.5,0.5}
+% ============== Matlab End =================
+
+\begin{document}
+
+\title{Programming Assignment 3
+\\Discrete Fourier Transforms
+\\\vspace{0.2cm}\scriptsize{Due: 2013 November 18, Monday}
+% \\\scriptsize{Instructor: Dr. Adam Larios}}
+% Date assigned (For my records):
+}
+\maketitle
+\thispagestyle{empty}
+% \pagestyle{empty}
+We are going to use the Discrete Fourier Transform (DFT) on data and images to get a better understand of how the Fourier Transform encodes information.  Note that the DFT is just the coefficients of a trigonometric polynomial interpolation of data.  Namely, it tells you the amplitude on different sines and cosines of different frequencies.  This means it is very good at picking up repeating patterns.   
+
+Do the exercises below, and answer and discuss the questions in your write up.  Try to give concrete examples or analytical arguments whenever possible.  For this assignment, you do not need to attach your code (unless you do the bonus), but please do attach plots and images.  If LaTeX gives you trouble importing images, just print them out, and refer to them in your write-up as ``Fig. 1'', ``Fig. 2'', and so on.  Make sure to label them correctly!
+
+\begin{itemize}
+ \item[Part I] \textbf{\textit{To be started in lab, only spend 5-10 minutes though.}} \textbf{(50 points+Bonus)} Recall that, as the earth rotates, it feels different gravitational pulls due to the presence of the sun and moon, and this creates tides in the ocean.  The height of the water on a fishing dock was recorded every hour for several days.  The data can be found on the course website as the file ``\texttt{tide\_data.txt}''.  Download this file, and copy/paste the data into Matlab (it is already in Matlab vector format).  Call the vector ``height''.
+ 
+ \underline{Exercises}
+ 
+ \begin{enumerate}
+  \item Plot the data using ``\texttt{plot(height)}'' (Matlab assumes the $x$-axis is just integers unless otherwise stated.)
+  \item To take the DFT of Matlab using the FFT algorithm, just use ``\texttt{fft(height)}''.  Plot this using \texttt{plot(fft(height),'.')}. (Remember to type ``\texttt{help plot}'' if you need information about the plot command.) Recall that the FFT gives you complex numbers.  What symmetries do you see, if any?
+  \item Since it hard to see what is really going on (since the FFT gives complex numbers), take the absolute value (\texttt{abs}) of the FFT and plot it.  You should see some spikes.  What are the spikes telling you?  Suppose you were from another planet, and knew very little about earth, but got this data back about the tides.  What could you conclude?  Also, why are some of the spikes seemingly reflected about the middle point?  What does the very first (non-reflected) spike represent in terms of the data?
+  \item Try compressing the data: Set all the other data to zero except for some data near the spikes.  Reconstruct the signal approximately by using the inverse Fourier Transform ``\texttt{ifft}''.  If we don't could the data that has been ``zeroed out'' as information, how much compression can we gain while still maintaining a ``good'' signal?  
+  
+\item \textbf{Bonus} (50 points): Code your own FFT and compare it with the results for the tide data.  Also, test your speed (e.g., using \texttt{tic} and \texttt{toc} in Matlab, or recorded times in C/C++/Fortran/Python, etc.), and compare your speed with Matlab's.  If you do this, then you \textit{should} submit your code in both paper and email format.
+
+ \end{enumerate}
+
+\item[Part II] \textbf{\textit{To be started in lab.  Spend most of your time on Part II.}} \textbf{(50 points)} We are going to use the 2D FFT on images.  Grey-scale images can be thought of as functions on a 2D rectangle which take values between 0 and 1 (or, in digital images, between 0 and 255), with 0 meaning ``black'' and 1 meaning ``white''.  Color images are just 3 channels of monochrome images (red, blue and green), so they can be handled similarly.  
+
+\noindent
+Matlab can work with images, but it is hard to directly edit them in Matlab, so we are going to use ``Gimp'', which is similar to Photoshop, but free. 
+
+\bigskip
+
+\underline{Getting set-up with the Gimp FFT plugin}
+
+\bigskip
+
+\begin{itemize}
+\item[Step 1.] Follow the instructions on the course webpage to install the FFT plug-in for Gimp.  
+
+ \item[Step 2.] Download all the images under ``Pictures for transforming'' by right-clicking on them and using ``Save as''.  
+ 
+ \item[Step 3.] Open Gimp, and the open the ``\texttt{v\_stripes.jpg}'' image from within Gimp.  
+ 
+ \item[Step 4.] Go to the Menu and do: 
+\begin{center}
+ \texttt{Filters} $\rightarrow$ \texttt{Generic} $\rightarrow$ \texttt{FFT Forward}\end{center}
+ 
+ \item[Step 5.] You are now looking at the FFT of the image, with the $x$-$y$-axes having their origin at the center of the screen.  Can you find the tiny single black point?  Which axis ($x$ or $y$) is it on?  Why?
+\end{itemize}
+
+\bigskip
+
+\underline{Exercises} 
+
+\bigskip
+
+\begin{enumerate}
+ \item Repeat the above steps with ``\texttt{h\_stripes.jpg}''.  Then try  ``\texttt{d\_stripes.jpg}'' and ``\texttt{box.jpg}''.  Record any observations you may have in your report.  It may be fun to make your own variations on these and play with them (not necessary for the report).
+ 
+ \item Next, open ``\texttt{moire\_family.jpg}''. Note the speckled newsprint pattern.  Such patterns are sometimes called Moir\'e patterns, and they have a very periodic nature.  Take the FFT of the image.  Can you find the spots where the pattern lies?  Zero-out these spots by coloring them black with the paintbrush tool.  Then do:
+ 
+\begin{center}
+ \texttt{Filters} $\rightarrow$ \texttt{Generic} $\rightarrow$ \texttt{FFT Inverse}\end{center}
+ What do you see?  Can you clean up the photo and get rid of the Moir\'e pattern while still maintaining decent image quality?  
+ 
+ \item Open ``\texttt{lion.jpg}''.  Can you ``free the lion'' from the cage by ``removing'' the bars?  Where is the information about the bars stored in Fourier space?  
+ 
+  \item Zero-out (i.e., paint black) as much of the FFT of \texttt{lion.jpg} as you can while still maintaining a good image.  What compression rate can you achieve?  What does this mean about where the major image details are stored?  Why does this make sense?
+ 
+\end{enumerate}
+
+\end{itemize}
+
+The last images, \texttt{parrots.jpg} and \texttt{stripe\_family.jpg} are not required for you to include in your report.  They are just there for you to play around with if you want.
+ 
+  
+
+%----------------------------------------------------
+\end{document}

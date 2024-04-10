@@ -1,0 +1,437 @@
+% $Header: /cvsroot/latex-beamer/latex-beamer/solutions/conference-talks/conference-ornate-20min.en.tex,v 1.6 2004/10/07 20:53:08 tantau Exp $
+
+\documentclass[leqno]{beamer}
+%\documentclass[handout,leqno,hyperref={pdfpagelabels=false}]{beamer}
+%\documentclass[draft,leqno,hyperref={pdfpagelabels=false}]{beamer}
+%% Note: ``hyperref={pdfpagelabels=false}'' is used to get rid of
+%% an unnecessary LaTeX warning.  Turn it off in modern versions.
+
+%% This gets rid of a bug in Beamer:
+\let\Tiny=\tiny
+
+\usepackage{amsmath,amsfonts,amssymb,mathrsfs}
+\usepackage{enumerate}
+\usepackage{color}
+\usepackage{graphicx}
+
+%% ==== Beamer Specific Packages and Options ====
+%% Use a more LaTeX-like font in math environments:
+\usefonttheme[onlymath]{serif} 
+
+%% Enable the ability to use hyperlinks:
+\usepackage{hyperref}
+
+%This gets rid of another Beamer compilation warning bug.
+% \usepackage{lmodern} 
+
+%% ==== Templates ====
+%\setbeamertemplate{background canvas}[vertical shading][bottom=blue!50,top=white!60] 
+\setbeamertemplate{frametitle}[shadow]
+
+%% ==== Presentation Options ====
+\usepackage{beamerthemeshadow} %Makes a color gradient in the frame title background.
+% \usepackage{beamerthemesidebar}
+% \usepackage{beamerthemesplit}
+% \usepackage{beamerthemebars}
+% \usepackage{beamerthemeclassic}
+% \usepackage{beamerthemelined}
+% \usepackage{beamerthemetree}
+% \usepackage{beamerinnerthemerounded}
+\beamertemplatenavigationsymbolsempty %To get rid of navigation symbols.
+
+%% ==== Themes ====
+% \usetheme{boxes}
+% \usetheme{default}
+
+%% Themes with tree-likes navigation bar
+% \usetheme{JuanLesPins}
+% \usetheme{Montpellier}
+% \usetheme{Antibes}
+% \usetheme{Rochester}
+
+%% Themes with TOC sidebar
+% \usetheme{PaloAlto}
+% \usetheme{Berkeley}
+% \usetheme{Goettingen}
+% \usetheme{Marburg}
+% \usetheme{Hannover}
+
+%% Themes with mini-frame navigation
+% \usetheme{Berlin}
+% \usetheme{Boadilla}
+% \usetheme{Ilmenau} % +1
+% \usetheme{Dresden}
+% \usetheme{Darmstadt} % +1
+%\usetheme{Frankfurt}
+% \usetheme{Singapore}
+% \usetheme{Szeged}
+
+%% Themes with section and subsection
+% \usetheme{AnnArbor}
+% \usetheme{CambridgeUS}
+% \usetheme{Copenhagen} % +1
+% \usetheme{Luebeck}
+% \usetheme{Malmoe}
+% \usetheme{Warsaw}
+
+%% ==== Colors ====
+%\definecolor{mygold}{rgb}{0.85, 0.60, 0.00} 
+%\setbeamercolor{math text}{fg=red!60!black}
+%\setbeamercolor{normal text in math text}{fg=black}
+
+%% ==== Color Themes ====
+% \usecolortheme{albatross}
+% \usecolortheme{blue}
+% \usecolortheme{beetle}
+% \usecolortheme{beaver}
+% \usecolortheme{default}
+ \usecolortheme{dolphin}
+% \usecolortheme{crane}
+% \usecolortheme{fly}
+% \usecolortheme{seagull}
+% \usecolortheme{lily}
+%\usecolortheme{orchid}
+%\usecolortheme{whale}
+%\usecolortheme{brown} 
+%\usecolortheme[named=Maroon]{structure} 
+
+%% ==== Custom Color Options ====
+%% Here is an example:
+%\usecolortheme[rgb={0,0.17,0.45}]{structure}
+%\setbeamertemplate{headline text}[vertical shading][bottom=red!60,top=orange!30] 
+%\setbeamertemplate{footline}[page number]{}
+
+%% ==== Inner Themes ====
+%\useinnertheme[shadow]{rounded}
+
+%% ==== Outer Themes ====
+\useoutertheme{infolines}
+
+% Many people like this style of Beamer slideshow
+%\usepackage{beamerthemesplit}
+
+% To do movies in Beamer:
+%\usepackage{multimedia}
+% And in the document, for example:
+%\movie[height=5cm,width=6.5cm,loop]{}{move.avi}
+
+%For using .eps graphics
+%\usepackage{graphicx} 
+% And in the document, for example:
+% \begin{figure}
+%  \includegraphics[scale=0.5]{Sines12.eps}
+% \end{figure}
+
+
+\title[My Short Title]{My Full-Length Title}
+
+%\subtitle{My Subtitle}
+
+\author[Author1, Author2]
+{X.~Author1\inst{1} \and Y.~Author2\inst{2}}
+
+\institute[Universities] % (optional, but mostly needed)
+{
+  \inst{1}
+  Department of Mathematics\\
+  University of Author1
+  \and
+  \inst{2}
+  Department of Engineering\\
+  University of Author2
+}
+
+\date[TAMU pre-REU 2012]
+{Texas A\&M University pre-REU program, 2012}
+
+% If you have a file called "university-logo-filename.xxx", where xxx
+% is a graphic format that can be processed by latex or pdflatex,
+% resp., then you can add a logo as follows:
+
+% \pgfdeclareimage[height=0.5cm]{university-logo}{university-logo-filename}
+% \logo{\pgfuseimage{university-logo}}
+
+% Delete this, if you do not want the table of contents to pop up at
+% the beginning of each subsection:
+\AtBeginSubsection[]
+{
+  \begin{frame}<beamer>
+    \frametitle{Outline}
+    \tableofcontents[currentsection,currentsubsection]
+  \end{frame}
+}
+
+
+% If you wish to uncover everything in a step-wise fashion, uncomment
+% the following command: 
+
+%\beamerdefaultoverlayspecification{<+->}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}
+  \frametitle{Outline}
+  \tableofcontents
+  % You might wish to add the option [pausesections]
+\end{frame}
+
+\section{Beamer Basics}
+
+\subsection{Frames}
+
+% ===========================================================
+\begin{frame} 
+  \begin{itemize}[<+->]
+   \item Beamer is the LaTeX-way of making presentations (and posters).
+   \item Invented by Til Tantau in 2004 (also invented tikZ in 2006).
+   \item Unlike powerpoint, the finished document is a pdf file.
+   \item Each slide is called a ``frame''.
+   \item Each change in the frame is just a new page in the pdf file.
+   \item Frames are easy to learn.
+   \item Timing the frames is slightly more involved, but not too hard.
+   \item Sections and subsections work just like in usual \LaTeX.
+  \end{itemize}
+\end{frame}
+% ===========================================================
+
+% ===========================================================
+\begin{frame} 
+  Documents are compiled with \texttt{pdflatex} (or \texttt{latex}), just like a usual \LaTeX document.  
+  \pause
+  Math works just like in \LaTeX.  \\
+  \pause
+  It can either be inline style: $\int_\Omega df = \oint_{\partial\Omega} f$, or in display style:
+  \begin{equation*}
+   \int_\Omega df = \oint_{\partial\Omega} f
+  \end{equation*}
+  \pause
+  Note that you usually shouldn't label equations in a presentation.
+\end{frame}
+% ===========================================================
+
+\section{Timing}
+
+% ===========================================================
+\begin{frame}{Pausing} 
+ The first part.
+ \pause
+ The second part.
+ \pause
+  The third part.
+\end{frame} 
+% ===========================================================
+
+% ===========================================================
+\begin{frame}{Detailed pausing} 
+ The first part.
+ \pause
+ The second part.
+ \pause
+  The third part.
+\end{frame} 
+% ===========================================================
+
+% ===========================================================
+\begin{frame}{Itemizing (version 1)} 
+ 
+\begin{itemize} 
+  \item Introduction 
+  \pause 
+  \item Statement of the main theorem 
+  \pause 
+  \item Technical lemmata 
+  \pause 
+  \item Proof of the main theorem 
+  \pause 
+  \item Conclusions 
+\end{itemize} 
+ 
+\end{frame} 
+% ===========================================================
+
+% ===========================================================
+\begin{frame}{Itemizing (version 2)} 
+ 
+\begin{itemize}[<+->]
+  \item Introduction 
+  \item Statement of the main theorem 
+  \item Technical lemmata 
+  \item Proof of the main theorem 
+  \item Conclusions 
+\end{itemize} 
+ 
+\end{frame} 
+% ===========================================================
+
+
+\section{Hyperlinks}
+
+% =========================================================
+\begin{frame}[label=MySlide]{Introduction}
+
+This slide is labeled ``MySlide''.
+
+\end{frame}
+
+% =========================================================
+\begin{frame}{Some other slide}
+
+If you click \hyperlink{MySlide}{here}, you will jump to the slide
+labeled ``MySlide''.
+
+\bigskip
+
+Clicking \hyperlink{MySlide}{\beamerbutton{here}} will also
+take you to the ``MySlide'' slide.
+
+\end{frame}
+% ===========================================================
+
+% ===========================================================
+\begin{frame}{Theorems and such}
+
+\begin{definition}
+  A triangle that has a right angle is called
+  a \emph{right triangle}.
+\end{definition}
+
+\begin{theorem}
+  In a right triangle, the square of the hypotenuse
+  equals the sum of the squares of the two other sides.
+\end{theorem}
+
+\begin{proof}
+  We leave the proof as an exercise to our astute reader.
+  We also suggest that the reader generalize the proof to
+  non-Euclidean geometries.
+\end{proof}
+
+\end{frame}
+% ===========================================================
+
+% ===========================================================
+\begin{frame}
+  \frametitle{Detailed Timing Commands}
+  You can create overlays\dots
+  \begin{itemize}
+  \item using the \texttt{pause} command:
+    \begin{itemize}
+    \item
+      First item.
+      \pause
+    \item    
+      Second item.
+    \end{itemize}
+  \item
+    using overlay specifications:
+    \begin{itemize}
+    \item<3->
+      First item.
+    \item<4->
+      Second item.
+    \end{itemize}
+  \item
+    using the general \texttt{uncover} command:
+    \begin{itemize}
+      \uncover<5->{\item
+        First item.}
+      \uncover<6->{\item
+        Second item.}
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+% ===========================================================
+
+
+
+
+
+
+
+
+% ===========================================================
+\begin{frame}
+  \frametitle{Make Titles Informative. Use Uppercase Letters.}
+  \framesubtitle{Subtitles are optional.}
+  % - A title should summarize the slide in an understandable fashion
+  %   for anyone how does not follow everything on the slide itself.
+
+  \begin{itemize}
+  \item
+    Use \texttt{itemize} often.
+  \item
+    Use very short sentences or short phrases.
+  \end{itemize}
+\end{frame}
+% ===========================================================
+
+
+\section*{Summary}
+
+\begin{frame}
+  \frametitle<presentation>{Summary}
+
+  % Keep the summary *very short*.
+  \begin{itemize}
+  \item
+    The \alert{first main message} of your talk in one or two lines.
+  \item
+    The \alert{second main message} of your talk in one or two lines.
+  \item
+    Perhaps a \alert{third message}, but not more than that.
+  \end{itemize}
+  
+  % The following outlook is optional.
+  \vskip0pt plus.5fill
+  \begin{itemize}
+  \item
+    Outlook
+    \begin{itemize}
+    \item
+      Something you haven't solved.
+    \item
+      Something else you haven't solved.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+
+% All of the following is optional and typically not needed. 
+\appendix
+\section<presentation>*{\appendixname}
+\subsection<presentation>*{For Further Reading}
+
+\begin{frame}[allowframebreaks]
+  \frametitle<presentation>{For Further Reading}
+    
+  \begin{thebibliography}{10}
+    
+  \beamertemplatebookbibitems
+  % Start with overview books.
+
+  \bibitem{Author1990}
+    A.~Author.
+    \newblock {\em Handbook of Everything}.
+    \newblock Some Press, 1990.
+ 
+    
+  \beamertemplatearticlebibitems
+  % Followed by interesting articles. Keep the list short. 
+
+  \bibitem{Someone2000}
+    S.~Someone.
+    \newblock On this and that.
+    \newblock {\em Journal of This and That}, 2(1):50--100,
+    2000.
+  \end{thebibliography}
+\end{frame}
+
+\end{document}
+
+

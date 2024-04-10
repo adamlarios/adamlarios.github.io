@@ -1,0 +1,271 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+<div id="splash"><a href="http://en.wikipedia.org/wiki/Lorenz_system"><img src="/~alarios2/images/linux.jpg" style="padding: 12px; float: left;"  /></a></div>
+    <div class="post">
+      <h2 class="title"><a>Math 934 </a> </h2>
+      <br>
+        <p class="meta">Topics in Differential Equations</p>
+        <div class="entry">
+<dl>
+    <dt><strong><a href="http://bulletin.unl.edu/courses/MATH/934">Math 934: Topics in Differential Equations</a></strong></dt><dd>
+    University of Nebraska-Lincoln, spring 2017
+    <br> 
+    <li>
+    <a href="documents/larios_syllabus_M934.pdf">Syllabus</a>
+    </li>
+    <font color="#444444">
+    <b>Course Documents</b>
+
+    <br> 
+    <li><a href="documents/matlabIntroLarios.pdf">Matlab Intro [pdf]</a>. My introduction to Matlab worksheet.</li>
+    <li><a href="documents/talk.pdf">talk.pdf</a>. My slides about Fourier transforms and PDEs.</li>
+    <li><a href="documents/Logistic.pdf">Logistic Worksheet [pdf]</a>. My code for the logistic problem: <a href="documents/logisticChaos.m">logisticChaos.m</a></li>
+    <li><a href="documents/RKproject.pdf">Runge-Kutta Project [pdf]</a> My n-dimensional rk4 code <a href="documents/rk4_ndim.m">rk4_ndim.m</a> and <a href="documents/rk4_error.m">rk4_error.m</a> code.</li>
+    <li>A backward Euler solver: <a href="documents/backward_euler.m">backward_euler.m</a> which requires a Newton's method solver: <a href="documents/Newton.m">Newton.m</a></li>
+    <li><a href="documents/fft-deriv_MIT.pdf">The Discrete Fourier Transform [pdf]</a> A write-up by Prof. Steven Johnson about how the DFT is used to compute derivatives.</li>
+    <li><a href="documents/FFTderivatives.m">FFTderivatives.m</a> My code to compute derivatives using the FFT.</li>
+    <li><a href="documents/FFTtheory.pdf">FFT Theory [pdf]</a> A write-up on the (correct!) algorithm to compute the FFT.</li>
+    <li><a href="documents/heatProject.pdf">heatProject.pdf</a> My code for the logistic problem: <a href="documents/heat_rk4.m">heat_rk4.m</a></li>
+    <li><a href="https://www.math.ualberta.ca/~bowman/talks/alias.pdf">Link to John Bowman's slides on dealiasing. [pdf]</a></li>
+    <li><a href="documents/burgersProject.pdf">burgersProject.pdf</a> (Code will be posted after all projects are in.)</li>
+    <li><a href="documents/IMEX.pdf">IMEX.pdf</a> A discussion of mixed implicit/explicit methods.</li>
+    <li>Read page 15 and Section 2.3.  If you need more mathematical background, read chapter A, starting on page 225.</li>
+    <li><a href="documents/transport_naive.m">transport_naive.m</a> My code to "simulate" the transport equation with the (unstable) Euler  method.</li>
+    <li><a href="documents/transport_lf.m">transport_lf.m</a> My code to simulate the transport equation with the leap-frog method.</li>
+    <li><a href="documents/wave_lf.m">wave_lf.m</a> My code to simulate the wave equation with the leap-frog method.</li>
+    <li><a href="documents/Project_FEM_Poisson.pdf">Project_FEM_Poisson.pdf</a> A project to code a 1D Poisson solver in Matlab.</li>
+<!--
+    <li>Do problems</li>
+    <li><font color="#444444"><b>Solutions</b></font> 
+    <br>
+    <a href="documents/HW01_Solutions.pdf">HW01_Solutions.pdf</a>
+    <br>
+      <ul>
+        <li><b>Week 01:</b> Read Chapter 1 of the book.  Read the syllabus in detail. Review linear algebra and multivariable calculus if you need to.</li>
+      </ul>
+-->
+  </font>
+    <br>
+
+   <!-- Unlesss otherwise stated in class, homework is due at the beginning of class
+    the second lecture day after when it was assigned, for example, if we have lecture on M,W,F, the material discussed on Monday will be due on Friday, and the material discussed on Wednesday will be due the following Monday, unless Monday is a holiday, in which case it would be due the following Wednesday.
+    <br>
+    <li><font color="#444444"><b>Contacting me:</b> </font>
+    <font color="black">First, read the </font><a href="documents/larios_syllabus_M934.pdf">Syllabus</a>.  
+    The best way to contact me is via email.  Please note that you should not expect an immediate response 24 hours a day, but that I will
+    try to answer your email in a reasonable amount of time (usually I am
+    pretty fast).  When emailing, be sure to include your full name, course and section. <font color="black"> If it is about homework problem, please write out the whole problem so I know what you are referring to.</font>
+-->
+        <!--<a href="http://www.math.tamu.edu/~jmlinhart/email.html">Here's what I'd like to see in email.</a> 
+        <a href="documents/linhart_email_document.shtml">Here's what I'd like to see in email.</a>  
+    </li>
+-->
+    <!--
+<li><font color="black">Exam Keys:</font><br>
+    <a href="documents/exam1key.pdf">Exam 1 Key</a>
+    <br>
+    <a href="documents/exam2key.pdf">Exam 2 Key</a>
+    <br>
+    <a href="documents/exam3key.pdf">Exam 3 Key</a> Typo on question 1: Solution should be x(t) = 2e^(2t)(1,3) - 2e^(4t)(1,1)
+</li>
+<li>
+    <a href="http://www.math.missouri.edu/~bartonae/pplane.html">Online Phase Portrait Plotting</a>
+</li>
+-->
+
+        <!--
+       <li>
+        MATLAB files:
+        </li>
+    <ul>
+        <li>
+            <a href="documents/dfield8.m">dfield8.m</a> for plotting direction fields with Matlab.
+        </li>
+        <li>
+            <a href="documents/pplane8.m">pplane8.m</a> for plotting 2D phase planes with Matlab.
+        <br> dfield8 and pplane are written by 
+            <a href="http://math.rice.edu/~dfield/">Professor John C. Polking</a>at Rice University.
+        </li>
+        <li>
+            <a href="documents/wave_equation.m">Wave Equation Example</a>
+        </li>
+        <li>
+            Manually plot a direction field with <a href="documents/PlotDirectionField.m">PlotDirectionField.m</a> (if you are interested).
+        </li>
+        <li>
+            <a href="documents/forward_euler.m">My forward_euler.m</a>
+        </li>
+        <li>
+            <a href="documents/backward_euler.m">My backward_euler.m</a> Note:
+            This requires you to use a separate Newton solver,<br> for example,
+            this one: 
+            <a href="documents/Newton.m">Newton.m</a> Note:
+        </li>
+        <li>
+            <a href="documents/euler_plot.m">euler_plot.m</a> A comparison of
+            backward Euler, Forward Euler, and RK45
+        </li>
+        <li>
+          <a href="documents/sinusoidal_forcing.m">sinusoidal_forcing.m</a>
+          An examination of resonant and beat behavior for a particular IVP.
+        <li>
+        <a href = "documents/discontinuous_forcing_function.m">discontinuous forcing</a>
+    </ul>
+        </ul>
+        -->
+    <!--
+        <li>
+<a name="Projects">
+        <b><font color="black">Projects:</font></b>
+    </a>
+        </li>
+    <ul>
+        <li>
+        <a href = "documents/Math308_Project1.pdf">Project 1</a>  Due Friday,
+    28 September 2012
+    <br>
+        My solution to Part 1: <a href = "documents/rk4.m">rk4.m</a>, 
+        <a href = "documents/rk4_error.m">rk4_error.m</a>
+        <br>  Save both files in the same folder, and run rk4_error in Matlab.
+        </li>
+        <li>
+        <a href = "documents/Math308_Project2.pdf">Project 2</a>  Due Monday,
+        5 November 
+        2012
+        <a href ="documents/larios_mandelbrot.m">mandelbrot.m</a>
+        <a href ="documents/larios_mandelbrot_simple.m">mandelbrot_simple.m</a>
+        <a href ="documents/logistic_chaos.m">logistic_chaos.m</a>
+        <a href = "Fractal_Links.html">Fractal Links</a>
+        <li>
+        <a href = "documents/Math308_Project3.pdf">Project 3</a>  Due Monday,
+        3 December 2012
+        <br>
+        My multi-dimesional RK4: <a href =
+            "documents/rk4_ndim.m">rk4_ndim.m</a> (You must still submit your
+        own 2D RK4 with error estimate!)
+        </li>
+        <li>
+        Project 3  Due Friday, 9 Mar 2012 (Accepted Monday, 19 Mar 2012)
+          <br>
+        Boyce and DiPrima book:: Section 3.7: #31, 32 and Section 3.8: #24, 25
+          <br>
+        <a href = "documents/second_order.m">Example: Numerical solution of a
+            second-order IVP in Matlab </a>
+        </li>
+        <li>
+        <a href = "documents/Math308_Project4.pdf">Project 4</a>  Due Monday, 9 Apr 2012
+          <br>
+          Supporting files: 
+        <a href = "documents/lorenz_demo.m">lorenz_demo.m</a>, 
+        <a href = "documents/g.m">g.m</a>, 
+        <a href="documents/pplane8.m">pplane8.m</a>
+        </li>
+        <li>
+        <a href = "documents/Math308_Project5.pdf">Project 5</a>  Due Thursday,
+        3 May 2012, 4:30 pm in Blocker 601
+        </li>
+    </ul>
+    -->
+</dd>
+</dl>
+<br>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+<div class="post">
+    <h2 class="title"><a name="ComputerResources">Computer Resources </a></h2>
+    <p class="meta">"Think twice, code once." -Anonymous</p>
+    <div class="entry">
+    <li>
+    MATLAB help: 
+    </li>
+    <ul>
+        <li>
+        <a href="documents/matlabIntroLarios.pdf">Matlab Introduction for this course</a>
+        </li>
+<!--
+        <li>
+        <a href="documents/Matlab_Intro.pdf">A Short Matlab Introduction</a>
+        </li>
+-->
+        <li>
+        <a href="documents/guido-308-facts-matlab.pdf">A short reference</a> by <a
+            href="http://simweb.iwr.uni-heidelberg.de/~gkanscha/de/">Guido Kanschat</a>
+        </li>
+        <li>
+        <a href="http://www.cyclismo.org/tutorial/matlab/">A long online tutorial</a>
+        </li>
+        <li>
+                 <a href="https://www.youtube.com/playlist?list=PLAOZch2HHHpWyLHySb80Qvf0thrVs5FSY">A Matlab lecture series by Dr. Hywel Owen.</a>
+        </li>
+    </ul>
+        </li>
+ <!--
+    <li>
+        Remote Login:
+        </li>
+    <ul>
+        <li>
+        If you have a Linux or Mac machine, the easiest way is just to open a
+        terminal and enter:
+        <br>
+        <code>
+            ssh -X YOUR_CALCLAB_USERNAME@calclab1.math.tamu.edu matlab
+        </code>
+        <br>
+        Make sure to replace YOUR_CALCLAB_USERNAME with the user name you use to
+        login in class.
+        </li>
+        <li>
+        <a href="http://www.math.tamu.edu/courses/calclabhelp.html">NoMachineNX and VOAL Tutorials</a>. Use this for remote login for Linux/Mac/Windows machines.
+        </li>
+    </ul>
+-->
+        <li>
+        Linux:
+        </li>
+    <ul>
+        <li>
+        Installing Linux is 100% free and very easy.  I recommend starting
+        with <a href="http://www.ubuntu.com/download">Ubuntu Linux</a>.
+        </li>
+        <li>
+        <a href = "https://help.ubuntu.com/community/UsingTheTerminal">Command
+            Line Introduction</a>,   
+        <a href = "http://www.ee.surrey.ac.uk/Teaching/Unix/">Command Line Tutorial</a>
+        </li>
+    </ul>
+<!--
+    <li>
+        LaTeX (the best way to type math):
+        </li>
+    <ul>
+        <li> If you are going to type your assignments, the best way be far is to use LaTeX.  After you learn the basics, it is far better than fighting with Microsoft Word to make your equations look right.  It is also a vital skill for a professional mathematician to have.  Below are some resources on learning it.
+        <li><a href="http://www.math.unl.edu/~math-club/resources/latex/">UNL Math Club's LaTeX resource page</a>
+        <li><a href="http://www.zinktypografie.nl/latex.php?lang=en">What is LaTeX?</a>
+        <li><a href="https://tobi.oetiker.ch/lshort/lshort.pdf">A Quick Introduction to LaTeX [pdf]</a>
+        <li><a href="http://www.latex-tutorial.com/tutorials/quick-start/">LaTeX Quick-Start</a>
+        <li><a href="http://tobi.oetiker.ch/lshort/lshort.pdf">A Not-So-Short Introduction to LaTeX [pdf]</a>
+        <li><a href="http://www.andy-roberts.net/writing/latex">Getting to Grips with LaTeX (good information on including graphics)</a>
+        <li><a href="http://www.texample.net/tikz/">Programming vector graphics in LaTeX with TikZ</a>
+        <li><a href="https://www.uncg.edu/cmp/reu/presentations/Charles Batts - Beamer Tutorial.pdf">Beamer (presentations with LaTeX) [pdf]</a>
+
+       <li><a href="http://en.wikibooks.org/wiki/LaTeX">The LaTeX wikibook</a> &mdash; Comprehensive introduction to using latex</li>
+       <li><a href="ftp://ftp.ams.org/pub/tex/doc/amsmath/short-math-guide.pdf">AMS-LaTeX &ndash; Short Math Guide (pdf)</a> &mdash; Quick reference for math formating and symbols</li>
+       <li> <a href="ftp://ftp.ams.org/pub/tex/doc/amsmath/amsldoc.pdf">AMS-LaTeX &ndash; User's Guide for the amsmath Package (pdf)</a></li>
+       <li> <a href="http://detexify.kirelabs.org/classify.html">Detexify</a> &mdash; Draw the symbol you want and this tool will suggest latex code for it</li>
+       <li> <a href="http://www.ctan.org/tex-archive/info/symbols/comprehensive/symbols-letter.pdf">The Comprehensive LaTeX Symbol List (pdf)</a> </li>
+       <li> <a href="http://tug.org/applications/Xy-pic/soft/xy/doc/xyguide.pdf">XY-pic User's Guide (pdf)</a> &mdash; Information for drawing commutative diagrams</li>
+    </ul>
+
+-->
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->

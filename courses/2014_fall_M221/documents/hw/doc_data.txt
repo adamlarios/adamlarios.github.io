@@ -1,0 +1,13 @@
+InfoKey: ModDate
+InfoValue: D:20140823102826-05'00'
+InfoKey: PTEX.Fullbanner
+InfoValue: This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) kpathsea version 6.1.1
+InfoKey: CreationDate
+InfoValue: D:20140823102826-05'00'
+InfoKey: Creator
+InfoValue: TeX
+InfoKey: Producer
+InfoValue: pdfTeX-1.40.14
+PdfID0: 22d6a974105aad3f8d02cbc8fe18b6
+PdfID1: 22d6a974105aad3f8d02cbc8fe18b6
+NumberOfPages: 4

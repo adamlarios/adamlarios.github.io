@@ -1,0 +1,37 @@
+	<!-- end #content -->
+	<div id="sidebar">
+		<div id="sidebar-bgtop">
+			<div id="sidebar-bgbtm">
+				<ul>
+					
+  <li>
+						<h2>Info</h2>
+						
+    <p>I am an Associate Professor in the
+    mathematics department at the University of Nebraska-Lincoln.
+						</p>
+
+					</li>
+
+					<li>
+						<ul>
+							<li><a href="/~alarios2/About.shtml">About</a></li>
+							<li><a href="/~alarios2/Research.shtml">Research</a></li>
+							<li><a href="/~alarios2/Publications.shtml">Publications</a></li>
+							<li><a href="/~alarios2/Teaching.shtml">Teaching</a></li>
+							<li><a href="/~alarios2/documents/Web_Curriculum_Vitae_for_Adam_Larios.pdf">Curriculum Vitae</a></li>
+						</ul>
+					</li>
+					<li>
+						<h2>Links</h2>
+						<ul>
+							<li><a href="http://www.math.unl.edu/">U. Nebraska-Lincoln Math</a></li>
+							<li><a href="http://www.math.tamu.edu/">Texas A&M Math</a></li>
+							<li><a href="http://www.lanl.gov">Los Alamos National Lab</a></li>
+							<li><a href="/~alarios2/FunLinks.shtml">Fun Links</a></li>
+							<li><a href="/~alarios2/LetterChecklist.shtml">Requesting a Letter</a></li>
+				</ul>
+			</li></ul></div>
+		</div>
+	</div>
+	<!-- end #sidebar -->

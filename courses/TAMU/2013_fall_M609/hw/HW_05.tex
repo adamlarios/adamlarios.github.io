@@ -1,0 +1,122 @@
+\documentstyle[12pt]{amsart}
+\topmargin=-.5in
+\textheight=9in
+\oddsidemargin=0in
+\evensidemargin=0in
+\textwidth=6.6in
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+{\bf MATH 609-600 \\
+Homework \#5 \\
+Numerical  Integration \& ODE Methods}
+\end{center}
+
+
+\small  
+\bigskip
+\noindent
+Solve any set of problems for 100 points.
+%The homework should be presented at the beginning of the class.
+5 pts per day penalty for delay of the homework applies.
+ 
+\bigskip
+\noindent
+
+
+\begin{enumerate}
+
+\item (10 pts) Show that the quadrature 
+$$
+ \displaystyle \int_{0}^{ \infty} e^{-x} f(x) dx \approx 
+\frac{2+ \sqrt{2}}{4} f(2- \sqrt{2})+
+\frac{2- \sqrt{2}}{4} f(2+ \sqrt{2})
+$$
+has algebraic degree of accuracy 3.
+
+
+\item (10 pts) Find the nodes and the coefficients of the Gauss 
+quadrature with two nodes for evaluating the integral
+$$
+\int_{-1}^1 \frac{f(x)}{\sqrt{1-x^2} } dx.
+$$
+ 
+\item  (20 pts)
+Prove that if the interval is symmetric with respect to the
+origin and if $w(x)$ is an even function, then the Gaussian 
+nodes will be symmetric  respect to the
+origin. So if the roots are ordered $x_0 < x_1 < \dots < x_n$, 
+then $x_i=-x_{n-i}$ and $A_i=A_{n-i}$ for $i=0,1, \dots,n.$
+
+\item (20 pts) Define the Legendre polynomial  $P_n(x)$ of degree $n$ by
+$$
+P_n(x)=\frac{1}{2^n ~n!}\frac{d^n(x^2-1)^n}{dx^n}, ~~ n=0,1, \dots.
+$$
+Show that   $P_n(x)$ has $n$ distinct zeros in the interval $(-1,1)$ which 
+are symmetric with respect to the origin.
+
+\item (20 pts) Consider the Gaussian quadrature %is written in the form
+$$
+\int_{-1}^{1} f(x) dx \approx  \displaystyle \sum_{i=1}^{n} A_k f(x_k).
+$$
+Show that 
+$%$
+%A_k=\frac{2}{(1-x_k^2)[P'_n(x_k)]^2}, ~~k=1,2,\dots, n.
+A_k=2/[(1-x_k^2)[P'_n(x_k)]^2], ~~k=1,2,\dots, n,
+$%$
+ where $P_n$ is the defined above Legendre polynomial. \\
+Hint: Use the fact that 
+$P_n(1)=1$, $P_n(-1)=(-1)^n$ and the equality
+$$
+\int_{-1}^{1}P_n(x) P'_n(x)/(x-x_k) dx= A_k[P'_n(x_k)]^2.
+$$
+
+\bigskip
+\noindent
+Below we consider the following initial value problem: find $x(t)$ such that 
+$x'(t)=f(t,x)$ for $t > t_0$ and satisfying the initial condition $x(t_0)=x_0$.
+Also $\eta_n$ denotes the approximation of $x(t_n)$ by the numerical method.
+\bigskip
+\noindent
+
+\item (20 pts) Consider the Runge-Kutta method 
+\begin{equation}\label{RK}
+\eta_0=x_0, ~~~~\eta_{i+1}= \eta_i + h \, \Phi(t_i,\eta_i;h), ~~~i=0,1,...
+\end{equation}
+where
+$ \displaystyle \Phi(t,x;h)= \frac14 k_1(t,x) + \frac34k_2(t,x)$
+with
+$ k_1(t,x)=  f(t,x) $,
+$ k_2(t,x) =  f(t+ \frac{2}{3}h, x+ \frac{2}{3} h k_1).$
+Show that the method is of second  order.
+
+\item (20 pts) For the above initial value problem 
+consider the following (in general, implicit) 
+Runge-Kutta method \eqref{RK}, where:
+\begin{equation}\label{Taylor-1}
+\begin{array}{rll}
+ \Phi(t,x;h)& = & a_1 k_1 + a_2k_2 \\[1ex]
+        k_1 & = & f(t+ \alpha_1 h, x + \beta_{11} h k_1)\\[1ex]
+        k_2 & = & f(t+ \alpha_2 h, x + \beta_{21} h k_1 + \beta_{22}h k_2).
+\end{array}
+\end{equation}
+(a) Find the conditions that the coefficients $a, \alpha, \beta $ need 
+to satisfy so that the {\bf explicit} 
+method (i.e. $\beta_{11} = \beta_{22}=0$) is of second order. 
+Give at least one set of coefficients that satisfy these conditions.\\
+(b) Find the conditions that the coefficients $a, \alpha, \beta $ need 
+to satisfy so that the {\bf implicit} 
+method (i.e. $\beta_{11} \not= 0$ and $\beta_{22} \not= 0$) is of second order.
+
+\item  (20 pts)  
+Derive an explicit multi-step method of order four (Adams-Bashforth four step
+method) that uses integration in the interval $(t_i,t_{i+1})$. Write down the expression
+for the local truncation error.
+
+\end{enumerate}
+ 
+ 
+ 
+ 
+\end{document}
+ 

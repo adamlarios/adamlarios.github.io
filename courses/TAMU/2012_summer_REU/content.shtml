@@ -1,0 +1,131 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"-->
+<div id="splash"><img src="/~alarios2/images/Adam%20Larios.jpg" style="padding: 12px; float: left;" height="243" width="154" /></div>
+    <div class="post">
+        <h2 class="title"><a>Math Pre-REU</a></h2>
+        <p class="meta">Signal and Image Analysis </p>
+        <div class="entry">
+            Hello!  Welcome to the math Pre-REU program at Texas A&M.
+            <br>
+            This site contains some information about the non-lecture portion
+            of the program.  
+            <br>
+            Please also see the 
+            <a href="http://www.math.tamu.edu/~berko/teaching/preREU2012/">
+            main webpage for the class</a>, maintained by 
+            <a href="http://www.math.tamu.edu/directory/formalpg.php?user=berko">Dr.
+                Gregory Berkolaiko</a>.
+<dl>
+    <dd>
+    <li><!-- ####################### -->
+    Here are a few resources for learning LaTeX: 
+    <ul><!-- ####################### -->
+        <li>
+        A bare-bones <a href="documents/Larios_latex_hello_world.tex">"Hello World"
+        latex document</a>.
+        </li>
+        <li>
+        <a href="documents/Larios_Paper_Template.tex">My LaTeX paper
+            template/tutorial</a>, the 
+        <a href="documents/Larios_Bibliography.bib">bibliography</a>, 
+        and the
+        <a href="documents/Larios_Paper_Template.pdf">compiled pdf</a>.  
+        This template has a very detailed header which you are free to use and
+        modify.
+        </li>
+        <li>
+        Tobias Oetiker's <a href="http://tobi.oetiker.ch/lshort/lshort.pdf">Not So Short Introduction to LaTeX</a>.  A
+        good guide for moving past the basics.
+        </li>
+        <!--
+        <li>
+        <a href=""></a>.  
+        </li>
+        <li>
+        <a href=""></a>.  
+        </li>
+        -->
+        <li>
+        <a href="http://www.tug.org/texlive/">The TeX-Live Users Group</a>
+        Download TeXlive here.  It is free, of course.
+        </li>
+        <li>
+        You also need an editor.  My favorite is 
+        <a href="http://kile.sourceforge.net/">Kile</a>,
+        but it only works on Linux.  
+        <br>
+        There is also <a href="http://www.xm1math.net/texmaker/">TeXMaker</a>, which will work on just
+        about any system (Linux/OSX/Windows).
+        </li>
+        <li>
+        Beamer stuff: <a href="documents/Larios_Beamer_Tutorial_Sample.tex">Beamer_Sample.tex</a> and 
+        <a href="documents/Larios_Beamer_Tutorial_Sample.pdf">Beamer_Sample.pdf</a>
+        </li>
+    </ul>
+    </li>
+ 
+    <li><!-- ####################### -->
+    Here are a few basic MATLAB guides: 
+    <ul><!-- ####################### -->
+        <li>
+        <a href="documents/guido-308-facts-matlab.pdf">A short reference</a> by <a
+            href="http://www.math.tamu.edu/~kanschat/">Guido Kanschat</a>
+        </li>
+        <li>
+        <a href="http://www.cyclismo.org/tutorial/matlab/">A long online tutorial</a>
+        </li>
+    </ul>
+    </li>
+        <li><!-- ####################### -->
+        Here are a few MATLAB files that we may or may not use:
+        </li><!-- ####################### -->
+    <ul>
+        <li>
+            <a href="documents/dfield8.m">dfield8.m</a> and 
+            <a href="documents/pplane8.m">pplane8.m</a> by
+            <a href="http://math.rice.edu/~dfield/">Professor John C. Polking</a>at Rice University.
+        </li>
+        <li>
+            <a href="documents/wave_equation.m">Wave Equation Example</a>
+        </li>
+    </ul>
+        <li><!-- ####################### -->
+        Remote Login:
+        </li><!-- ####################### -->
+    <ul>
+        <li>
+        If you have a Linux or Mac machine, the easiest way is just to open a
+        terminal and enter:
+        <br>
+        <code>
+            ssh -X YOUR_CALCLAB_USERNAME@calclab1.math.tamu.edu matlab
+        </code>
+        <br>
+        Make sure to replace YOUR_CALCLAB_USERNAME with the user name you use to
+        login in class.
+        </li>
+        <li>
+        <a href="http://mpeg.math.tamu.edu/home/dmanuel/NXVOAL/NXVOAL.html">NoMachineNX and VOAL Tutorial</a>. Use this for Linux/Mac/Windows machines.
+        </li>
+    </ul>
+        <li><!-- ####################### -->
+        Learn Linux, if you are interested:
+        </li><!-- ####################### -->
+    <ul>
+        <li>
+        Installing Linux is 100% free and very easy.  I recommend starting
+        with <a href="http://www.ubuntu.com/download">Ubuntu Linux</a>.
+        </li>
+        <li>
+        <a href = "https://help.ubuntu.com/community/UsingTheTerminal">Command
+            Line Introduction</a>,   
+        <a href = "http://www.ee.surrey.ac.uk/Teaching/Unix/">Command Line Tutorial</a>
+        </li>
+    </ul>
+</dd>
+</dl>
+<br>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!--#include virtual="/~alarios2/layout/footer.shtml"-->

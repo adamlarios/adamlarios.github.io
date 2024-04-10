@@ -1,0 +1,281 @@
+<!--#include virtual="/~alarios2/layout/header.shtml"
+-->
+<div id="splash"><img src="/~alarios2/images/Adam%20Larios.jpg" style="padding: 12px; float: left;" height="243" width="154" /></div>
+<div class="post">
+    <h2 class="title"><a>Math 151 </a></h2>
+    <p class="meta">Engineering Mathematics I</p>
+    <div class="entry">
+        <dl>
+            <dt><strong><a
+                    href="http://www.math.tamu.edu/courses/math151/">Math 151:
+            Engineering Mathematics I</a></strong></dt><dd>
+            Texas A&M University, Fall 2013
+            <br> 
+            <li>
+            <a href="documents/larios_syllabus_151.pdf">
+                Syllabus</a> (for all sections)
+            </li>
+            <li>
+              <a href="http://www.math.tamu.edu/~fulges/math151_Fall2013.html">Your
+                  TA's webpage</a>, which includes answers to previous quizzes.
+            </li>
+            <li>
+            <a href="http://www.math.tamu.edu/courses/eHomework/">WebAssign</a> 
+            <li>
+            <a href="http://www.math.tamu.edu/courses/math151/currenthw.html">Suggested Homework Problems</a> 
+            <li><b>Contacting me:</b> The best way to contact me is via email.  Please
+            note that you should not expect an immediate response 24 hours a day, but that I will
+            try to answer your email in a reasonable amount of time (usually I am
+            pretty fast).  When
+            emailing, be sure to include your full name, course and section.
+            <br>
+            <a href="http://www.math.tamu.edu/~jmlinhart/email.html">Here's what I'd like to see in email.</a>  
+            <li>
+            <a href="mathgifs.html">Here's a link to more helpful math gifs like this one:</a>
+            <br>
+              <a href="mathgifs.html"><img src="sin.gif" style="padding: 12px; float: left;"
+                                           height="100" width="200"/></a>
+            <div style="clear:both;width:100%;height:1px;overflow:hidden"></div>
+            </li>
+Above: The Sine curve is just the height of a point on the unit circle.
+            <br>
+            <li>
+            <a href="http://mathigon.org/panorama/">Real-Life Applications of
+                Mathematics</a>
+            </li>
+            <li>
+            <a href="http://www.youtube.com/watch?v=CJ8MzWncFfQ">Learn to think
+                like a Martian</a>
+            </li>
+            <li>
+            <a href="http://www.youtube.com/watch?v=zSZNsIFID28">Feynman on the
+                beauty of a flower</a>
+            </li>
+        </ul>
+        </dd>
+    </dl>
+
+</div><!-- end entry --> 
+</div><!-- end post --> 
+
+<div class="post">
+    <h2 class="title"><a name="General Resources">General Resources </a></h2>
+    <p class="meta">"Success is not final, failure is not fatal: it is the
+    courage to continue that counts." -Winston Churchill</p>
+    <div class="entry">
+<ul>
+    <dl>
+            <li>
+            <A href="http://www.math.tamu.edu/courses/calclabhelp.html">
+                Matlab Help Sessions </A><p>
+            <li>
+             <A href="http://www.math.tamu.edu/courses/helpsessions.html">
+                 Homework Help Sessions </A> <p>
+            <li>
+             <A href="http://www.math.tamu.edu/~austin/wirmath151.html">
+                 Amy Austin's Streaming Video </A> <p>
+            <li>
+             <A href="http://disted6.math.tamu.edu/m151-152videos/index.html">
+                 Streaming Video of Exams</A><p>
+        </ul>
+        </dd>
+    </dl>
+</ul>
+
+
+
+</div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+<div class="post">
+    <h2 class="title"><a name="ComputerResources">Computer Resources </a></h2>
+    <p class="meta">"Think twice, code once." -Anonymous</p>
+    <div class="entry">
+        <li>
+        MATLAB help: 
+        </li>
+        <ul><li>
+            <a href="documents/Matlab_Intro.pdf">Matlab Introduction</a> (Ignore
+            the last page.)
+            </li>
+            <li>
+            <a href="documents/guido-308-facts-matlab.pdf">A short reference</a> by <a
+                href="http://www.math.tamu.edu/~kanschat/">Guido Kanschat</a>
+            </li>
+            <li>
+            <a href="http://www.cyclismo.org/tutorial/matlab/">A long online tutorial</a>
+            </li>
+        </ul>
+        </li>
+
+        <li>
+        Remote Login:
+        </li>
+        <ul>
+            <li>
+            If you have a Linux or Mac machine, the easiest way is just to open a
+            terminal and enter:
+            <br>
+            <code>
+                ssh -X YOUR_CALCLAB_USERNAME@calclab1.math.tamu.edu matlab
+            </code>
+            <br>
+            Make sure to replace YOUR_CALCLAB_USERNAME with the user name you use to
+            login in class.
+            </li>
+            <li>
+            <a href="http://mpeg.math.tamu.edu/home/dmanuel/NXVOAL/NXVOAL.html">NoMachineNX and VOAL Tutorial</a>. Use this for Linux/Mac/Windows machines.
+            </li>
+        </ul>
+        <li>
+        Linux:
+        </li>
+        <ul>
+            <li>
+            Installing Linux is 100% free and very easy.  I recommend starting
+            with <a href="http://www.ubuntu.com/download">Ubuntu Linux</a>.
+            </li>
+            <li>
+            <a href = "http://linuxcommand.org/learning_the_shell.php">Learning
+                the shell</a>, 
+            <a href = "https://help.ubuntu.com/community/UsingTheTerminal">Command
+                Line Introduction</a>,   
+            <a href = "http://www.ee.surrey.ac.uk/Teaching/Unix/">Command Line Tutorial</a>
+            </li>
+        </ul>
+
+    </div><!-- end entry --> 
+</div><!-- end post --> 
+
+<!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+
+<div class="post">
+    <h2 class="title"><a name="StudyHelp">Study Help</a></h2>
+    <p class="meta">Tips you can use to increase your academic effectiveness.</p>
+    <div class="entry">
+        <font color="black"><b>Being able to study efficiently is a skill that takes time to develop.  It is normal to discover that the study habits and skills that worked for you in highschool or as a freshman need to be updated and improved if you are going to keep from being overwhelmed.  It takes time and effort, as well as trial and error, to find which study habits work best for you.  Below are some suggestions and resources to get you started.  Good luck, and study efficiently!</b></font>
+
+        <dl>
+            <li><font color="black"> Build a solid foundation, if you haven't already.</font>
+            <ol>
+                <li>A solid foundation in alegbra and precalculus is required for this course,
+                especially
+                knowledge of exponentials, logarithms, trig functions, and
+                algebraic operations.
+                <li> Many people do not realize that they still have some issues with
+                algebra.  Success in this course will be almost impossible if there
+                are too many holes in your algebraic skills, especially those
+                concerning logs and exponents.  Fix any issues as soon as possible
+                so that you will be able to do your best.
+                <li> Here's one <a
+                    href="http://tutorial.math.lamar.edu/Classes/CalcI/ExpLogEqns.aspx">Exponent
+                    and Log review</a>. Use Google to find more.
+            </ol> 
+            <li><font color="black">Tips on doing homework</font></li>
+            <ol>
+                <li>On the same day the homework is assigned, read over all the problems.  This will get you thinking about them early on.  The problems will stay in your brain on the "back burner", and you may have more luck later when you sit down to work them.
+                <li>Do all the homework problems, even if you don't get them in on time.  
+                <li> Homework is excercise.  If you want to get better at sports, you need to excercise everyday.  If you want to get better at mathematics, you need to work on problems every day.
+            </ol>
+            <li>  <font color="black">Advice from students for doing better on exams </font></li>
+            <ol>
+                <li><b><u>Study with more people.</u></b>  Study in groups or with a partner.  Work problems together on a white board.  Take turns challenging each other.  Being able to explain a problem clearly to someone else is a major step towards understanding it.
+                <li>Pay attention in class and to the instructor's emails.
+                <li>Rework what you didn't understand well.
+                <li>Write down short examples on the notecard.
+                <br><b>Note:</b> Notecards are not allowed on exams; the pupose of this
+                tip is to help with studying.
+                <li>Label formulas on your cards.
+                <li>Theorems should be on the notecard.
+                <li>Keep a running list of things for your notecard rather than trying
+                to compile it all at the last minute.
+                <li>Write down formulas completely and correctly.
+            </ol>
+            <li>
+            <font color="black">Advice on how to predict what is on the exam </font>(in addition to some of the
+            above):
+            </li>
+            <ol>
+                <li>Old exams are a <b>hint</b>.
+                <li>Pay attention to problems done in class several times.
+                <li>Take note of quiz questions; one of those might become an exam
+                question.
+                <li>Problems tend to be similar to homework/suggested homework.
+            </ol> 
+            <li>
+            <font color="black">In Class</font>
+            </li>
+            <ul>
+                <li><b>Make sure you have read the section we are covering before you come to class.</b>
+                <li>Please be <b>assertive</b> in asking questions during lecture.
+                <li>Please be <b>assertive</b> in paying attention in lecture.
+                <li>Remember that you are responsible for all material presented in
+                lecture, no matter how strongly you felt it was emphasized.</li>
+            </ul>
+
+            <li> <font color="black"> Links<sup>*</sup> to articles on efficient study habits</font>
+            <ol>
+                <li><p><a
+                    href="http://calnewport.com/blog/2008/07/03/case-study-why-the-number-of-hours-you-spend-studying-means-nothing/">Case
+                    Study: Why the Number of Hours You Spend Studying Means
+                    Nothing</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2008/11/25/case-study-how-i-got-the-highest-grade-in-my-discrete-math-class/">Case
+                    Study: How I Got the Highest Grade in my Discrete Math
+                    Class</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2008/12/31/case-study-how-tyler-aced-a-difficult-course/">Case
+                    Study: How Tyler Aced a Difficult Course</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/01/30/case-study-how-amy-saved-her-college-career/">Case
+                    Study: How Amy Saved Her College Career</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/04/16/finals-diaries-travis-prepares-to-battle-calculus/">Finals
+                    Diaries: Travis Prepares to Battle Calculus</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/05/22/the-grade-whisperer-eric-prepares-to-battle-english-lit/">The
+                    Grade Whisperer: Eric Prepares to Battle English Lit</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2010/01/13/how-ricardo-aced-computer-science-using-his-iphone/">How
+                    Ricardo Aced Computer Science Using His iPhone</a> (An alternative
+                would be to use <a href="http://ankisrs.net/">Anki</a>.)</p></li>
+            </ol>
+
+            <p><a href="http://calnewport.com/blog/">Study Hacks</a> &quot;Four Weeks to a
+            4.0&quot; series</p>
+
+            <ol>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/03/30/4-weeks-to-a-40-adopt-an-autopilot-schedule-and-a-sunday-ritual/">Week
+                    1</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/04/06/4-weeks-to-a-40-streamline-your-notes/">Week
+                    2</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/04/13/4-weeks-to-a-40-master-your-assignments/">Week
+                    3</a></p></li>
+                <li><p><a
+                    href="http://calnewport.com/blog/2009/04/20/4-weeks-to-a-40-create-project-folders/">Week
+                    4</a></p></li>
+            </ol>
+            <li>
+            Some of the above material is taken from <a
+                href="http://www.math.tamu.edu/~jmlinhart/m308/">Jean-Marie Linhart's
+                site</a>, which has
+            some great resources.  See her excellent website on <a
+                href="http://www.math.tamu.edu/~jmlinhart/success.html">Success at
+                Math</a>.
+            </li>
+            <br>
+            <sup>*</sup> Use the external links on this page only according to your own judgement; I am not
+            responsable for, nor in control of, their content.  The opinions given
+            there do not necessarily reflect my own, and I do not officialy endorse
+            any statements made on the websites which are linked to, nor any of the
+            content linked to therein.
+
+        </div><!-- end entry --> 
+    </div><!-- end post --> 
+
+    <!--#include virtual="/~alarios2/layout/footer.html"-->

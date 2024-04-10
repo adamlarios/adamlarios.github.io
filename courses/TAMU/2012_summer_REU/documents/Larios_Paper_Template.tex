@@ -1,0 +1,514 @@
+% Hello!  This document is written to help you learn LaTeX for writing mathematical documents. 
+% A LaTeX document is included below.  
+% It is intended to get you started with LaTeX, and then to act as sort of a ``quick reference'' 
+% for commands after you get comfortable with LaTeX.
+
+% To get started, you will need a TeX distribution and a TeX editor installed on your computer.  
+% For a TeX distribution, I recommend TeXLive for Linux, MacTeX for Macs (usually included with TeXShop), and MiKTeX for Windows. 
+% As for a TeX editor, TeXMaker is a great editor, which is free, and works on
+% Linux, Man, and Windows.  My favorite editor is Kile, which is available for
+% Linux.  
+% You can find these easily online using Google.  
+% Just download and install the TeX distribution (this can be kind of a pain)
+% and then install the TeX editor of your choice.
+% Next, copy & paste this document into the editor, and compile it by clicking on "LATEX" 
+% (your editor may have a different button or menu item).  
+% Then click on "DVI Previewer" (or similar).  
+% When you are done previewing a document and you are ready to finalize it, you'll want to make a *.pdf file.  
+% To make a *.pdf, click on PDF LATEX (or a similar button).  
+% Note that this document (the one you are reading right now) is meant to be read 
+% in both *.tex form (i.e. uncompiled) and *.pdf form (i.e., compiled).  
+% Try compiling it first so that you can see what it looks like, 
+% then go back and see how to do those things by looking at this file.  
+% Also, notice my hints and tips within this document, 
+% which are hidden from the main document using ``%'' symbols to comment them out.  
+% Here are a few online resources to get you started:
+
+%   http://www.andy-roberts.net/misc/latex/index.html
+%   http://www.andy-roberts.net/misc/
+
+% If you want to use citations and make a bibliography, 
+% I strongly recommend looking into the amsrefs package or the BibTeX add-on.  
+% You do NOT have to type in bibliography references be hand.  
+% Instead, look up the article or book you want on a site like http://www.ams.org/mathscinet/ .  
+% Click ``Select Alternate Format'', choose ``BibTeX'', 
+% and it will automatically generate an entry for you which you can copy and paste.
+
+% For those of you working on presentations, if you are using programs like OpenOffice Presentation 
+% or Microsoft Powerpoint, you will likely find that it can be difficult or impossible to implement 
+% the mathematics you want and have things look right.  
+% The solution to this is to use Beamer, which is a LaTeX-based presentation format and very 
+% standard for giving math talks.  
+% If you know LaTeX, Beamer is pretty straight-forward.  A good place to start learning about it is:
+
+%   http://www.math.umbc.edu/~rouben/beamer/
+
+% Happy TeXing!
+
+% The main document follows below.
+
+% --------------------------------------------------------------
+% -------------------------Header-------------------------------
+% --------------------------------------------------------------
+% Every document in LaTeX starts with a ``header'' or ``preamble.''  
+% The header defines the way your document looks, and can be a very powerful tool for formatting 
+% and custom making commands.  Don't pay much attention to it now, 
+% but come back to the header once you feel more comfortable with LaTeX.  
+% For now, just copy the full header into your new documents.  
+% The end of the header is marked by the ``\begin{document}'' command below.
+
+% Line spacing ----------------------------------------
+% This sets up the font size and document type.
+\documentclass[11pt]{amsart}
+
+% Document class possibilities:
+%   amsart, article, book, beamer, report, letter
+% Options:
+%   letterpaper, a4paper,11pt,oneside, twoside, draft, twocolumn, landscape
+
+%% For beamer class, see my beamer template.
+
+%% ========== Options to Toggle When Compiling ==============
+%\usepackage[notcite]{showkeys} %% Show tags and labels.
+%\usepackage{layout}            %% Show variable values controlling page layout.
+%\allowdisplaybreaks[1]         %% Allow multiline displays to split.
+%\nobibliography     %% Use proper citations, but do not generate bibliography.
+
+%% ========== Select *.tex file encoding and language ==============
+%\usepackage[language]{babel} %% Takes care of all language requirements.
+
+%\usepackage[latin1]{inputenc}  %% Use with PuTTY or TeXMaker
+% \usepackage[utf8]{inputenc}  %% Use on most OS's, such as Ubuntu.
+
+%% ============== Page Layout ==============
+%% Allow extra space at the bottom of pages.
+\raggedbottom     
+
+%\usepackage{fullpage}
+%% The ``fullpage`` package uses smaller page margins.  
+%% It is uses up most of the page and to look nice for homework, 
+%% but you should leave it off if you are writing a paper.
+
+%%Control page number placement.  \thepage is the current page number.
+% \renewcommand{\headrulewidth}{0pt}
+% \lhead{}
+% \chead{}
+% \rhead{}
+% \lfoot{}
+% \cfoot{\thepage}
+% \rfoot{}
+
+%\usepackage{geometry}  %% Can adjust the margins of individual pages
+%% Use it like this:
+%% \newgeometry{left=3cm,bottom=0.1cm}
+%%     ... Lines that require margins adjusted ...
+%% \restoregeometry
+
+%% ============== Page Styles ==============
+% \usepackage{fancyhdr}
+% \pagestyle{fancy}
+% \pagestyle{empty}
+
+%% ============== Math Packages ==============
+% Packages define many useful symbols and commands in LaTeX.
+% The packages amsmath,amsfonts, and amssymb are essential to most
+% math documents.  You can download more packages online, or install
+% nearly all of them by installing the full version
+% of you TeX distribution.
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{mathtools} % An improvement of amsmath
+\usepackage{latexsym}
+
+%% ============ Typesetting add-ons ============
+\usepackage{siunitx} %Support for SI units, \num, \SI, etc.
+
+%% ============== Single-Use Packages ==============
+\usepackage{enumerate}
+\usepackage{cancel}
+\usepackage{cases}
+\usepackage{empheq}
+\usepackage{multicol}
+\usepackage{wrapfig}
+
+%% ============== Graphics Packages ==============
+%\usepackage{graphicx} %% Conflicts with pdflatex.
+%\usepackage{graphics} %% Conflicts with eps files.
+%\usepackage{epsfig} Allows eps files (?)
+
+%% Note: For using .eps graphics, use the graphicx package,
+%% and in the document use, for example:
+%% \begin{figure}
+%%  \includegraphics[scale=0.5]{my_picture.eps}
+%% \end{figure}
+
+%% Prevent figures from appearing on a page by themselves:
+%\renewcommand{\topfraction}{0.85}
+%\renewcommand{\textfraction}{0.1}
+%\renewcommand{\floatpagefraction}{0.75}
+
+%% Force floats to always appear after their definition: 
+%\usepackage{flafter}
+
+%% ============== tikZ and PGF packages ==============
+% \usepackage{ltxtable,tabularx,tabulary}
+% 
+% \usepackage{tikz}
+% \usepackage{pgf}
+% \usepackage{pgfplots} %% Requires pgf 2.0 or later.
+% \usetikzlibrary{arrows, automata, backgrounds, calendar, chains,
+% matrix, mindmap, patterns, petri, shadows, shapes.geometric,
+% shapes.misc, spy, trees}
+
+
+%% ============== Colors ==============
+%% Warning: These are often a source of conflicts during compilation.
+\usepackage{color}
+\newcommand{\blue}[1]{{\color{blue} #1}}
+\newcommand{\red}[1]{{\color{red} #1}}
+
+%% ============== Notes ==============
+\usepackage{todonotes}
+% \listoftodos, \todo[noline]{}, \todo[inline]{}, 
+% \todo{}, \missingfigure{}
+   
+%% ============== Fonts ==============
+% \usepackage{bbm}  %% Non-Vanilla: Not include in many LaTeX distros.
+\usepackage{mathrsfs}
+\usepackage{fontenc} %T1 font encoding
+\usepackage{inputenc} %UTF-8 support
+%\usepackage{babel} %Language specific commands, shortcuts, hyphenation.
+
+\usepackage{verbatim}
+
+%% Microtype improves spacing.  Load after fonts.
+\usepackage{microtype}
+
+%% ============== Theorem Styles ==============
+%% These commands define various theorem-like environments.
+%% Note: newtheorem* prevents numbering.
+
+\theoremstyle{plain}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem*{claim}{Claim}
+
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+\newtheorem{axiom}[theorem]{Axiom}
+
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+%% ============== References ==============
+\numberwithin{equation}{section} %% Equation numbering control.
+\numberwithin{figure}{section}   %% Figure numbering control.
+
+\usepackage[square,comma,numbers,sort&compress]{natbib}
+\usepackage[colorlinks=true, pdfborder={0 0 0}]{hyperref}
+\hypersetup{urlcolor=blue, citecolor=red}
+\usepackage{url}
+
+%% Reference things as 'fig. 1', 'Lemma 7', etc.
+%% Note: some conflict with section labeling
+% \usepackage{cleveref}
+
+%% Create references like 'on the following page', 'on page 23'
+% \usepackage{varioref} 
+
+% usepackage[refpages]{gloss} %% Glossary
+
+%%%%%%%%%%%%%%%%%%%%% MACROS %%%%%%%%%%%%%%%%%%%%%
+%% Sometimes it can be very tedious to retype long
+%% commands.  Use ``new command'' to avoid this.
+%% For example, here you only need to type $\nR$
+%% in your document rather than $\mathbb R$ to
+%% get the symbol for the real numbers.
+
+% ============================== Vectors ==============================
+\newcommand{\vect}[1]{\mathbf{#1}}
+\newcommand{\bi}{\vect{i}}
+\newcommand{\bj}{\vect{j}}
+\newcommand{\bk}{\vect{k}}
+
+\newcommand{\bu}{\vect{u}}
+\newcommand{\bv}{\vect{v}}
+\newcommand{\bw}{\vect{w}}
+\newcommand{\boldm}{\vect{m}}
+\newcommand{\bx}{\vect{x}}
+\newcommand{\by}{\vect{y}}
+\newcommand{\bz}{\vect{z}}
+
+\newcommand{\be}{\vect{e}}
+
+% ==================== Fields ==================
+\newcommand{\field}[1]{\mathbb{#1}}
+\newcommand{\nC}{\field{C}}
+\newcommand{\nF}{\field{F}}
+\newcommand{\nK}{\field{K}}
+\newcommand{\nN}{\field{N}}
+\newcommand{\nQ}{\field{Q}}
+\newcommand{\nR}{\field{R}}
+\newcommand{\nT}{\field{T}}
+\newcommand{\nZ}{\field{Z}}
+
+% ======================== Script Symbols  ========================
+\newcommand{\sL}{\mathscr L}
+\newcommand{\sH}{\mathscr H}
+
+% ====================== Caligraphic Symbols ======================
+%% Make your caligraphy fonts even fancier with this:
+% \usepackage{eucal}
+\newcommand{\cA}{\mathcal A}
+\newcommand{\cB}{\mathcal B}
+\newcommand{\cC}{\mathcal C}
+\newcommand{\cD}{\mathcal D}
+
+\newcommand{\cL}{\mathcal L}
+
+% ======================== Fraktur Symbols  ========================
+% Note: You must use the mathrsfs package for these symbols.
+
+%\newcommand{\fM}{\mathfrak M}
+
+% ========================== Bold Symbols ==========================
+\newcommand{\bvphi}{\boldsymbol{\vphi}}
+\newcommand{\bPhi}{\boldsymbol{\Phi}}
+
+% ======================== Misc. Symbols ========================
+\newcommand{\QED}{\hfill$\blacksquare$}
+% \QED is not recommended.  Instead, use \begin{proof}...\end{proof}.
+
+% For a fancy lowercase l, use \ell
+
+% You can even make your own symbols (advanced):
+\newcommand{\dhr}{\m\athrel{\lhook\joinrel\relbar\kern-.8ex\joinrel\lhook\joinrel\rightarrow}}
+
+% ========================== Operations ==========================
+%% These can be very useful.  Note how they are defined.
+%% The first bracket {} names the new command.  The second []
+%% is the number of arguments, and the third {} is the full
+%% length expression.  For example, rather than writing
+%% out the full notation for the partial derivative, of
+%% f with respect to x, the command below allows you
+%% to just write $\pd{f}{x}$.  This can be a big time saver
+%% and can make your .txt file easier for you to read.
+\newcommand{\cnj}[1]{\overline{#1}}
+\newcommand{\pd}[2]{\frac{\partial #1}{\partial #2}}
+\newcommand{\npd}[3]{\frac{\partial^#3 #1}{\partial #2^#3}} %\npd{f}{x}{2}
+\newcommand{\abs}[1]{\left\lvert#1\right\rvert}
+\newcommand{\norm}[1]{\left\lVert#1\right\rVert}
+\newcommand{\set}[1]{\left\{#1\right\}}
+\newcommand{\ip}[2]{\left<#1,#2\right>}
+\newcommand{\pnt}[1]{\left(#1\right)}
+\newcommand{\pair}[2]{\left(#1,#2\right)} 
+
+% ============ Special Macros For This Paper ==================
+
+%% Put your macros here.
+
+%% ============== Counters ==============
+\newcounter{my_counter}    %% Define a new counter.
+\setcounter{my_counter}{1} %% Set is equal to 1.
+
+ %% ============== Article Information ==============
+\title[Short Version of Tile]{Full Title Goes Here}
+
+\date{\today}
+% \date{25 June 2012}
+
+\keywords{keyword1, keyword2,...}
+\thanks{MSC 2010 Classification: }
+%% Note: Find MSC classification numbers at
+%% http://www.ams.org/mathscinet/freeTools.html
+
+% ======================  Author Information ======================
+\author{First Author}
+\email[First Author]{student1@MyEmail.edu}
+%
+\author{Second Author}
+\email[Second Author]{student2@MyEmail.edu}
+%
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\thispagestyle{empty} %% Gets rid of page number on first page.
+
+\begin{abstract}
+The abstract goes here. 
+\end{abstract}
+   
+\maketitle
+   
+\section{\texorpdfstring{Introduction}{}}\label{sec:intro}
+
+Here is some stuff in the introduction.  It will lay out all the other things.
+
+\section{\texorpdfstring{Why Math is Awesome}{}}\label{sec:awesome}
+
+In this section, we will explain why math is awesome.  First, how about a system of equations in display-style:
+\begin{subequations}\label{Navier_Stokes}
+\begin{align}
+\label{momentum_equation}
+ \partial_t u +(u\cdot\nabla)u+\nabla p &= \nu\triangle u +f,
+\\
+\label{MHD_div}
+ \nabla\cdot u &= 0,
+\\
+\notag
+ u(0) &= u_0.
+\end{align}
+\end{subequations}
+% Notice the & symbols separating the columns.
+% Also \\ means "end the current line."
+% You don't need a ''\\" on the last line.  
+% In fact, you shouldn't put one there
+% since it will make an additional blank row.
+
+% To get rid of the numbering, use a star like this:  
+% \begin{align*} ... \end{align*}
+% Or use \notag to get rid of the number on a specific line.
+
+% Note: NEVER leave a blank line in your align environment. 
+% An error will happen when you try to compile.
+
+% There is an old way of making multi-line equations, called ``eqnarray''
+% It is now considered obsolete, and you shouldn't use it.
+
+\subsection{\texorpdfstring{Why math is fun}{}}\label{subsec:fun}
+
+Here is a subsection.  We can reference the previous system of equations \eqref{Navier_Stokes}, or specific parts of it \eqref{momentum_equation} or \eqref{MHD_div}.  
+
+This is a citation of a paper \cite{Beale_Kato_Majda_1984} and a book \cite{Chandrasekhar_1961}, which will show up in the bibliography.  Remember that an easy way to get formatted references is to go to \url{http://www.ams.org/mathscinet} from a university computer, look up an article, click ``Select Alternative Format'', and select ``BibTeX.''  Then just copy the reference into your $*$.bib file.
+
+
+
+\subsection{\texorpdfstring{Why math is cool}{}}\label{subsec:cool}
+
+Here is another subsection.
+
+\section{\texorpdfstring{Some tips on \LaTeX}{}}\label{sec:latex}
+
+In Section \ref{sec:awesome}, you saw how to make multi-line equations.  Single-line equations can be done the same way, but there is also simpler way:
+\[
+\int_{\Omega}df = \oint_{\partial\Omega}f(x) \, dx
+\]
+
+% Note the ``\,'' symbol.  This makes a small space so the ``f(x)dx'' looks better.
+% LaTeX doesn't pay attention to spacing in the tex document, so 
+% $y = x$ is the same as $y         =        x$.
+
+% Note also that the old double dollar sign notation still works, but is outdated.  
+% That is, the above line could have been written as:
+% $$\int_{\Omega}df=\oint_{\partial\Omega}f$$
+% In fact, it is preferable to use \( ... \) notation instead of $ ... $, but 
+% the single dollar sign is used so common, that I will use it here as well.
+
+% To get rid of the numbering, use a star like this:  
+% \begin{align*} ... \end{align*}
+% Or use \notag to get rid of the number on a specific line.
+
+% Note: NEVER leave a vertical space in your equation array. An error will happen when you try to compile
+
+\begin{enumerate}
+  \item You can easily make lists using \emph{enumerate}.
+  \item The numbering is done automatically.
+
+    \begin{enumerate}
+      \item You can even make lists within lists.
+      \item I heard you like lists, so I put a list in your list.
+    \end{enumerate}
+
+\end{enumerate}
+
+Numerical lists are handy, but sometimes, you wanted a bulleted list:
+
+\begin{itemize}
+  \item[$\spadesuit$] Or you can make your own symbols using \emph{itemize}.
+  \item[$\bigotimes$] Even unusual symbols.
+  \item The default symbol is a standard bullet.
+\end{itemize}
+
+There are many way to make matrices.  Notice the use of the left and right operators.  They will stretch to any size you like.
+\[
+\left[
+\begin{array}{rl|c}%r=right, l=left |=make a line, c=center
+3 & 1 & 4 \\
+1 & 5 & 9 \\
+\hline
+2 & 6 & \text{See!  Easy.}
+\end{array}
+\right]
+\]
+% Notice the \left[  and \right] notation.  
+% You can use this in other ways, such as \left( and \right), or even \left\{ and \right. 
+
+\noindent
+You can also make ``piecewise'' defined functions:
+%Notice how you have to use different symbols for the left and right quotation marks.  
+%If I had written "piecewise" above instead of ``piecewise'' the document looks wrong.  
+%Some editors correct for this automatically.  
+%The ` symbol is near the upper-left part of your keyboard, while the ' symbol 
+%is the same key as " except that you don't press the shift button.
+\[
+\Phi(x):=
+\left\{
+\begin{array}{ll}
+\sum_{n=0}^\infty\frac{x^{-2n}}{(2n+1)!}  & \text{if }x\in\mathbb{R}\setminus\{0\},\\
+0 & \text{otherwise.}
+\end{array}
+\right. 
+%The "." is an empty character in this situation, 
+%but it is needed so that the "\left" and "\right" commands match.
+\]
+%Note that you can write the symbol for the real numbers as $\mathbb{R}$.  
+%However, because of the ``new command'' defined in the header, you can also write $\nR$ to get it.
+
+%Note the symbol {rc|r} means "first column aligned right"
+%"second column aligned center"
+%Then a vertical line
+%"third column aligned center"
+
+\noindent There are a few ways to cancel things: 
+$a\neq b$, $a\not\in A$, $\cancel{(x^2+1)}y=\cancel{(x^2+1)}z$ (you need the \emph{cancel} package for that last one).    
+You can write fractions like this: $\frac{z+i}{z-i}$.  
+If you want to make them look like display text, try $\dfrac{z+i}{z-i}$.  
+More generally, try \emph{display style}: 
+$\displaystyle{\lim_{n\rightarrow\infty}a_n}\neq b$. 
+It's enough to make L'H\^ospital, H\"older, or Poincar\'e drool (note how \LaTeX can make accents on the names).
+
+\LaTeX has many built-in symbols.  Most of them can be found in your TeX editor's symbol list.  For standard calculus functions, \LaTeX has built-in symbols, which you should use.  For example, 
+\[
+ \sin(x) \text{ and } \log(x)
+ \qquad\text{ look better than }\qquad
+ sin(x) \text{ and } log(x).
+\]
+
+There are many resources online as well. Just type ``latex'' into Google followed by your query.
+
+\[
+|
+\big[\Big<\bigg\{\Bigg(
+\underline{\hspace{1.2cm}}
+/ \text{\Large{Happy TeXing!}} \backslash
+\underline{\hspace{1.2cm}}
+\Bigg)\bigg\}\Big.\big]
+|
+\]
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{scriptsize}
+\bibliographystyle{amsplain}%amsalpha%amsplain%plain
+\bibliography{Larios_Bibliography}
+\end{scriptsize}
+
+\end{document}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
