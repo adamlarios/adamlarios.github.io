@@ -8,9 +8,9 @@
 <meta name="keywords" content="" />
 <meta name="description" content="" />
 
-<link href="/~alarios2/style.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="style.css" rel="stylesheet" type="text/css" media="screen" />
 
 </head>
 <body>
 
-<!--#include virtual="/~alarios2/layout/logo.html"-->
+<!--#include virtual="layout/logo.html"-->

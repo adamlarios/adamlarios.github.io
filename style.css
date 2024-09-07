@@ -114,7 +114,7 @@ hr { display: none; }
 	float: left;
 	height: 31px;
 	padding: 16px 16px 0px 24px;
-	background: url(/~alarios2/images/img09.jpg) no-repeat right 16px;
+	background: url(images/img09.jpg) no-repeat right 16px;
 	text-decoration: none;
 	text-align: center;
 	text-transform: capitalize;
@@ -244,7 +244,7 @@ hr { display: none; }
 
 .post {
 	margin-bottom: 20px;
-	background: url(/~alarios2/images/img04.jpg) no-repeat left top;
+	background: url(images/img04.jpg) no-repeat left top;
 }
 
 .post .title {
@@ -309,7 +309,7 @@ hr { display: none; }
 	height: 18px;
 	margin: 0px; 
 	padding: 3px 0px 0px 40px;
-	background: url(/~alarios2//images/img06.gif) no-repeat left top;
+	background: url(/images/img06.gif) no-repeat left top;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -325,7 +325,7 @@ hr { display: none; }
 	height: 18px;
 	margin: 0px; 
 	padding: 3px 0px 0px 40px;
-	background: url(/~alarios2/images/img06.gif) no-repeat left top;
+	background: url(images/img06.gif) no-repeat left top;
 	text-decoration: none;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 11px;
@@ -355,18 +355,18 @@ hr { display: none; }
 	float: right;
 	width: 250px;
 	margin: 0px;
-	background: url(/~alarios2/images/img06.jpg) repeat-y left top;
+	background: url(images/img06.jpg) repeat-y left top;
 	font-family: Arial, Helvetica, sans-serif;
 	font-size: 12px;
 }
 
 #sidebar-bgtop {
-	background: url(/~alarios2/images/img05.jpg) no-repeat left top;
+	background: url(images/img05.jpg) no-repeat left top;
 }
 
 #sidebar-bgbtm {
 	padding: 80px 10px 30px 0px;
-	background: url(/~alarios2/images/img07.jpg) no-repeat left bottom;
+	background: url(images/img07.jpg) no-repeat left bottom;
 }
 
 #sidebar ul {
@@ -387,7 +387,7 @@ hr { display: none; }
 #sidebar li li {
 	margin: 0;
 	padding: 12px 0px 12px 20px;
-	background: url(/~alarios2/images/img10.jpg) no-repeat left bottom;
+	background: url(images/img10.jpg) no-repeat left bottom;
 }
 
 #sidebar li li a {
@@ -408,7 +408,7 @@ hr { display: none; }
 	height: 30px;
 	margin: 0 0 10px 17px;
 	padding: 6px 0 2px 14px;
-	background: url(/~alarios2/images/img05.gif) repeat-x left top;
+	background: url(images/img05.gif) repeat-x left top;
 	text-transform: capitalize;
 	font-size: 18px;
 	font-weight: normal;
@@ -496,7 +496,7 @@ hr { display: none; }
 	height: 100px;
 	margin: 0 auto;
 	padding: 0;
-	background: #2b2b2b url(/~alarios2/images/img08.jpg) repeat-x left top;
+	background: #2b2b2b url(images/img08.jpg) repeat-x left top;
 }
 
 #footer-bgcontent {
