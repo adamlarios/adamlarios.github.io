@@ -1,0 +1,3 @@
+git .
+git commit -am''
+git push origin main
